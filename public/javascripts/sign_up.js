@@ -10,3 +10,7 @@ function matchPassword(confirmPass)
     confirmPass.setCustomValidity("");
   }
 }
+function emailTaken()
+{
+  var email= document.getElementById('UserEmail');
+}
