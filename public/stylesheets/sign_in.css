@@ -2,7 +2,7 @@
 body{
   font-family: 'Roboto',sans-serif;
 
-  background-image: url("public/images/Recify_background.png");
+  background-image: url("/public/images/Recify_background.png");
 
   background-repeat: no-repeat;
   background-size: cover;
