@@ -8,7 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
   <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-  <link rel="stylesheet" type="text/css" href="../styling/sign_in.css">
+  <link rel="stylesheet" type="text/css" href="../public/stylesheets/sign_in.css">
 </head>
 <body>
 
@@ -16,9 +16,9 @@
   <div class="col-sm-8 main-section">
     <div class="modal-content">
       <div class="col-12 user-img">
-        <img src="../img/faceorange.png">
+        <img src="../public/images/faceorange.png">
       </div>
-    <form class="col-12" action="" method="post" onsubmit="return signinform(this)">
+    <form class="col-12" action="/signin" method="post" onsubmit="return signinform(this)">
       <div class="form-group email">
         <input type="text" name="UserEmail" class="form-control" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email should be something like omar@hotmail.com">
       </div>
@@ -36,6 +36,6 @@
 </div>
 
 
-<script type="text/javascript" src="../scripts/signinscript.js"></script>
+<script type="text/javascript" src="../public/javascripts/signinscript.js"></script>
 </body>
 </html>

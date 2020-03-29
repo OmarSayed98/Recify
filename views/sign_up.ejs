@@ -8,7 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
   <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-  <link rel="stylesheet" type="text/css" href="../styling/sign_up.css">
+  <link rel="stylesheet" type="text/css" href="../public/stylesheets/sign_up.css">
 </head>
 <body>
 
@@ -16,9 +16,9 @@
   <div class="col-sm-8 main-section">
     <div class="modal-content">
       <div class="col-12 user-img">
-        <img src="../img/faceorange.png">
+        <img src="../public/imgages/faceorange.png">
       </div>
-    <form class="col-12" action="" method="post" onsubmit="return signinform(this)">
+    <form class="col-12" action="/signup" method="post" onsubmit="return signinform(this)">
       <div class="form-group fName">
         <input type="text" name="Name" class="form-control" placeholder="Name" required>
       </div>
@@ -43,6 +43,6 @@
 </div>
 
 
-<script type="text/javascript" src="../scripts/sign_up.js"></script>
+<script type="text/javascript" src="../public/javascripts/sign_up.js"></script>
 </body>
 </html>

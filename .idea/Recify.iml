@@ -13,5 +13,6 @@
     <orderEntry type="library" name="@types/mongodb" level="application" />
     <orderEntry type="library" name="@types/mongoose" level="application" />
     <orderEntry type="library" name="@types/bcrypt" level="application" />
+    <orderEntry type="library" name="@types/bcrypt" level="application" />
   </component>
 </module>
