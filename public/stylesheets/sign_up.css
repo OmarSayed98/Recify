@@ -56,7 +56,10 @@ body{
 }
 
 input:hover{
-    border: 1px solid #ff5f00 !important;
+    border: 1px solid #ff5f00;
+}
+input:active{
+  border: none;
 }
 button{
   width:40%;
@@ -71,8 +74,8 @@ button{
   border-bottom:4px solid #fa6913;
 }
 .btn:hover , .btn:focus{
-  background-color: #ff5f00 !important;
-  border-bottom: 4px solid #ff5f00 !important;
+  background-color: #ff5f00;
+  border-bottom: 4px solid #ff5f00;
 }
 .svg-inline--fa {
   font-size: 20px;

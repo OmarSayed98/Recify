@@ -58,6 +58,9 @@ body{
 input:hover{
     border: 1px solid #ff5f00 !important;
 }
+input:active{
+  border: none;
+}
 button{
   width:40%;
   margin:5px 0 25px;
