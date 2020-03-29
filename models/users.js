@@ -1,31 +1,30 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 const userschema = new schema({
-    firstName: String,
-    lastName: String,
+    name: String,
     password: String,
     likedMovies: [schema.ObjectId],
     dislikedMovies: [schema.ObjectId],
     notifications: [schema.ObjectId],
     email: String
 });
-const user = mongoose.model('user', userschema);
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
-user.pre("save",function(next){
-    const user=this;
+userschema.pre('save', function(next) {
+    var user = this;
     if (!user.isModified('password')) return next();
-    bcrypt.hash(user.password, saltRounds, function (err, hash) {
-        if(err)
-            return next(err);
-        user.password=hash;
-        next();
+    bcrypt.genSalt(10, function(err, salt) {
+        if (err) return next(err);
+        bcrypt.hash(user.password, salt, function(err, hash) {
+            if (err) return next(err);
+            user.password = hash;
+            next();
+        });
     });
 });
-userschema.methods.comparePassword=function(candidatepass,cb){
-    bcrypt.compare(candidatePass, this.password, function(err, isMatch) {
+userschema.methods.comparePassword = function(candidatePassword, cb) {
+    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
         if (err) return cb(err);
         cb(null, isMatch);
     });
 };
-module.exports=user;
+module.exports=mongoose.model('user', userschema);
