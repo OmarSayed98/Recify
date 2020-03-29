@@ -1,0 +1,55 @@
+body{margin: 0;
+     padding: 0;
+     background-color: black;
+     font-family: 'Arial'}
+.header{width:80%;
+        margin: auto;
+        }
+.headerLogoDiv{width: 5%;
+               height: max-content;
+               background: rgba(133, 133, 133, 0.2);
+               float:left;}
+#headerLogo{width:100%;}
+
+.NavBarContentSelection{float:left;
+                         margin-top: 2.2%;
+                         margin-left: 1%;
+                        }
+.NavBarContentSelection a{margin-left:10px;
+                          color: white;
+                          float:left;
+                          text-decoration: none;
+                        }
+.NavBarContentSelection a:first-child{margin-right: 10px;}
+.NavBarContentSelection a:hover{color:orange;}
+.vl{border-left: 1px solid orange;
+    height:20px;
+    float:left;}
+
+.NavBarMenu{float:right;
+              margin-top: 2.2%;}
+
+.NavBarProfileLink a{float: right;
+                    text-decoration: none;
+                    color: white;
+                    position: relative;
+                    }
+.NavBarProfileLink a i{
+                     color: orange;
+                     margin-left: 4px;}
+.NavBarProfileLink a:hover{color: orange;}
+.vr{border-right: 1px solid orange;
+    height:20px;
+    float:right;
+    margin-left: 10px;
+    margin-right: 10px;}
+.NotificationBadge{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding-right:3.2px;
+  padding-left:2.8px;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  background: red;
+  color: white;}
