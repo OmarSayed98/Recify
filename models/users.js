@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 const userschema = new schema({
-    name: String,
-    password: String,
+    name: {type:String,required:true},
+    password: {type:String,required:true},
     likedMovies: [schema.ObjectId],
     dislikedMovies: [schema.ObjectId],
     notifications: [schema.ObjectId],
-    email: String
+    email: {type:String,required:true}
 });
 const bcrypt = require('bcrypt');
 userschema.pre('save', function(next) {

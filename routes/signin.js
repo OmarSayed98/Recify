@@ -6,24 +6,26 @@ router.get('/',function(req,res){
     res.render('sign_in');
 });
 router.post('/',function(req,res){
-    var data=req.body;
-    users.findOne({email:data.UserEmail},function(err,user){
-        if(err)
-            throw err;
-        if(user) {
-            user.comparePassword(data.UserPassword, function (err, match) {
-                if (err)
+    const data=req.body;
+    const errors=[];
+    users.findOne({email:data.UserEmail}).then(function(result){
+        if(!result){
+            errors.push({msg:"Invalid Data"});
+            res.render('sign_in',{errors:errors,email:data.UserEmail,password:data.UserPassword});
+        }
+        else{
+            result.comparePassword(data.UserPassword,function(err,match){
+                if(err)
                     throw err;
-                if (match)
-                    res.render('sign_in');
+                if(match){
+                    res.render('sign_up');
+                }
                 else{
-
+                    errors.push({msg:"Invalid Data"});
+                    res.render('sign_in',{errors:errors,email:data.UserEmail,password:data.UserPassword});
                 }
             })
         }
-        else{
-
-        }
-    })
+    });
 });
 module.exports=router;
