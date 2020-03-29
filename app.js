@@ -1,9 +1,9 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var mongoose=require('mongoose');
-var app = express();
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const mongoose=require('mongoose');
+const app = express();
 mongoose.connect("mongodb://localhost:27017/Dijkstra", {
   useUnifiedTopology: true,
   useNewUrlParser: true
@@ -15,4 +15,5 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.listen(8080);
+module.exports=app;
+app.listen(3000);
