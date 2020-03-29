@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 body{
   font-family: 'Roboto',sans-serif;
-  background-image: url("../img/Recify_background.png");
+  background-image: url("..public/images/Recify_background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
