@@ -12,5 +12,6 @@ function matchPassword(confirmPass)
 }
 function emailTaken()
 {
-  var email= document.getElementById('UserEmail');
+  var email= document.getElementById("UserEmail");
+  email.setCustomValidity("This email is already taken!");
 }
