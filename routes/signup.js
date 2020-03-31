@@ -6,7 +6,7 @@ router.get('/',function(req,res){
 });
 router.post('/',function(req,res){
     const data=req.body;
-    let errors=[];
+    const errors=[];
     const email=data.UserEmail.toLowerCase();
     users.findOne({email:email}).then(function(result){
         if(!result){
