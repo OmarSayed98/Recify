@@ -18,6 +18,7 @@ router.post('/',function(req,res){
                 if(err)
                     throw err;
                 if(match){
+                    req.session.email=req.body.UserEmail;
                     res.redirect('/home');
                 }
                 else{
