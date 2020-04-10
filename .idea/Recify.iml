@@ -16,5 +16,7 @@
     <orderEntry type="library" name="@types/bcrypt" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="@types/connect-flash" level="application" />
+    <orderEntry type="library" name="@types/express-session" level="application" />
   </component>
 </module>

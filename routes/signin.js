@@ -18,7 +18,7 @@ router.post('/',function(req,res){
                 if(err)
                     throw err;
                 if(match){
-                    res.render('sign_up');
+                    res.redirect('/home');
                 }
                 else{
                     errors.push({msg:"Invalid Data"});

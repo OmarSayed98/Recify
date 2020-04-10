@@ -15,8 +15,10 @@ router.post('/',function(req,res){
                 email:data.UserEmail,
                 password:data.Password
             });
-            user.save();
-            res.render('sign_in');
+            user.save().then(function(user){
+                req.flash('success_msg','Registration Complete');
+                res.redirect('/signin');
+            });
         }
         else{
             errors.push({msg:"Email Already Taken"});
