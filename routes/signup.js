@@ -1,10 +1,18 @@
 const express=require('express');
 const router=express.Router();
 const users=require('../models/users');
-router.get('/',function(req,res){
+function redirect(req,res,next){
+    if(req.session.name){
+        res.redirect('/home');
+    }
+    else{
+        next();
+    }
+}
+router.get('/',redirect,function(req,res){
     res.render('sign_up');
 });
-router.post('/',function(req,res){
+router.post('/',redirect,function(req,res){
     const data=req.body;
     const errors=[];
     const email=data.UserEmail.toLowerCase();

@@ -2,10 +2,18 @@ const express=require('express');
 const router=express.Router();
 const mongoose=require('../server.js');
 const users=require('../models/users');
-router.get('/',function(req,res){
+function redirect(req,res,next){
+    if(req.session.name){
+        res.redirect('/home');
+    }
+    else{
+        next();
+    }
+}
+router.get('/',redirect,function(req,res){
     res.render('sign_in');
 });
-router.post('/',function(req,res){
+router.post('/',redirect,function(req,res){
     const data=req.body;
     const errors=[];
     users.findOne({email:data.UserEmail}).then(function(result){
@@ -18,7 +26,7 @@ router.post('/',function(req,res){
                 if(err)
                     throw err;
                 if(match){
-                    req.session.email=req.body.UserEmail;
+                    req.session.name=result.name;
                     res.redirect('/home');
                 }
                 else{
