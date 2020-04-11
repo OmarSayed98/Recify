@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -7,16 +8,15 @@ const session=require('express-session');
 const app = express();
 const route=require('./routes/index');
 const db=require('./server');
+const MongoStore=require('connect-mongo')(session);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(session({
-    secret: 'sakdjfas;kdfjaslkfj',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 60000 }
+    secret:process.env.SECRET_KEY,
+    store:new MongoStore({mongooseConnection:db})
 }));
 app.use(flash());
 app.use(function(req,res,next){

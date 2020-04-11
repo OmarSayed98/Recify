@@ -4,4 +4,5 @@ mongoose.connect("mongodb://localhost:27017/Dijkstra", {
     useUnifiedTopology: true,
     useNewUrlParser: true
 });
+
 module.exports=db;
