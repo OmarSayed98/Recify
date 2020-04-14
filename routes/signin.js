@@ -1,6 +1,5 @@
 const express=require('express');
 const router=express.Router();
-const mongoose=require('../server.js');
 const users=require('../models/users');
 function redirect(req,res,next){
     if(req.session.name){

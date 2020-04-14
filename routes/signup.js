@@ -23,7 +23,7 @@ router.post('/',redirect,function(req,res){
                 email:data.UserEmail,
                 password:data.Password
             });
-            user.save().then(function(user){
+            user.save().then(function(){
                 req.flash('success_msg','Registration Complete');
                 res.redirect('/signin');
             });
