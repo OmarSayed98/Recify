@@ -12,9 +12,6 @@ router.get('/',redirect,function(req,res){
     res.render('homepage');
 });
 router.get('/signout',redirect,function(req,res){
-    res.render('homepage');
-});
-router.post('/signout',redirect,function(req,res){
     req.session.destroy();
     res.redirect('/signin');
 });
