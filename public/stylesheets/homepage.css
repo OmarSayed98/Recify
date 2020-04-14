@@ -1,0 +1,113 @@
+body{margin: 0;
+     padding: 0;
+     font-family: 'Arial';
+
+
+   }
+#carouselExampleIndicators{
+    background-image: url("../images/Recify background6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: max-content;
+    z-index: 9;
+
+}
+.carousel-inner{
+
+                }
+.sliderimg{
+    position: relative;
+    left: 65%;
+    margin-top: 5.5%;
+    width: 20%;
+    margin-bottom: 4%;
+
+}
+
+.ctrl{color: #666666;
+opacity: 1.0 !important;}
+.ctrl:hover{color:orange;
+    opacity:1.0;}
+
+.carousel-control-next, .carousel-control-prev{
+  height: max-content;
+  margin-top: 22.5%;
+    width: max-content;
+}
+.carousel-control-next{
+    margin-right: 5%;
+}
+.carousel-control-prev{
+    margin-left: 5%;
+}
+.carousel-caption{
+    position: absolute;
+    left: 12% !important;
+    min-width: 30%;
+    height: max-content;
+    top: 20%;
+    padding-bottom: 20px;
+    text-align: left;
+
+}
+.MovieName{
+    font-size:5.0rem ;
+    margin-left: 0px;
+
+}
+.MovieCategory{
+    border: 1px solid darkorange;
+    background-color: orange;
+    border-radius: 3px;
+    padding: 2px;
+    width: 100px;
+    opacity: 0.75;
+    float: left;
+    text-align: center;
+    margin-right:10px ;
+
+}
+.MovieCategory:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.Morebtn{
+    border: 1px solid darkorange;
+    background-color: darkorange;
+    border-radius: 3px;
+    padding: 2px;
+    width: 100px;
+    opacity: 0.75;
+
+}
+.Morebtn a{
+    text-decoration: none;
+    color: white;
+}
+.Morebtn:hover{
+    opacity: 1;
+
+}
+.fix{
+    clear: both;
+}
+.fa-star{
+    float: left;
+    color: gold;
+    margin-right:5px ;
+    margin-top: 2px;
+}
+.sliderRating{
+    font-size: 1.75rem;
+}
+.fa-thumbs-up, .fa-thumbs-down{
+    color: white;
+}
+.fa-thumbs-up:hover, .fa-thumbs-down:hover{
+    color: orange;
+    cursor: pointer;
+}
+.fa-thumbs-up{
+    margin-right: 20px;
+}
