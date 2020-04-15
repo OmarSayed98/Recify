@@ -1,9 +1,10 @@
 body{margin: 0;
-     padding: 0;
-     font-family: 'Arial';
+    padding: 0;
+    font-family: 'Arial';
 
 
-   }
+
+}
 #carouselExampleIndicators{
     background-image: url("../images/Recify background6.jpg");
     background-repeat: no-repeat;
@@ -15,24 +16,24 @@ body{margin: 0;
 }
 .carousel-inner{
 
-                }
+}
 .sliderimg{
     position: relative;
     left: 65%;
     margin-top: 5.5%;
-    width: 20%;
     margin-bottom: 4%;
 
 }
 
-.ctrl{color: #666666;
-opacity: 1.0 !important;}
+.ctrl{color: orange;
+    opacity: 1.0 !important;}
 .ctrl:hover{color:orange;
     opacity:1.0;}
 
 .carousel-control-next, .carousel-control-prev{
-  height: max-content;
-  margin-top: 22.5%;
+    height: max-content;
+    margin-top: 17.5%;
+
     width: max-content;
 }
 .carousel-control-next{
@@ -92,7 +93,7 @@ opacity: 1.0 !important;}
 .fix{
     clear: both;
 }
-.fa-star{
+.sliderratingicon{
     float: left;
     color: gold;
     margin-right:5px ;
@@ -110,4 +111,52 @@ opacity: 1.0 !important;}
 }
 .fa-thumbs-up{
     margin-right: 20px;
+}
+.tabtitlearrow{
+
+}
+.tabsposter{
+    width:100%;
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    );
+    z-index: 111111111111111111111;
+}
+
+.tabcontent{
+    border: 1px solid black;
+    padding: 0;
+    margin: 15px;
+
+
+}
+.tabcontent:first-child {
+    margin-left:5% ;
+
+}
+
+.tabcontent:last-child {
+    margin-right: 0;
+}
+.tabcontent:first-child{
+}
+.tabcontent:last-child{
+}
+.tabPosterData{
+    position: absolute;
+    bottom: 0%;
+    color: orange;
+    left: 15%;
+}
+
+.tabPosterData h3, .tabsposterRating{
+    font-weight: bolder;
+}
+.tabsmorebtn{
+    position: absolute;
+    display: none;
+}
+.tab1{
+    width: 90%;
 }
