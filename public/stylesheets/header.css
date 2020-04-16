@@ -145,15 +145,34 @@ body{font-family: 'Roboto',sans-serif;
 .notifDiv{
     color: white;
     float: right;
+    overflow-x:visible;
+    width: 130px;
+}
 
-}
-.notifDiv p{
-    word-wrap: normal;
-}
 .notificationMenu{
     display: none;
-    width: 130px;
+    width: 200px;
+    max-height: 200px;
+    overflow-y: scroll;
     border-radius: 7px;
-    padding-left: 5px;
+    padding-left: 7.5px;
+    padding-top: 7.5px;
     background: rgba(105, 105, 105, 0.8);
+}
+.notificationMenu::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+.notificationMenu::-webkit-scrollbar-track {
+    background: rgba(255,165,0,0.3);
+}
+
+/* Handle */
+.notificationMenu::-webkit-scrollbar-thumb {
+    background: orange;
+}
+
+/* Handle on hover */
+.notificationMenu::-webkit-scrollbar-thumb:hover {
+    background: darkorange;
 }
