@@ -23,6 +23,30 @@ function searchMenu()
   if(searchResult.style.display!="block"){
     searchResult.style.display="block";
   }
+  var movie=document.getElementById('searchData').value;
+  var key="&apikey=e7aad19";
+  var pageNum =1;
+  $.getJSON('http://www.omdbapi.com/?s='+movie+'&page='+pageNum+ key).then(function(response){
+    var t=JSON.stringify(response);
+    var tt=JSON.parse(t);
+
+
+    for(var i=0;i<tt.Search.length;i++)
+    {
+        if(tt.Search[i].Poster.length<1)
+        {
+          i+=1;
+        }
+        else{
+          var moviePoster = document.querySelectorAll("#searchResult img")[i];
+          moviePoster.src=tt.Search[i].Poster;
+          var movieName = document.querySelectorAll('#searchResult p')[i];
+          movieName.innerHTML= tt.Search[i].Title;
+        }
+
+    }
+
+  });
 }
 
 function notificationMenu()

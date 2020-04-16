@@ -135,14 +135,19 @@ body{font-family: 'Roboto',sans-serif;
     border-radius: 7px;
     position: relative;
     display:none;
+    overflow-y: visible;
 }
-.searchResult p{float: left;
+.searchResult p{
                 margin-left: 10px;
-                margin-bottom: 7px;}
+                margin-bottom: 7px;
+                }
 .searchResult img{width: 15%;
                   float: left;
                   margin-bottom: 7px;}
+.theResult {
+    overflow-y: visible;
 
+}
 .notifDiv{
     color: white;
     float: right;
