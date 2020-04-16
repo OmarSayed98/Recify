@@ -71,6 +71,7 @@ body{font-family: 'Roboto',sans-serif;
 #searchbar{
     float: left;
     width:100%;
+    color: white;
 }
 #searchbar:hover{
     color: orange !important;
@@ -161,6 +162,7 @@ body{font-family: 'Roboto',sans-serif;
 }
 .notificationMenu::-webkit-scrollbar {
     width: 10px;
+
 }
 /* Track */
 .notificationMenu::-webkit-scrollbar-track {
