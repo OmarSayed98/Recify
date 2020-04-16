@@ -28,6 +28,9 @@ body{
   margin-top: 250px;
   padding: 0;
 }
+.alert{
+  font-size:14px;
+}
 .modal-content{
     background-color: #3b4652;
     opacity: .95;
