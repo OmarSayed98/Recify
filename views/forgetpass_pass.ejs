@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forget Password</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/forgetpass_pass.css">
+</head>
+<body>
+
+<div class="modal-dialog text-center">
+    <div class="col-sm-8 main-section">
+        <div class="modal-content">
+            <div class="col-12 user-img">
+                <img src="../public/images/faceorange.png">
+            </div>
+            <div class="col-12 ">
+                <h3>Reset Password</h3>
+            </div>
+            <form class="col-12" action="/signin" method="post" onsubmit="return signinform(this)">
+                <div class="form-group">
+                    <input type="password" class="form-control" id="UserNewPassword" name="UserNewPassword" placeholder="New Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="UserNewConfirmPassword" name="UserNewConfirmPassword" placeholder="Confirm Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password Must Match Your New Password">
+                </div>
+                <a href="#"><button type="submit" name="next_btn" class="btn"><i class="fas fa-save"></i>Save</button></a>
+            </form>
+            <div class="col-12 links">
+                <a href="/signin">Sign in</a><br>
+                New to Recify?  <a href="/signup"> Sign up now.</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
