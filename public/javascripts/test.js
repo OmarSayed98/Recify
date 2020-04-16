@@ -39,6 +39,7 @@ function get(id,key){
       var title = data.Title;
       var type = data.Type;
       var genre = data.Genre;
+
       console.log("Title: "+title);
       console.log("Type: "+type);
       console.log("Genre: "+genre);
