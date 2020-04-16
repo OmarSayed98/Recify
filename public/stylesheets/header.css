@@ -35,14 +35,19 @@ body{font-family: 'Roboto',sans-serif;
 
 .NavBarMenu{float:right;
     margin-top: 2.2%;
-    width: 50%;
-    min-width: 650px;
+    width: 30%;
+    min-width: max-content;
+    overflow-y:visible;
 }
 
+.NavBarProfileLink{
+    position: relative;
+}
 .NavBarProfileLink a,.NavBarProfileLink .notificationP{float: right;
     text-decoration: none;
     color: white;
     position: relative;
+    text-align: right;
 }
 .NavBarProfileLink a i, .notificationP i{
     color: orange;}
@@ -65,12 +70,12 @@ body{font-family: 'Roboto',sans-serif;
     color: white;}
 #searchbar{
     float: left;
-    margin-top: -3.5%;
-    width:50%;
+    width:100%;
 }
 #searchbar:hover{
     color: orange !important;
 }
+#searchbar input{color: white;}
 #searchbar:active{
     color: orange !important;
 }
@@ -109,5 +114,46 @@ body{font-family: 'Roboto',sans-serif;
     .sandwichMenu{
         display: block;
     }
+    #searchmenu{display: none;}
 
+}
+
+
+#searchmenu{
+    width: 25%;
+    margin-top: 1%;
+    margin-left: 2%;
+    float: left;
+    overflow-y: visible;
+    color: white;
+}
+.searchResult{
+    padding-left: 20px;
+    height: max-content;
+    background: rgba(105, 105, 105, 0.8);
+    border-radius: 7px;
+    position: relative;
+    display:none;
+}
+.searchResult p{float: left;
+                margin-left: 10px;
+                margin-bottom: 7px;}
+.searchResult img{width: 15%;
+                  float: left;
+                  margin-bottom: 7px;}
+
+.notifDiv{
+    color: white;
+    float: right;
+
+}
+.notifDiv p{
+    word-wrap: normal;
+}
+.notificationMenu{
+    display: none;
+    width: 130px;
+    border-radius: 7px;
+    padding-left: 5px;
+    background: rgba(105, 105, 105, 0.8);
 }

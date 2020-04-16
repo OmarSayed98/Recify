@@ -36,26 +36,47 @@
         <a href="#">TV shows</a>
     </div>
 
+    <div id="searchmenu">
+        <div id="searchbar">
+            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                       aria-label="Search" onkeypress="searchMenu()">
+            </form>
+        </div>
+        <div class="searchResult" id="searchResult">
+            <img src="../public/images/BreakingBad.jpg">
+            <p>Breaking bad</p>
+            <br class="fix">
+        </div>
+
+    </div>
+
 
     <div class="NavBarMenu">
+
         <div class="NavBarProfileLink">
             <a href="home/signout">Sign out <i class="fa fa-user"></i></a>
             <div class="vr"></div>
-            <p class="notificationP">Notifications <i class="fa fa-bell"></i>
-                <span class="NotificationBadge">3</span>
-            </p>
+            <div class="notifDiv" id="notifDiv">
+                <p class="notificationP" onclick="notificationMenu()">Notifications <i class="fa fa-bell"></i>
+                    <span class="NotificationBadge">3</span>
+                </p>
+                <br>
+                <div class="notificationMenu" id="notifications">
 
-            <div id="searchbar">
-                <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-                           aria-label="Search">
-                </form>
+                    <p>This is a notification</p>
+                    <p>This is a a long notification</p>
+                </div>
+
             </div>
+
+
             <div class="vr"></div>
             <a href="#"><%=name%> <i class="fa fa-user-circle"></i></a>
 
         </div>
+
 
     </div>
 
