@@ -6,7 +6,9 @@ const userschema = new schema({
     likedMovies: [schema.ObjectId],
     dislikedMovies: [schema.ObjectId],
     notifications: [schema.ObjectId],
-    email: {type:String,required:true}
+    email: {type:String,required:true},
+    resetpasstoken:String,
+    resetpassexpiry:Date
 });
 const bcrypt = require('bcrypt');
 userschema.pre('save', function(next) {
