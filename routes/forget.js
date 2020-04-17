@@ -42,6 +42,9 @@ router.post('/',function(req,res){
                 auth:{
                     user:"recify1@gmail.com",
                     pass:"omaromarmoatazhatem1998"
+                },
+                tls: {
+                    rejectUnauthorized: false
                 }
             });
             const mailoption={
