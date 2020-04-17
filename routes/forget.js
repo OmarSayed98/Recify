@@ -37,6 +37,8 @@ router.post('/',function(req,res){
         function(token,result,done){
             const transport=nodemailer.createTransport({
                 service:'Gmail',
+                secure:false,
+                port:587,
                 auth:{
                     user:"recify1@gmail.com",
                     pass:"omaromarmoatazhatem1998"
