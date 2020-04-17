@@ -22,8 +22,9 @@
                 <h3>Forgot Password ?</h3>
                 <p class="inst">We will send you an email with instructions on how to reset your password.</p>
             </div>
-            <form class="col-12" action="/signin" method="post" onsubmit="return signinform(this)">
+            <form class="col-12" action="/forget" method="post" onsubmit="return signinform(this)">
                 <div class="form-group email">
+                    <%include ./partial/errors.ejs %>
                     <input type="text" name="UserEmail" class="form-control" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email should be something like omar@hotmail.com">
                 </div>
                 <a href="#"><button type="submit" name="next_btn" class="btn"><i class="fas fa-arrow-circle-right"></i>Send Email</button></a>
