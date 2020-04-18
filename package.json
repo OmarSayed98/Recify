@@ -21,6 +21,7 @@
     "http-errors": "~1.6.3",
     "mongoose": "^5.9.6",
     "morgan": "~1.9.1",
+    "ms": "^2.1.2",
     "nodemailer": "^6.4.6",
     "nodemon": "^2.0.3"
   }

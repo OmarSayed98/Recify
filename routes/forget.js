@@ -5,10 +5,15 @@ const user=require('../models/users');
 const crypto=require('crypto');
 const async=require('async');
 const nodemailer=require('nodemailer');
-router.get('/',function(req,res){
+function redirect(req,res,next){
+    if(req.session.name)
+        return res.redirect('/home');
+    next();
+}
+router.get('/',redirect,function(req,res){
     res.render('forgetpass_email');
 });
-router.post('/',function(req,res){
+router.post('/',redirect,function(req,res){
     async.waterfall([
         function(done){
             crypto.randomBytes(20,function(err,tok){
@@ -40,8 +45,8 @@ router.post('/',function(req,res){
                 secure:false,
                 port:587,
                 auth:{
-                    user:"recify1@gmail.com",
-                    pass:"omaromarmoatazhatem1998"
+                    user:process.env.GMAIL,
+                    pass:process.env.GMAILPASS
                 },
                 tls: {
                     rejectUnauthorized: false
@@ -49,7 +54,7 @@ router.post('/',function(req,res){
             });
             const mailoption={
                 to:result.email,
-                from:"recify1@gmail.com",
+                from:process.env.GMAIL,
                 subject:'Recify Password reset',
                 text:'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
                     'Please click on the following link, or paste this into your browser to complete the process:\n\n' +

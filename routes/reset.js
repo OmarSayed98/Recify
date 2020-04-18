@@ -1,7 +1,12 @@
 const express=require('express');
 const router=express.Router();
 const user=require('../models/users');
-router.get('/:token',function(req,res){
+function redirect(req,res,next){
+   if(req.session.name)
+      return res.redirect('/home');
+   next();
+}
+router.get('/:token',redirect,function(req,res){
    const token=req.params.token;
    user.findOne({resetpasstoken:token,resetpassexpiry:{$gt:Date.now()}}).then(function (result) {
       if(!result){
@@ -13,7 +18,7 @@ router.get('/:token',function(req,res){
       }
    });
 });
-router.post('/:token',function(req,res){
+router.post('/:token',redirect,function(req,res){
    user.findOne({resetpasstoken:req.params.token,resetpassexpiry:{$gt:Date.now()}}).then(function (result) {
       if(!result){
          req.flash('error_msg','reset token is invalid');

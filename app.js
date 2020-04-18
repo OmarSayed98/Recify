@@ -9,6 +9,7 @@ const app = express();
 const route=require('./routes/index');
 const db=require('./server');
 const MongoStore=require('connect-mongo')(session);
+const ms=require('ms');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
@@ -19,7 +20,7 @@ app.use(session({
     resave:false,
     saveUninitialized:false,
     cookie : {
-        maxAge: 1000* 60 * 60 *24 * 365
+        maxAge: ms('14 days')
     },
     store:new MongoStore({mongooseConnection:db})
 }));
