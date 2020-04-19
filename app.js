@@ -34,4 +34,4 @@ app.use(cookieParser());
 app.use('/public',express.static(path.join(__dirname, 'public')));
 route(app);
 module.exports=app;
-app.listen(process.env.PORT);
+app.listen(3000);
