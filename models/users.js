@@ -8,7 +8,8 @@ const userschema = new schema({
     notifications: [schema.ObjectId],
     email: {type:String,required:true},
     resetpasstoken:String,
-    resetpassexpiry:Date
+    resetpassexpiry:Date,
+    confirmtoken:String
 });
 const bcrypt = require('bcrypt');
 userschema.pre('save', function(next) {
