@@ -20,6 +20,10 @@ router.post('/',redirect,function(req,res){
             errors.push({msg:"Invalid Data"});
             res.render('sign_in',{errors:errors,email:data.UserEmail,password:data.UserPassword});
         }
+        else if(result.confirmtoken!==undefined){
+            errors.push({msg:"confirm your email"});
+            res.render('sign_in',{errors:errors,email:data.UserEmail,password:data.UserPassword});
+        }
         else{
             result.comparePassword(data.UserPassword,function(err,match){
                 if(err)
