@@ -42,6 +42,8 @@ function searchMenu()
           moviePoster.src=tt.Search[i].Poster;
           var movieName = document.querySelectorAll('#searchResult p')[i];
           movieName.innerHTML= tt.Search[i].Title;
+          var movieId = document.querySelectorAll('#searchResult input')[i];
+          movieId.value=tt.Search[i].imdbID;
         }
 
     }
@@ -59,6 +61,16 @@ function notificationMenu()
   else {
     notifmenu.style.display="none";
   }
+}
+
+function sendMovieId(selection)
+{
+
+  var movieId= selection.getElementsByTagName('input')[0].value;
+  /*var http = new XMLHttpRequest();
+  var url = '';
+  http.open('POST', url, true);
+  http.send(movieId);*/
 }
 
 $(document).click(function(e) {

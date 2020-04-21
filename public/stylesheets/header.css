@@ -129,13 +129,13 @@ body{font-family: 'Roboto',sans-serif;
     color: white;
 }
 .searchResult{
-    padding-left: 20px;
+    padding-left: 1px;
     height: max-content;
     background: rgba(105, 105, 105, 0.8);
     border-radius: 7px;
     position: relative;
     display:none;
-    overflow-y: visible;
+    overflow-y: hidden;
 }
 .searchResult p{
                 margin-left: 10px;
@@ -143,9 +143,17 @@ body{font-family: 'Roboto',sans-serif;
                 }
 .searchResult img{width: 15%;
                   float: left;
-                  margin-bottom: 7px;}
+                  margin-bottom: 7px;
+                  margin-top: 7px;}
 .theResult {
-    overflow-y: visible;
+
+    border-radius: 7px;
+
+}
+.theResult:hover{
+    cursor: pointer;
+    color: orange;
+    background-color: #202326;
 
 }
 .notifDiv{
