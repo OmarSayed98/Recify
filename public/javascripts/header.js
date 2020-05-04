@@ -65,12 +65,35 @@ function notificationMenu()
 
 function sendMovieId(selection)
 {
-
+  var key="&apikey=e7aad19";
   var movieId= selection.getElementsByTagName('input')[0].value;
-  /*var http = new XMLHttpRequest();
-  var url = '';
-  http.open('POST', url, true);
-  http.send(movieId);*/
+  var MovieData;
+  $.getJSON('http://www.omdbapi.com/?i='+movieId+ key).then(function(res){
+    var resp=JSON.stringify(res);
+    var data=JSON.parse(resp);
+    console.log(res);
+    MovieData={
+      title: data.Title,
+      year: data.Year,
+      type: data.Type,
+      genre: data.Genre,
+      cast: data.Actors,
+      rated: data.Rated,
+      Imdbrating: data.imdbRating,
+      runtime: data.Runtime,
+      poster: data.Poster,
+      director: data.Director,
+      writer: data.Writer,
+      plot: data.Plot,
+      awards: data.Awards,
+      production: data.Production,
+      imdbID: data.imdbId,
+    };
+    var http = new XMLHttpRequest();
+    http.open('POST', '/search', true);
+    http.setRequestHeader("Content-type", "application/json");
+    http.send(MovieData);
+  });
 }
 
 $(document).click(function(e) {
