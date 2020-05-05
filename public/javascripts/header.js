@@ -71,7 +71,7 @@ function sendMovieId(selection)
   $.getJSON('http://www.omdbapi.com/?i='+movieId+ key).then(function(res){
 
     var http = new XMLHttpRequest();
-    http.open('POST', 'http://127.0.0.1:3000/search', true);
+    http.open('POST', 'http://localhost:3000/search', true);
     http.setRequestHeader("Content-type", "application/json");
     http.send(JSON.stringify(res));
   });
