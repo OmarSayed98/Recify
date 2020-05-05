@@ -2,7 +2,7 @@ const express=require('express');
 const youtubelib=require('youtube-node');
 const router=express.Router();
 const youtube=new youtubelib();
-youtube.setKey('AIzaSyBaJvAJRb9S6AI0gKv55_valrqgD1QaSKk');
+youtube.setKey(process.env.API_KEY);
 router.post('/',(req,res)=>{
    const movie=req.body;
    youtube.search(req.body.Title+' '+req.body.Year+' Trailer', 1, function(error, result) {
