@@ -33,17 +33,19 @@ function searchMenu()
 
     for(var i=0;i<5;i++)
     {
-        if(tt.Search[i].Poster.length<1)
+
+      var movieName = document.querySelectorAll('#searchResult p')[i];
+      var moviePoster = document.querySelectorAll("#searchResult img")[i];
+      movieName.innerHTML= tt.Search[i].Title;
+      var movieId = document.querySelectorAll('#searchResult input')[i];
+      movieId.value=tt.Search[i].imdbID;
+        if(tt.Search[i].Poster!=="N/A")
         {
-          i+=1;
+
+          moviePoster.src=tt.Search[i].Poster;
         }
         else{
-          var moviePoster = document.querySelectorAll("#searchResult img")[i];
-          moviePoster.src=tt.Search[i].Poster;
-          var movieName = document.querySelectorAll('#searchResult p')[i];
-          movieName.innerHTML= tt.Search[i].Title;
-          var movieId = document.querySelectorAll('#searchResult input')[i];
-          movieId.value=tt.Search[i].imdbID;
+          moviePoster.src="../public/images/noposter.jpg";
         }
 
     }

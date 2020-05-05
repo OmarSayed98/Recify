@@ -129,31 +129,40 @@ body{font-family: 'Roboto',sans-serif;
     color: white;
 }
 .searchResult{
-    padding-left: 1px;
+    padding-left: 0.1px;
     height: max-content;
     background: rgba(105, 105, 105, 0.8);
     border-radius: 7px;
     position: relative;
     display:none;
     overflow-y: hidden;
+
 }
 .searchResult p{
                 margin-left: 10px;
                 margin-bottom: 7px;
+                float: left;
+                width: 80%;
+                margin-top: 7px;
                 }
 .searchResult img{width: 15%;
                   float: left;
                   margin-bottom: 7px;
-                  margin-top: 7px;}
+                  margin-top: 7px;
+                  margin-left: 7px;
+                  }
 .theResult {
 
-    border-radius: 7px;
+
+    border-bottom: 1px solid darkgrey;
+    border-bottom-radius:0px;
 
 }
 .theResult:hover{
     cursor: pointer;
     color: orange;
     background-color: #202326;
+    border-radius: 7px;
 
 }
 .notifDiv{
