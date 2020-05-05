@@ -69,9 +69,8 @@ function sendMovieId(selection)
   var movieId= selection.getElementsByTagName('input')[0].value;
   var MovieData;
   $.getJSON('http://www.omdbapi.com/?i='+movieId+ key).then(function(res){
-    var resp=JSON.stringify(res);
-    var data=JSON.parse(resp);
-    console.log(res);
+    /*var resp=JSON.parse(res);
+    var data=JSON.stringify(resp);
     MovieData={
       title: data.Title,
       year: data.Year,
@@ -88,11 +87,11 @@ function sendMovieId(selection)
       awards: data.Awards,
       production: data.Production,
       imdbID: data.imdbId,
-    };
+    };*/
     var http = new XMLHttpRequest();
-    http.open('POST', '/search', true);
+    http.open('POST', 'http://127.0.0.1:3000/search', true);
     http.setRequestHeader("Content-type", "application/json");
-    http.send(MovieData);
+    http.send(JSON.stringify(res));
   });
 }
 
