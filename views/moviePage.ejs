@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Movie page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="mdb.min.css">
+    <link rel="stylesheet" href="moviePage.css">
+    <link rel="stylesheet" href="headerMoviePage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="header">
+
+    <div class="headerLogoDiv">
+        <a href="/home"><img src="logo.png" id="headerLogo"></a>
+    </div>
+    <div class="NavBarContentSelection">
+
+        <a href="#"> Movies</a>
+
+        <div class="vl"></div>
+
+        <a href="#">TV shows</a>
+    </div>
+
+    <div id="searchmenu">
+        <div id="searchbar">
+            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                       aria-label="Search" id="searchData" onkeyup="searchMenu()">
+            </form>
+        </div>
+        <div class="searchResult" id="searchResult">
+            <div class="theResult" onclick="sendMovieId(this)">
+                <img>
+                <p name="test"></p>
+                <input type="hidden" name="theMovieId" value="">
+                <br class="fix">
+            </div>
+
+            <div class="theResult" onclick="sendMovieId(this)">
+                <img>
+                <p></p>
+                <input type="hidden" name="theMovieId" value="">
+                <br class="fix">
+            </div>
+            <div class="theResult" onclick="sendMovieId(this)">
+                <img>
+                <p></p>
+                <input type="hidden" name="theMovieId" value="">
+                <br class="fix">
+            </div>
+            <div class="theResult" onclick="sendMovieId(this)">
+                <img>
+                <p></p>
+                <input type="hidden" name="theMovieId" value="">
+                <br class="fix">
+            </div>
+            <div class="theResult" onclick="sendMovieId(this)">
+                <img>
+                <p></p>
+                <input type="hidden" name="theMovieId" value="">
+                <br class="fix">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="NavBarMenu">
+
+        <div class="NavBarProfileLink">
+            <a href="home/signout">Sign out <i class="fa fa-user"></i></a>
+            <div class="vr"></div>
+            <div class="notifDiv" id="notifDiv">
+                <p class="notificationP" onclick="notificationMenu()">Notifications <i class="fa fa-bell"></i>
+                    <span class="NotificationBadge">3</span>
+                </p>
+                <br>
+                <div class="notificationMenu" id="notifications">
+
+                    <p>This is a notification</p>
+                    <p>This is a a long notification</p>
+                    <p>This is a notification</p>
+                    <p>This is a a long notification</p>
+                    <p>This is a notification</p>
+                    <p>This is a a long notification........</p>
+                    <p>This is a notification</p>
+                    <p>This is a a long notification</p>
+                    <p>This is a notification</p>
+                    <p>This is a a long notification</p>
+                </div>
+
+            </div>
+
+
+            <div class="vr"></div>
+            <a href="#">Omar <i class="fa fa-user-circle"></i></a>
+
+        </div>
+
+
+    </div>
+
+    <div id="sandwichMenu" class="sandwichMenu">
+        <i id="sanmenu" class="fa fa-bars fa-2x" onclick="sandwich()"></i>
+
+        <div id="smallmenu">
+            <a href="#"> Movies</a>
+
+            <a href="#">TV shows</a>
+
+            <a href="#"><%=name%> <i class="fa fa-user-circle"></i></a>
+
+            <p class="notificationP">Notifications <i class="fa fa-bell"></i>
+                <span class="NotificationBadge">3</span>
+            </p>
+
+            <a href="home/signout">Sign out <i class="fa fa-user"></i></a>
+
+            <div id="sbar">
+                <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+
+                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                           aria-label="Search">
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid">
+  <div class="MovieData">
+  <div class="PosterDiv">
+    <div id="background-video">
+      <i class="far fa-play-circle fa-4x palybtn" onclick="hide();" id="playbtn"></i>
+      <div onclick="play();" id="vidwrap"></div>
+    </div>
+
+  </div>
+  <div class="DataDiv">
+    <h1 id="movieTitle">Knives Out (2019)</h1>
+    <p class="Synopsis">Synopsis</p>
+    <p id="plot">The circumstances surrounding the death of crime novelist Harlan Thrombey are mysterious, but there's one thing that renowned Detective Benoit Blanc knows for sure -- everyone in the wildly dysfunctional Thrombey family is a suspect. Now, Blanc must sift through a web of lies and red herrings to uncover the truth.</p>
+    <p class="borderfix emptyP"><p>
+    <p class="RunningTime">Running Time:</p>
+    <p class="RTinput">2h 11min </p>
+    <p class="borderfix emptyP"><p>
+    <p class="Genre">Genre:</p>
+    <p class="Ginput"> Comedy, Crime, Drama</p>
+    <p class="borderfix emptyP"><p>
+    <p class="Director">Director:</p>
+    <p class="Dinput">Rian Johnson</p>
+    <p class="borderfix emptyP"><p>
+    <p class="Cast">Cast:</p>
+    <p class="Cinput"> Daniel Craig, Chris Evans, Ana de Armas</p>
+    <p class="borderfix emptyP"><p>
+    <p class="ReleaseDate">Release Date:</p>
+    <p class="RDinput">  27 November 2019 </p>
+    <p class="borderfix emptyP"><p>
+    <p class="IMDbRating">IMdb Rating:</p>
+    <i class="fas fa-star RatingIcon"></i>
+    <p class="IMDbRinput">  7.9/10 </p>
+    <p class="borderfix emptyP"><p>
+  </div>
+  <div class="CommentsDiv">
+    <h3 class="CommnetTite CommentBorderFix">Comments (2)</h3>
+    <div class="PrintedComments">
+    <img class="UserImg"src="Gender_Neutral_User_icon-icons.com_55902.png" alt="User Image" height="40" width="40">
+    <p class="UserName"> Hatem Tarek</p>
+    <p class="UserComment"> Excellent Whodunit with a stellar cast. Sometimes just mingling great actors together can be bad for chemistry but everyone in this movie inhabited their parts brilliantly, almost perfectly. Kudos to both Daniel Craig and Chris Evans for breaking out of limiting roles as Bond and Capt. America and having a blast while doing so. It looks like everyone was having a blast really.</p>
+    <img class="UserImg"src="Gender_Neutral_User_icon-icons.com_55902.png" alt="User Image" height="40" width="40">
+    <p class="UserName"> Omar El Halwany</p>
+    <p class="UserComment"> Near perfect. Now one of my top favorite movies of all time and I’m picky. The writer managed to come up with a fresh angle on the traditional ‘estate’ murder mystery. There was also the interesting mix of old and timely new elements. Great cast. Daniel Craig’s character and the main character Marta are very likeable. Never a dull moment. Would like to see again.  Genius. Only a very few parts that were a stretch. Good message.  Fun to see the stars.</p>
+    </div>
+    <div class="CommentsEntry">
+      <h3 class="CommentRequestTitle CommentRequestBorderFix">Leave a comment</h3>
+      <form class="Comments" action="#" method="post">
+        <textarea class="commentarea" name="Comments" rows="5" cols="50" placeholder="Write Your Comment Here"></textarea>
+        <br>
+        <button class="Postbtn" type="button" name="Postbtn">Post</button>
+      </form>
+  </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript" src="header.js">
+</script>
+<script type="text/javascript">
+
+function hide() {
+var x = document.getElementById("playbtn");
+if (x.style.display === "none") {
+  x.style.display = "block";
+} else {
+  x.style.display = "none";
+}
+}
+function play(){document.getElementById('vidwrap').innerHTML = '<iframe width="210" height="370" src="https://www.youtube.com/embed/xi-1NchUqMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';}
+</script>
+  </body>
+</html>

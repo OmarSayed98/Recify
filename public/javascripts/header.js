@@ -39,14 +39,14 @@ function searchMenu()
       movieName.innerHTML= tt.Search[i].Title;
       var movieId = document.querySelectorAll('#searchResult input')[i];
       movieId.value=tt.Search[i].imdbID;
-        if(tt.Search[i].Poster!=="N/A")
-        {
+      if(tt.Search[i].Poster!=="N/A")
+      {
 
-          moviePoster.src=tt.Search[i].Poster;
-        }
-        else{
-          moviePoster.src="../public/images/noposter.jpg";
-        }
+        moviePoster.src=tt.Search[i].Poster;
+      }
+      else{
+        moviePoster.src="../public/images/noposter.jpg";
+      }
 
     }
 

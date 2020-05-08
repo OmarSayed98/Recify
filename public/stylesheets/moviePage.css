@@ -1,0 +1,164 @@
+body{margin: 0;
+    padding: 0;
+    font-family: 'Arial';
+    background-color: #202326;
+    overflow-x: hidden;
+}
+.container-fluid{
+  padding: 0;
+  position:relative;
+  margin: 0;
+  margin-left: 5%;
+  margin-top: 100px;
+}
+
+/*.MovieData {
+    background-image: url("Recify background6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100px;
+    z-index: -1;
+    position: absolute;
+
+}*/
+.DataDiv{
+  float: left;
+  margin-left: 45px;
+  width: 75%;
+}
+
+#movieTitle{color: orange;}
+#plot{color: white;
+      width: 85%;
+      text-align: justify;}
+.RunningTime{
+  float: left;
+  margin-right: 15%;
+}
+.Genre{
+  float: left;
+  margin-right: 20.5%;
+}
+.Director{
+  float: left;
+  margin-right: 19%;
+}
+.Cast{
+  float: left;
+  margin-right: 21.5%;
+}
+.ReleaseDate{
+  float: left;
+  margin-right: 15%;
+}
+.IMDbRating{
+  float: left;
+  margin-right: 15%;
+}
+.RatingIcon{
+  float: left;
+  color: gold;
+  margin-right: 1%;
+  margin-top: 0.25%;
+  margin-left: 0.25%;
+}
+.UserImg{
+  color: darkorange;
+  background-color: grey;
+  border-radius: 5px;
+  float: left;
+  margin-right: 2%;
+  margin-bottom: 10%;
+}
+.UserComment{
+  width:50%;
+  text-align: justify;
+}
+.PrintedComments{
+  float: left;
+  
+}
+.commentarea{
+  border-radius: 5px;
+}
+.CommentsDiv{
+}
+.CommentsEntry{
+
+}
+.Postbtn{
+margin-top: 2%;
+border-radius: 5px orange;
+background-color: orange;
+margin-bottom: 4%;
+}
+.Postbtn:hover{
+  background-color: darkorange;
+}
+
+
+#vidwrap {
+
+    background: url('knives.jpg') no-repeat center;
+    float: left;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow:hidden;
+    background-repeat: no-repeat;
+    width:210px;
+    height:370px;
+    cursor:pointer;
+
+}
+.palybtn{
+  z-index: 100;
+  position: absolute;
+  top: 135px;
+  left:5%;
+  color: grey;
+}
+.palybtn:hover{
+  color:orange;
+  cursor: pointer;
+}
+.Synopsis:after{
+      content: ""; /* This is necessary for the pseudo element to work. */
+      display: block; /* This will put the pseudo element on its own line. */
+      margin: 0 auto; /* This will center the border. */
+      width: 7%; /* Change this to whatever width you want. */
+      padding-top: 5px; /* This creates some space between the element and the border. */
+      border-bottom: 1px solid darkorange; /* This creates the border. Replace black with whatever color you want. */
+      margin-left: 0;
+}
+.borderfix:after{
+      content: ""; /* This is necessary for the pseudo element to work. */
+      display: block; /* This will put the pseudo element on its own line. */
+      margin: 0 auto; /* This will center the border. */
+      width: 60%; /* Change this to whatever width you want. */
+      padding-top: 5px; /* This creates some space between the element and the border. */
+      border-bottom: 1px solid darkorange; /* This creates the border. Replace black with whatever color you want. */
+      margin-left: 0;
+}
+.CommentBorderFix:after{
+      content: ""; /* This is necessary for the pseudo element to work. */
+      display: block; /* This will put the pseudo element on its own line. */
+      margin: 0 auto; /* This will center the border. */
+      width: 14%; /* Change this to whatever width you want. */
+      padding-top: 8px; /* This creates some space between the element and the border. */
+      border-bottom: 1px solid darkorange; /* This creates the border. Replace black with whatever color you want. */
+      margin-left: 0;
+      margin-bottom: 3%;
+}
+.CommentRequestBorderFix:after{
+      content: ""; /* This is necessary for the pseudo element to work. */
+      display: block; /* This will put the pseudo element on its own line. */
+      margin: 0 auto; /* This will center the border. */
+      width: 17%; /* Change this to whatever width you want. */
+      padding-top: 8px; /* This creates some space between the element and the border. */
+      border-bottom: 1px solid darkorange; /* This creates the border. Replace black with whatever color you want. */
+      margin-left: 0;
+      margin-bottom: 3%;
+}
