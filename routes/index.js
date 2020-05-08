@@ -4,7 +4,7 @@ const home=require('./homepage');
 const forget=require('./forget');
 const reset=require('./reset');
 const confirm=require('./confirm');
-const search=require('./search');
+//const search=require('./search');
 const movie=require('./movie');
 module.exports=function(app){
     app.use('/signin',signin);
@@ -13,6 +13,6 @@ module.exports=function(app){
     app.use('/forget',forget);
     app.use('/reset',reset);
     app.use('/confirm',confirm);
-    app.use('/search',search);
+    //app.use('/search',search);
     app.use('/movie',movie);
 };
