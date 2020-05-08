@@ -26,7 +26,7 @@ router.post('/',(req,res)=>{
          };
          rp(options).then(data=>console.log('request sent')).catch(err=>console.log('fail'));
       }
-   })
+   });
    //res.redirect('/movie');
 });
 module.exports=router;

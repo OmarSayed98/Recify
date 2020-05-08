@@ -1,3 +1,5 @@
+
+var key="&apikey=e7aad19";
 function sandwich(){
   var sanmenu = document.getElementById('sandwichMenu');
   var smenu = document.getElementById("smallmenu");
@@ -67,7 +69,7 @@ function notificationMenu()
 
 function sendMovieId(selection)
 {
-  var key="&apikey=e7aad19";
+
   var movieId= selection.getElementsByTagName('input')[0].value;
 
   $.getJSON('http://www.omdbapi.com/?i='+movieId+ key).then(function(res){
