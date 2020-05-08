@@ -2,6 +2,8 @@ const express=require('express');
 const youtubelib=require('youtube-node');
 const router=express.Router();
 const youtube=new youtubelib();
+const rp=require('request-promise');
+const ur=require('url');
 youtube.setKey(process.env.API_KEY);
 router.post('/',(req,res)=>{
    const movie=req.body;
@@ -10,9 +12,21 @@ router.post('/',(req,res)=>{
          console.log(error);
       }
       else {
+         res.redirect('/movie');
+         return;
          const moviedata={movie:movie,link:result.items[0].id.videoId};
-         console.log(moviedata.link);
+         let url="http://localhost:3000/movie?id=";
+         url+=movie.imdbID.toString();
+         const query="?id="+movie.imdbID.toString();
+         let options={
+            method:'POST',
+            uri:url,
+            body:moviedata,
+            json:true
+         };
+         rp(options).then(data=>console.log('request sent')).catch(err=>console.log('fail'));
       }
-   });
+   })
+   //res.redirect('/movie');
 });
 module.exports=router;

@@ -30,6 +30,8 @@ router.post('/',redirect,function(req,res){
                     throw err;
                 if(match){
                     req.session.name=result.name;
+                    req.session.id=result._id;
+                    console.log(result._id);
                     res.redirect('/home');
                 }
                 else{

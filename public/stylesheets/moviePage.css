@@ -100,7 +100,7 @@ margin-bottom: 4%;
 
 #vidwrap {
 
-    background: url('knives.jpg') no-repeat center;
+    background: url('../images/knives.jpg') no-repeat center;
     float: left;
     -webkit-background-size: cover;
     -moz-background-size: cover;
