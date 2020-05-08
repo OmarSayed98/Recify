@@ -153,28 +153,22 @@
 
   </div>
   <div class="DataDiv">
-    <h1 id="movieTitle"></h1>
+    <h1 id="movieTitle"><%=movie.title%></h1>
     <p class="Synopsis">Synopsis</p>
-    <p id="plot">The circumstances surrounding the death of crime novelist Harlan Thrombey are mysterious, but there's one thing that renowned Detective Benoit Blanc knows for sure -- everyone in the wildly dysfunctional Thrombey family is a suspect. Now, Blanc must sift through a web of lies and red herrings to uncover the truth.</p>
+    <p id="plot"><%=movie.plot%></p>
     <p class="borderfix emptyP"><p>
-    <p class="RunningTime">Running Time:</p>
-    <p class="RTinput">2h 11min </p>
+    <p class="RunningTime">Running Time:<%=movie.runtime%></p>
     <p class="borderfix emptyP"><p>
-    <p class="Genre">Genre:</p>
-    <p class="Ginput"> Comedy, Crime, Drama</p>
+    <p class="Genre">Genre:<%=genre%></p>
     <p class="borderfix emptyP"><p>
-    <p class="Director">Director:</p>
-    <p class="Dinput">Rian Johnson</p>
+    <p class="Director">Director:<%=director%></p>
     <p class="borderfix emptyP"><p>
-    <p class="Cast">Cast:</p>
-    <p class="Cinput"> Daniel Craig, Chris Evans, Ana de Armas</p>
+    <p class="Cast">Cast:<%=actors%></p>
     <p class="borderfix emptyP"><p>
-    <p class="ReleaseDate">Release Date:</p>
-    <p class="RDinput">  27 November 2019 </p>
+    <p class="ReleaseDate">Release Date:<%=movie.released%></p>
     <p class="borderfix emptyP"><p>
-    <p class="IMDbRating">IMdb Rating:</p>
+    <p class="IMDbRating">IMdb Rating:<%=movie.imdbrating%></p>
     <i class="fas fa-star RatingIcon"></i>
-    <p class="IMDbRinput">  7.9/10 </p>
     <p class="borderfix emptyP"><p>
   </div>
   <div class="CommentsDiv">
@@ -210,7 +204,7 @@ if (x.style.display === "none") {
   x.style.display = "none";
 }
 }
-function play(){document.getElementById('vidwrap').innerHTML = '<iframe width="210" height="370" src="https://www.youtube.com/embed/xi-1NchUqMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';}
+function play(){document.getElementById('vidwrap').innerHTML = '<iframe width="210" height="370" src=<%=trailer%> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';}
 </script>
   </body>
 </html>
