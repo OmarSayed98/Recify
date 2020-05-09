@@ -30,6 +30,15 @@ router.post('/',(req,res)=>{
 
 
 
-
+   /*
+           youtube.search(result.title+" "+result.year+" trailer",1,(err,result1)=>{
+               if(err)
+                   console.log(err);
+               else{
+                   const trailerid=result1.items[0].id.videoId;
+                   const trailerurl="https://www.youtube.com/embed/"+trailerid;
+                   res.render('moviePage',{movie:result,actors:actors,genre:genre,director,trailer:trailerurl});
+               }
+           })*/
 });
 module.exports=router;
