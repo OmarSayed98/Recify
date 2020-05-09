@@ -22,7 +22,7 @@ function sandwich(){
 function searchMenu()
 {
   var searchResult = document.getElementById("searchResult");
-  if(searchResult.style.display!="block"){
+  if(searchResult.style.display!=="block"){
     searchResult.style.display="block";
   }
   var movie=document.getElementById('searchData').value;
@@ -84,10 +84,10 @@ function sendMovieId(selection)
 $(document).click(function(e) {
 
 
-  if( e.target.id != 'searchResult') {
+  if( e.target.id !== 'searchResult') {
     $("#searchResult").hide();
   }
-  else if(e.target.id != 'notifications')
+  else if(e.target.id !== 'notifications')
   {
     $("#notifications").hide();
   }

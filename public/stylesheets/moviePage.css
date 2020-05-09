@@ -74,15 +74,13 @@ width: 5%;
 .Postbtn:hover{
   background-color: darkorange;
 }
-#background-video{
 
-}
 .playbtn{
     z-index: 100;
-    position: absolute;
-    top: 135px;
+    position: relative;
+    left: 37.5%;
+    top: 150px;
     display: block;
-    left: 2%;
     color: grey;
     cursor: pointer;
 }
@@ -91,14 +89,8 @@ width: 5%;
     cursor: pointer;
 }
 .PosterDiv{
-
     float: left;
-
-}
-#vidwrap {
-
     background: url('../images/knives.jpg') no-repeat center;
-    float: left;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -108,9 +100,18 @@ width: 5%;
     width:210px;
     height:370px;
     cursor:pointer;
-
 }
 
+#hiddenTrailer{
+    display: none;
+    margin:auto;
+    position: absolute;
+    top: 50px;
+    height: fit-content;
+    width: fit-content;
+    left: 12.5%;
+
+}
 .Synopsis:after{
       content: ""; /* This is necessary for the pseudo element to work. */
       display: block; /* This will put the pseudo element on its own line. */
