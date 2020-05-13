@@ -12,6 +12,17 @@ function play(trailer){
 
 }
 
+function likeMovie()
+{
+
+}
+
+function dislikeMovie()
+{
+
+}
+
+
 $(document).mouseup(function(e)
 {
     var trailer = $("#hiddenTrailer");

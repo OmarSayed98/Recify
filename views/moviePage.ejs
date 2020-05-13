@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../public/stylesheets/mdb.min.css">
     <link rel="stylesheet" href="../public/stylesheets/moviePage.css">
     <link rel="stylesheet" href="../public/stylesheets/headerMoviePage.css">
+    <link rel="stylesheet" href="font-awesome-animation.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
@@ -150,7 +151,11 @@
         <i class="far fa-play-circle fa-4x playbtn" onclick="play('<%=trailer%>')" id="playbtn"></i>
 
   </div>
+      <i class="fas fa-thumbs-up fa-3x" id="like" onclick="likeMovie()"></i>
+      <i class="fas fa-thumbs-down fa-3x" id="dislike" onclick="dislikeMovie()"></i>
+
   <div class="DataDiv">
+
     <h1 id="movieTitle"><%=movie.title%></h1>
     <p class="Synopsis">Synopsis</p>
     <p id="plot"><%=movie.plot%></p>
@@ -169,6 +174,8 @@
     <p class="borderfix emptyP"><p>
 
   </div>
+
+   <br class="fix">
 
   <div class="CommentsDiv">
     <h3 class="CommnetTite CommentBorderFix">Comments (2)</h3>

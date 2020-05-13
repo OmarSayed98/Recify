@@ -16,15 +16,40 @@ body{margin: 0;
 .MovieData {
     width: 100%;
     margin-top: 150px;
+    min-width: 1280px;
 
 }
 .DataDiv{
   float: left;
   width: 60%;
+  min-width: 800px;
   margin-left: 3%;
 
 }
 
+
+#like{float: left;
+      position: absolute;
+      display: block;
+      top: 425px;
+      left: 0;
+
+}
+#like:hover{
+    cursor: pointer;
+    color: orange;
+}
+#dislike{float: left;
+    position: absolute;
+    display: block;
+    top: 425px;
+    left: 150px;
+
+}
+#dislike:hover{
+    cursor: pointer;
+    color: red;
+}
 #movieTitle{color: orange;}
 #plot{color: white;
       width: 85%;
