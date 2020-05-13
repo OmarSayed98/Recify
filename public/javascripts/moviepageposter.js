@@ -12,12 +12,13 @@ function play(trailer){
 
 }
 
-/*$(document).click(function(e) {
+$(document).mouseup(function(e)
+{
+    var trailer = $("#hiddenTrailer");
 
-
-    if( e.target.id !== 'hiddenTrailer' && e.target.id!=="playbtn") {
-        $("#hiddenTrailer").css({
-            display: "none"
-        });
+    if (!trailer.is(e.target) && trailer.has(e.target).length === 0)
+    {
+        trailer.hide();
     }
-});*/
+});
+
