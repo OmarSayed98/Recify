@@ -1,3 +1,5 @@
+
+var key="&apikey=e7aad19";
 function sandwich(){
   var sanmenu = document.getElementById('sandwichMenu');
   var smenu = document.getElementById("smallmenu");
@@ -20,7 +22,7 @@ function sandwich(){
 function searchMenu()
 {
   var searchResult = document.getElementById("searchResult");
-  if(searchResult.style.display!="block"){
+  if(searchResult.style.display!=="block"){
     searchResult.style.display="block";
   }
   var movie=document.getElementById('searchData').value;
@@ -67,25 +69,25 @@ function notificationMenu()
 
 function sendMovieId(selection)
 {
-  var key="&apikey=e7aad19";
+
   var movieId= selection.getElementsByTagName('input')[0].value;
 
   $.getJSON('http://www.omdbapi.com/?i='+movieId+ key).then(function(res){
-
-    var http = new XMLHttpRequest();
+    /*var http = new XMLHttpRequest();
     http.open('POST', 'http://localhost:3000/search', true);
     http.setRequestHeader("Content-type", "application/json");
-    http.send(JSON.stringify(res));
+    http.send(JSON.stringify(res));*/
+    window.location.href="http://localhost:3000/movie?id="+movieId;
   });
 }
 
 $(document).click(function(e) {
 
 
-  if( e.target.id != 'searchResult') {
+  if( e.target.id !== 'searchResult') {
     $("#searchResult").hide();
   }
-  else if(e.target.id != 'notifications')
+  else if(e.target.id !== 'notifications')
   {
     $("#notifications").hide();
   }

@@ -10,56 +10,31 @@ body{margin: 0;
   margin: 0;
   margin-left: 5%;
   margin-top: 100px;
+
 }
 
-/*.MovieData {
-    background-image: url("Recify background6.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100px;
-    z-index: -1;
-    position: absolute;
+.MovieData {
+    width: 100%;
+    margin-top: 150px;
 
-}*/
+}
 .DataDiv{
   float: left;
-  margin-left: 45px;
-  width: 75%;
+  width: 60%;
+  margin-left: 3%;
+
 }
 
 #movieTitle{color: orange;}
 #plot{color: white;
       width: 85%;
       text-align: justify;}
-.RunningTime{
-  float: left;
-  margin-right: 15%;
-}
-.Genre{
-  float: left;
-  margin-right: 20.5%;
-}
-.Director{
-  float: left;
-  margin-right: 19%;
-}
-.Cast{
-  float: left;
-  margin-right: 21.5%;
-}
-.ReleaseDate{
-  float: left;
-  margin-right: 15%;
-}
+
 .IMDbRating{
-  float: left;
-  margin-right: 15%;
+  margin-right: 0.2%;
 }
 .RatingIcon{
-  float: left;
   color: gold;
-  margin-right: 1%;
   margin-top: 0.25%;
   margin-left: 0.25%;
 }
@@ -83,25 +58,39 @@ body{margin: 0;
   border-radius: 5px;
 }
 .CommentsDiv{
+    width: 70%;
 }
 .CommentsEntry{
 
 }
 .Postbtn{
 margin-top: 2%;
-border-radius: 5px orange;
+border-radius: 5px;
+border: none;
 background-color: orange;
 margin-bottom: 4%;
+width: 5%;
 }
 .Postbtn:hover{
   background-color: darkorange;
 }
 
-
-#vidwrap {
-
-    background: url('../images/knives.jpg') no-repeat center;
+.playbtn{
+    z-index: 100;
+    position: relative;
+    left: 37.5%;
+    top: 150px;
+    display: block;
+    color: grey;
+    cursor: pointer;
+}
+.playbtn:hover{
+    color:orange;
+    cursor: pointer;
+}
+.PosterDiv{
     float: left;
+    background: url('../images/knives.jpg') no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -111,18 +100,17 @@ margin-bottom: 4%;
     width:210px;
     height:370px;
     cursor:pointer;
+}
 
-}
-.palybtn{
-  z-index: 100;
-  position: absolute;
-  top: 135px;
-  left:5%;
-  color: grey;
-}
-.palybtn:hover{
-  color:orange;
-  cursor: pointer;
+#hiddenTrailer{
+    display: none;
+    margin:auto;
+    position: absolute;
+    top: 50px;
+    height: fit-content;
+    width: 50%;
+    left: 12.5%;
+
 }
 .Synopsis:after{
       content: ""; /* This is necessary for the pseudo element to work. */
