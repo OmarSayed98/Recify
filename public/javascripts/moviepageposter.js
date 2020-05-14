@@ -1,9 +1,24 @@
+function setupPage(poster) {
+  if(poster!=="N/A")
+  {
+    var pst=document.getElementById('poster');
+    var url="url('";
+    url+=poster;
+    url+="') no-repeat center";
+
+    pst.style.background=url;
+  }
+}
+
 function play(trailer){
     var x = document.getElementById("hiddenTrailer");
     if (x.style.display !== "block") {
         x.style.display = "block";
        x.innerHTML = '<iframe width="100%" height="480" id="theIframe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
        document.getElementById("theIframe").src=trailer;
+       var btn = document.getElementById("playbtn");
+       btn.style.display="none";
+
     }
     else {
         x.style.display="none";
@@ -81,10 +96,11 @@ function dislikeMovie(id)
 $(document).mouseup(function(e)
 {
     var trailer = $("#hiddenTrailer");
-
+    var btn=  $("#playbtn");
     if (!trailer.is(e.target) && trailer.has(e.target).length === 0)
     {
         trailer.hide();
+        btn.show();
     }
 });
 

@@ -120,13 +120,12 @@ width: 5%;
 }
 .PosterDiv{
     float: left;
-    background: url('../images/knives.jpg') no-repeat center;
+    background: url('../images/noposter.jpg') no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     overflow:hidden;
-    background-repeat: no-repeat;
     width:210px;
     height:370px;
     cursor:pointer;
