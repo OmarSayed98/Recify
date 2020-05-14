@@ -108,7 +108,7 @@ width: 5%;
 .playbtn{
     z-index: 100;
     position: relative;
-    left: 37.5%;
+    left: 37%;
     top: 150px;
     display: block;
     color: grey;
