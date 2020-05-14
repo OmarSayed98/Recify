@@ -21,6 +21,7 @@
 
   </head>
   <body>
+  <%=movie.poster%>
     <div class="header">
 
     <div class="headerLogoDiv">
@@ -151,8 +152,8 @@
         <i class="far fa-play-circle fa-4x playbtn" onclick="play('<%=trailer%>')" id="playbtn"></i>
 
   </div>
-      <i class="fas fa-thumbs-up fa-3x" id="like" onclick="likeMovie()"></i>
-      <i class="fas fa-thumbs-down fa-3x" id="dislike" onclick="dislikeMovie()"></i>
+      <i class="fas fa-thumbs-up fa-3x" id="like" onclick="likeMovie('<%=movie.imdbid%>')"></i>
+      <i class="fas fa-thumbs-down fa-3x" id="dislike" onclick="dislikeMovie('<%=movie.imdbid%>')"></i>
 
   <div class="DataDiv">
 

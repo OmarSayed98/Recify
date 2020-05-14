@@ -12,71 +12,69 @@ function play(trailer){
 
 }
 
-function likeMovie()
+function likeMovie(id)
 {
     var xhttp = new XMLHttpRequest();
     var likebtn=document.getElementById('like');
     var dislikebtn=document.getElementById('dislike');
-    var url="";
+    var url="http://localhost:3000/movie/status?id=";
+    url+=id;
+    url+="&st=";
     if(!likebtn.classList.contains('likeClicked'))
     {
         if(dislikebtn.classList.contains('dislikeClicked'))
         {
+            url+="21";
             dislikebtn.classList.remove('dislikeClicked');
             likebtn.classList.add('likeClicked');
-            xhttp.open("POST", url, true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("");
         }
         else {
+            url+="01";
             likebtn.classList.add('likeClicked');
-            xhttp.open("POST", url, true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("");
-
         }
     }
     else if(likebtn.classList.contains('likeClicked'))
     {
+        url+="10";
         likebtn.classList.remove('likeClicked');
-        xhttp.open("POST", url, true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("");
     }
-
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState === 4 && xhttp.status === 200)
+            console.log('request sent');
+    }
+    xhttp.open("POST", url, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
 }
 
-function dislikeMovie()
+function dislikeMovie(id)
 {
     var likebtn=document.getElementById('like');
     var dislikebtn=document.getElementById('dislike');
-    var url="";
+    var url="http://localhost:3000/movie/status?id=";
     var xhttp = new XMLHttpRequest();
-
+    url+=id;
+    url+="&st=";
     if(!dislikebtn.classList.contains('dislikeClicked'))
     {
         if(likebtn.classList.contains('likeClicked'))
         {
             likebtn.classList.remove('likeClicked');
-            xhttp.open("POST", url, true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("");
+            url+="12";
         }
         else {
             dislikebtn.classList.add('dislikeClicked');
-            xhttp.open("POST", url, true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("");
+            url+="02";
         }
     }
     else if(dislikebtn.classList.contains('dislikeClicked'))
     {
         dislikebtn.classList.remove('dislikeClicked');
-        xhttp.open("POST", url, true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("");
+        url+="20";
     }
-
+    xhttp.open("GET", url, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("");
 }
 
 

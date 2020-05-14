@@ -13,8 +13,8 @@ const movieschema = new schema({
     awards: {type:String,required:true},
     poster: {type:String,required:true},
     rating: {type:String,required:true},
-    likedUsers: [Object],
-    dislikedUsers: [Object],
+    likedUsers: [String],
+    dislikedUsers: [String],
     imdbID: {type:String,required:true},
     production: {type:String,required:true}
 });

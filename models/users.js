@@ -3,9 +3,9 @@ const schema = mongoose.Schema;
 const userschema = new schema({
     name: {type:String,required:true},
     password: {type:String,required:true},
-    likedMovies: [schema.ObjectId],
-    dislikedMovies: [schema.ObjectId],
-    notifications: [schema.ObjectId],
+    likedMovies: [String],
+    dislikedMovies: [String],
+    notifications: [String],
     email: {type:String,required:true},
     resetpasstoken:String,
     resetpassexpiry:Date,
