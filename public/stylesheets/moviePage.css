@@ -50,6 +50,13 @@ body{margin: 0;
     cursor: pointer;
     color: red;
 }
+
+.likeClicked{
+    color:orange;
+}
+.dislikeClicked{
+    color:red;
+}
 #movieTitle{color: orange;}
 #plot{color: white;
       width: 85%;
@@ -85,9 +92,7 @@ body{margin: 0;
 .CommentsDiv{
     width: 70%;
 }
-.CommentsEntry{
 
-}
 .Postbtn{
 margin-top: 2%;
 border-radius: 5px;
