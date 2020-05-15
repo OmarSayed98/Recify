@@ -2,37 +2,39 @@ body{margin: 0;
     padding: 0;
     font-family: 'Arial';
     background-color: #202326;
-    overflow-x: hidden;
+
 }
 .container-fluid{
   padding: 0;
   position:relative;
   margin: 0;
-  margin-left: 5%;
   margin-top: 100px;
 
 }
 
 .MovieData {
-    width: 100%;
+    width: 95%;
+    margin-left: 5%;
     margin-top: 150px;
-    min-width: 1280px;
+    height: fit-content;
 
+}
+.DataDiv  p{
+    width: 70%;
 }
 .DataDiv{
   float: left;
   width: 60%;
-  min-width: 800px;
   margin-left: 3%;
 
 }
 
 
 #like{float: left;
-      position: absolute;
+      position: relative;
       display: block;
-      top: 425px;
-      left: 0;
+      margin-right: 150px;
+      color: white;
 
 }
 #like:hover{
@@ -40,10 +42,10 @@ body{margin: 0;
     color: orange;
 }
 #dislike{float: left;
-    position: absolute;
     display: block;
-    top: 425px;
-    left: 150px;
+    position: relative;
+    color: white;
+
 
 }
 #dislike:hover{
@@ -84,13 +86,17 @@ body{margin: 0;
 }
 .PrintedComments{
   float: left;
+  width: 100%;
   
 }
 .commentarea{
   border-radius: 5px;
 }
 .CommentsDiv{
-    width: 70%;
+    width: 90%;
+    margin-top: 75px;
+    margin-left: 5%;
+    min-width: 1000px;
 }
 
 .Postbtn{
@@ -107,11 +113,11 @@ width: 5%;
 
 .playbtn{
     z-index: 100;
-    position: relative;
-    left: 37%;
-    top: 150px;
-    display: block;
-    color: grey;
+    position: absolute;
+    left: 120px;
+    top: 180px;
+    float: left;
+    color: white;
     cursor: pointer;
 }
 .playbtn:hover{
@@ -120,17 +126,15 @@ width: 5%;
 }
 .PosterDiv{
     float: left;
-    background: url('../images/noposter.jpg') no-repeat center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow:hidden;
-    width:210px;
-    height:370px;
-    cursor:pointer;
 }
+#moviePoster{width: 100%;}
+#likeDislike{position: relative;
+            left: 10%;
+            top: 30px;
+            width: fit-content;
 
+
+}
 #hiddenTrailer{
     display: none;
     margin:auto;
@@ -154,7 +158,7 @@ width: 5%;
       content: ""; /* This is necessary for the pseudo element to work. */
       display: block; /* This will put the pseudo element on its own line. */
       margin: 0 auto; /* This will center the border. */
-      width: 60%; /* Change this to whatever width you want. */
+      width: 100%; /* Change this to whatever width you want. */
       padding-top: 5px; /* This creates some space between the element and the border. */
       border-bottom: 1px solid darkorange; /* This creates the border. Replace black with whatever color you want. */
       margin-left: 0;
