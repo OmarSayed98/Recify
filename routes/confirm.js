@@ -14,6 +14,7 @@ router.get('/:token',redirect,function(req,res){
         }
         else{
             result.confirmtoken=undefined;
+            req.session.user_id=result._id;
             result.save().then((err)=>console.log(err));
             req.flash('confirm','email confirmed');
             req.session.name=result.name;

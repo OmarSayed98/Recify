@@ -90,7 +90,7 @@ router.get('/',(req,res)=>{
             const trailerurl="https://www.youtube.com/embed/"+trailerid;
             let buttonid=0;
             user.findOne({_id:req.session.user_id}).then((resmv)=>{
-                if(result) {
+                if(resmv) {
                     console.log(resmv);
                     const arr = resmv.likedMovies;
                     const arrdis = resmv.dislikedMovies;
