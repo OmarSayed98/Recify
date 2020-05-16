@@ -1,10 +1,19 @@
-function setupPage(poster) {
+function setupPage(poster,st) {
   if(poster!=="N/A")
   {
     var pst=document.getElementById('moviePoster');
 
     pst.src=poster;
   }
+  if(st==='1')
+  {
+      document.getElementById('like').classList.add("likeClicked");
+  }
+
+    if(st==='2')
+    {
+        document.getElementById('dislike').classList.add("dislikeClicked");
+    }
 }
 
 function play(trailer){

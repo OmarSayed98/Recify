@@ -19,8 +19,8 @@
 
 
   </head>
-  <body onload="setupPage('<%=movie.poster%>')">
-  <%=st%>
+  <body onload="setupPage('<%=movie.poster%>','<%=st%>')">
+
     <div class="header">
 
     <div class="headerLogoDiv">
@@ -148,13 +148,14 @@
   <div class="MovieData">
 
   <div class="PosterDiv" id="poster">
-        <img src="../public/images/noposter.jpg" id="moviePoster" >
+      <img src="../public/images/noposter.jpg" id="moviePoster" >
 
 
       <div id="likeDislike">
           <i class="fas fa-thumbs-up fa-3x" id="like" onclick="likeMovie('<%=movie.imdbid%>')"></i>
           <i class="fas fa-thumbs-down fa-3x" id="dislike" onclick="dislikeMovie('<%=movie.imdbid%>')"></i>
       </div>
+
   </div>
       <i class="far fa-play-circle fa-4x playbtn" onclick="play('<%=trailer%>')" id="playbtn"></i>
 

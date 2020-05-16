@@ -89,9 +89,11 @@ router.get('/',(req,res)=>{
             const trailerid=result1.data.items[0].id.videoId;
             const trailerurl="https://www.youtube.com/embed/"+trailerid;
             let buttonid=0;
+
             user.findOne({_id:req.session.user_id}).then((resmv)=>{
-                if(result) {
+                if(resmv) {
                     console.log(resmv);
+
                     const arr = resmv.likedMovies;
                     const arrdis = resmv.dislikedMovies;
                     arr.forEach((element) => {
@@ -114,6 +116,7 @@ router.post('/status',(req,res)=> {
         const query = url.parse(req.url, true).query;
         const id = query.id, st = query.st;
         console.log(st);
+        console.log(req.session.user_id);
         omdb.get({
             id: id
         }).then((result) => {
