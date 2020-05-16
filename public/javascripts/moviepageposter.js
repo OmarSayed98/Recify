@@ -87,7 +87,7 @@ function dislikeMovie(id)
         dislikebtn.classList.remove('dislikeClicked');
         url+="20";
     }
-    xhttp.open("GET", url, true);
+    xhttp.open("POST", url, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("");
 }
