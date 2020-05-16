@@ -7,6 +7,7 @@ const youtube=new youtubelib();
 const {google}=require('googleapis');
 const youtubev3=google.youtube({version:'v3',auth:process.env.API_KEY});
 const movie=require('../models/movies');
+const user=require('../models/users');
 youtube.setKey(process.env.API_KEY1);
 const savedb=(item,id,status)=>{
     if(status[1]==='1')
@@ -17,14 +18,22 @@ const savedb=(item,id,status)=>{
         if(err)
             console.log(err);
         if(!result){
+            if(status[1]==='1') {
+                user.updateOne({_id:id}, {$push: {likedMovies: item.imdbID}}).then(()=>console.log('movie added'));
+            }
+            else{
+                user.updateOne({_id:id}, {$push: {dislikedMovies: item.imdbID}}).then(()=>console.log('movie disliked'));
+            }
             item.save().then(console.log('item saved for first time'));
         }
         else{
             if(status[1]==='1') {
                 movie.updateOne({imdbID: item.imdbID}, {$push: {likedUsers: id}}).then(()=>console.log('like added'));
+                user.updateOne({_id:id}, {$push: {likedMovies: item.imdbID}}).then(()=>console.log('movie added'));
             }
             else{
                 movie.updateOne({imdbID: item.imdbID}, {$push: {dislikedUsers: id}}).then(()=>console.log('dislike added'));
+                user.updateOne({_id:id}, {$push: {dislikedMovies: item.imdbID}}).then(()=>console.log('movie added'));
             }
         }
     })
@@ -34,9 +43,15 @@ const deletedb=(id,status,userid)=>{
         movie.updateOne({imdbID:id},{$pullAll:{likedUsers: [userid]}}).then(status => {
             console.log(status);
         });
+        user.updateOne({_id:userid},{$pullAll:{likedMovies: [id]}}).then(status => {
+            console.log(status);
+        });
     }
     else{
         movie.updateOne({imdbID:id},{$pullAll:{dislikedUsers: [userid]}}).then(status => {
+            console.log(status);
+        });
+        user.updateOne({_id:userid},{$pullAll:{dislikedMovies: [id]}}).then(status => {
             console.log(status);
         });
     }
@@ -73,7 +88,23 @@ router.get('/',(req,res)=>{
         }).then(result1=>{
             const trailerid=result1.data.items[0].id.videoId;
             const trailerurl="https://www.youtube.com/embed/"+trailerid;
-            res.render('moviePage',{movie:result,actors:actors,genre:genre,director,trailer:trailerurl});
+            let buttonid=0;
+            user.findOne({_id:req.session.user_id}).then((resmv)=>{
+                console.log(resmv);
+                const arr=resmv.likedMovies;
+                const arrdis=resmv.dislikedMovies;
+                arr.forEach((element)=>{
+                    if(element===result.imdbid){
+                        buttonid=1;
+                    }
+                });
+                arrdis.forEach((element)=>{
+                    if(element===result.imdbid){
+                        buttonid=2;
+                    }
+                });
+                res.render('moviePage',{movie:result,actors:actors,genre:genre,director,trailer:trailerurl,st:buttonid});
+            });
         }).catch(err=>console.log(err));
     }).catch(console.error);
 });
