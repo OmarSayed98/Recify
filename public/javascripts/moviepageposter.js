@@ -81,6 +81,7 @@ function dislikeMovie(id)
         if(likebtn.classList.contains('likeClicked'))
         {
             likebtn.classList.remove('likeClicked');
+            dislikebtn.classList.add('dislikeClicked');
             url+="12";
         }
         else {
