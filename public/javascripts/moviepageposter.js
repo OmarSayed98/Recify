@@ -1,12 +1,9 @@
 function setupPage(poster) {
   if(poster!=="N/A")
   {
-    var pst=document.getElementById('poster');
-    var url="url('";
-    url+=poster;
-    url+="') no-repeat center";
+    var pst=document.getElementById('moviePoster');
 
-    pst.style.background=url;
+    pst.src=poster;
   }
 }
 

@@ -146,13 +146,17 @@
 
 <div class="container-fluid">
   <div class="MovieData">
+
   <div class="PosterDiv" id="poster">
+        <img src="../public/images/noposter.jpg" id="moviePoster" >
 
-        <i class="far fa-play-circle fa-4x playbtn" onclick="play('<%=trailer%>')" id="playbtn"></i>
 
+      <div id="likeDislike">
+          <i class="fas fa-thumbs-up fa-3x" id="like" onclick="likeMovie('<%=movie.imdbid%>')"></i>
+          <i class="fas fa-thumbs-down fa-3x" id="dislike" onclick="dislikeMovie('<%=movie.imdbid%>')"></i>
+      </div>
   </div>
-      <i class="fas fa-thumbs-up fa-3x" id="like" onclick="likeMovie('<%=movie.imdbid%>')"></i>
-      <i class="fas fa-thumbs-down fa-3x" id="dislike" onclick="dislikeMovie('<%=movie.imdbid%>')"></i>
+      <i class="far fa-play-circle fa-4x playbtn" onclick="play('<%=trailer%>')" id="playbtn"></i>
 
   <div class="DataDiv">
 
@@ -177,26 +181,27 @@
 
    <br class="fix">
 
-  <div class="CommentsDiv">
-    <h3 class="CommnetTite CommentBorderFix">Comments (2)</h3>
-    <div class="PrintedComments">
-    <img class="UserImg"src="../public/images/Gender_Neutral_User_icon-icons.com_55902.png" alt="User Image" height="40" width="40">
-    <p class="UserName"> Hatem Tarek</p>
-    <p class="UserComment"> Excellent Whodunit with a stellar cast. Sometimes just mingling great actors together can be bad for chemistry but everyone in this movie inhabited their parts brilliantly, almost perfectly. Kudos to both Daniel Craig and Chris Evans for breaking out of limiting roles as Bond and Capt. America and having a blast while doing so. It looks like everyone was having a blast really.</p>
-    <img class="UserImg"src="../public/images/Gender_Neutral_User_icon-icons.com_55902.png" alt="User Image" height="40" width="40">
-    <p class="UserName"> Omar El Halwany</p>
-    <p class="UserComment"> Near perfect. Now one of my top favorite movies of all time and I’m picky. The writer managed to come up with a fresh angle on the traditional ‘estate’ murder mystery. There was also the interesting mix of old and timely new elements. Great cast. Daniel Craig’s character and the main character Marta are very likeable. Never a dull moment. Would like to see again.  Genius. Only a very few parts that were a stretch. Good message.  Fun to see the stars.</p>
-    </div>
-    <div class="CommentsEntry">
-      <h3 class="CommentRequestTitle CommentRequestBorderFix">Leave a comment</h3>
-      <form class="Comments" action="#" method="post">
-        <textarea class="commentarea" name="Comments" rows="5" cols="50" placeholder="Write Your Comment Here"></textarea>
-        <br>
-        <button class="Postbtn" type="button" name="Postbtn">Post</button>
-      </form>
-  </div>
-  </div>
+
 </div>
+    <div class="CommentsDiv">
+        <h3 class="CommnetTite CommentBorderFix">Comments (2)</h3>
+        <div class="PrintedComments">
+            <img class="UserImg"src="../public/images/Gender_Neutral_User_icon-icons.com_55902.png" alt="User Image" height="40" width="40">
+            <p class="UserName"> Hatem Tarek</p>
+            <p class="UserComment"> Excellent Whodunit with a stellar cast. Sometimes just mingling great actors together can be bad for chemistry but everyone in this movie inhabited their parts brilliantly, almost perfectly. Kudos to both Daniel Craig and Chris Evans for breaking out of limiting roles as Bond and Capt. America and having a blast while doing so. It looks like everyone was having a blast really.</p>
+            <img class="UserImg"src="../public/images/Gender_Neutral_User_icon-icons.com_55902.png" alt="User Image" height="40" width="40">
+            <p class="UserName"> Omar El Halwany</p>
+            <p class="UserComment"> Near perfect. Now one of my top favorite movies of all time and I’m picky. The writer managed to come up with a fresh angle on the traditional ‘estate’ murder mystery. There was also the interesting mix of old and timely new elements. Great cast. Daniel Craig’s character and the main character Marta are very likeable. Never a dull moment. Would like to see again.  Genius. Only a very few parts that were a stretch. Good message.  Fun to see the stars.</p>
+        </div>
+        <div class="CommentsEntry">
+            <h3 class="CommentRequestTitle CommentRequestBorderFix">Leave a comment</h3>
+            <form class="Comments" action="#" method="post">
+                <textarea class="commentarea" name="Comments" rows="5" cols="50" placeholder="Write Your Comment Here"></textarea>
+                <br>
+                <button class="Postbtn" type="button" name="Postbtn">Post</button>
+            </form>
+        </div>
+    </div>
 <div id="hiddenTrailer">
 
 
