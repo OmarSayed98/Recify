@@ -55,7 +55,7 @@ const deletedb=(id,status,userid)=>{
             console.log(status);
         });
     }
-}
+};
 const get=(arr)=>{
     let actors="";
     for(let i=0;i<arr.length;i++){
@@ -67,7 +67,7 @@ const get=(arr)=>{
             actors+=arr[i];
     }
     return actors;
-}
+};
 router.get('/',(req,res)=>{
     const id=url.parse(req.url,true).query.id;
     omdb.get({
