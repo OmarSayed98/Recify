@@ -90,19 +90,21 @@ router.get('/',(req,res)=>{
             const trailerurl="https://www.youtube.com/embed/"+trailerid;
             let buttonid=0;
             user.findOne({_id:req.session.user_id}).then((resmv)=>{
-                console.log(resmv);
-                const arr=resmv.likedMovies;
-                const arrdis=resmv.dislikedMovies;
-                arr.forEach((element)=>{
-                    if(element===result.imdbid){
-                        buttonid=1;
-                    }
-                });
-                arrdis.forEach((element)=>{
-                    if(element===result.imdbid){
-                        buttonid=2;
-                    }
-                });
+                if(result) {
+                    console.log(resmv);
+                    const arr = resmv.likedMovies;
+                    const arrdis = resmv.dislikedMovies;
+                    arr.forEach((element) => {
+                        if (element === result.imdbid) {
+                            buttonid = 1;
+                        }
+                    });
+                    arrdis.forEach((element) => {
+                        if (element === result.imdbid) {
+                            buttonid = 2;
+                        }
+                    });
+                }
                 res.render('moviePage',{movie:result,actors:actors,genre:genre,director,trailer:trailerurl,st:buttonid});
             });
         }).catch(err=>console.log(err));
