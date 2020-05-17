@@ -77,24 +77,21 @@ body{margin: 0;
   border-radius: 5px;
   float: left;
   margin-right: 2%;
-  margin-bottom: 10%;
 }
 .UserComment{
-  width:50%;
+  width:100%;
   text-align: justify;
 }
 .PrintedComments{
-  float: left;
-  width: 100%;
-  
+  width: 70%;
+
 }
 .commentarea{
   border-radius: 5px;
 }
 .CommentsDiv{
-    width: 90%;
+    width: 95%;
     margin-top: 75px;
-    min-width: 1000px;
 }
 
 .Postbtn{
@@ -103,7 +100,7 @@ border-radius: 5px;
 border: none;
 background-color: orange;
 margin-bottom: 4%;
-width: 5%;
+width: 60px;
 }
 .Postbtn:hover{
   background-color: darkorange;
@@ -179,4 +176,12 @@ width: 5%;
       border-bottom: 1px solid darkorange; /* This creates the border. Replace black with whatever color you want. */
       margin-left: 0;
       margin-bottom: 3%;
+}
+
+@media only screen and (max-width: 915px) {
+    .DataDiv{
+        margin-top: 50px;
+        width: fit-content;
+    }
+
 }
