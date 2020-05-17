@@ -35,5 +35,8 @@ app.use(function(req,res,next){
 app.use(cookieParser());
 app.use('/public',express.static(path.join(__dirname, 'public')));
 route(app);
+app.get('/',(req,res)=>{
+    res.redirect('/home');
+})
 module.exports=app;
 app.listen(3000);
