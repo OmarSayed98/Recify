@@ -71,16 +71,22 @@ body{margin: 0;
   margin-top: 0.25%;
   margin-left: 0.25%;
 }
+.UserName{
+    padding-top:8px;
+    font-weight: bolder;
+    color: orange;
+}
 .UserImg{
   color: darkorange;
   background-color: grey;
   border-radius: 5px;
   float: left;
-  margin-right: 2%;
+  margin-right: 1.5%;
 }
 .UserComment{
   width:100%;
   text-align: justify;
+  margin-bottom: 20px;
 }
 .PrintedComments{
   width: 70%;
@@ -88,6 +94,8 @@ body{margin: 0;
 }
 .commentarea{
   border-radius: 5px;
+  height: 150px;
+  width: 40%;
 }
 .CommentsDiv{
     width: 95%;
@@ -143,7 +151,8 @@ width: 60px;
       content: ""; /* This is necessary for the pseudo element to work. */
       display: block; /* This will put the pseudo element on its own line. */
       margin: 0 auto; /* This will center the border. */
-      width: 7%; /* Change this to whatever width you want. */
+      width:9%;
+      min-width: 67.5px; /* Change this to whatever width you want. */
       padding-top: 5px; /* This creates some space between the element and the border. */
       border-bottom: 1px solid darkorange; /* This creates the border. Replace black with whatever color you want. */
       margin-left: 0;
@@ -161,7 +170,8 @@ width: 60px;
       content: ""; /* This is necessary for the pseudo element to work. */
       display: block; /* This will put the pseudo element on its own line. */
       margin: 0 auto; /* This will center the border. */
-      width: 14%; /* Change this to whatever width you want. */
+      width: 10.75%; /* Change this to whatever width you want. */
+      min-width: 180px;
       padding-top: 8px; /* This creates some space between the element and the border. */
       border-bottom: 1px solid darkorange; /* This creates the border. Replace black with whatever color you want. */
       margin-left: 0;
@@ -171,7 +181,8 @@ width: 60px;
       content: ""; /* This is necessary for the pseudo element to work. */
       display: block; /* This will put the pseudo element on its own line. */
       margin: 0 auto; /* This will center the border. */
-      width: 17%; /* Change this to whatever width you want. */
+      width: 13%; /* Change this to whatever width you want. */
+      min-width: 220px;
       padding-top: 8px; /* This creates some space between the element and the border. */
       border-bottom: 1px solid darkorange; /* This creates the border. Replace black with whatever color you want. */
       margin-left: 0;
