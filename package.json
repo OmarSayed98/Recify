@@ -19,6 +19,7 @@
     "express": "~4.16.1",
     "express-session": "^1.17.0",
     "flash": "^1.1.0",
+    "flickity": "^2.2.1",
     "google-auth-library": "^6.0.0",
     "googleapis": "^50.0.0",
     "http-errors": "~1.6.3",
