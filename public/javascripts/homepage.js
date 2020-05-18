@@ -54,3 +54,9 @@ function sliderHideArrow(arrow){
     arr.style.display="none";
 
 }
+
+function displayMoviePage(movieId) {
+    window.location.href="http://localhost:3000/movie?id="+movieId;
+
+
+}

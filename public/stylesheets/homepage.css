@@ -143,7 +143,7 @@ body{margin: 0;
 }
 .tabPosterData{
     position: absolute;
-    bottom: 0%;
+    bottom: 0;
     color: orange;
     left: 15%;
 }
@@ -159,7 +159,6 @@ body{margin: 0;
     width: 90%;
 }
 
-
 .movieSelectionSlider{
 
 }
@@ -167,7 +166,7 @@ body{margin: 0;
     width: 250px;
     height:350px;
     margin-right: 20px;
-    border-radius: 5px;
+    opacity:0.65;
 }
 
 .carousel-cell img:hover{cursor: pointer;}
@@ -217,6 +216,25 @@ body{margin: 0;
 
 .headerData:hover h2, .headerData:hover p{
     color:darkorange;
+}
+
+/*.miniMovieData{
+    width:70%;
+    position: absolute;
+    top:650px;
+    left: 15%;
+    background-color: white;
+    height: 500px;
+}*/
+.carousel-cell:hover{
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    border: 2px solid rgba(255,165,0,0.5);
+    border-radius: 7px;
+}
+.carousel-cell:hover img{
+    border-radius: 7px;
 }
 
 
