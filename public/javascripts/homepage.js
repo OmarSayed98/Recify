@@ -29,3 +29,28 @@ function loadSliderImages(){
 
     });
 }
+
+function sliderTitleHover(showMore) {
+    const show=document.getElementById(showMore);
+    show.style.display="inline-block";
+
+
+
+}
+
+function sliderTitleHoverExit(showMore) {
+    const show=document.getElementById(showMore);
+    show.style.display="none";
+
+}
+
+function sliderShowArrow(arrow){
+    const arr=document.getElementById(arrow);
+    arr.style.display="inline-block";
+
+}
+function sliderHideArrow(arrow){
+    const arr=document.getElementById(arrow);
+    arr.style.display="none";
+
+}

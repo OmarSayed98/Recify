@@ -158,3 +158,66 @@ body{margin: 0;
 .tab1{
     width: 90%;
 }
+
+
+.movieSelectionSlider{
+
+}
+.carousel-cell {
+    width: 250px;
+    height:350px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.carousel-cell img:hover{cursor: pointer;}
+
+.carousel-cell img {
+    display: block;
+    width:100%;
+    text-align: center;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+}
+
+
+/* fade in lazy loaded image */
+.carousel-cell-image.flickity-lazyloaded,
+.carousel-cell-image.flickity-lazyerror {
+    opacity: 1;
+}
+.movieSelectionHeader{
+}
+.titleArrow{
+    color: darkorange;
+    display: none;
+}
+.showMore{
+    color: orange;
+    font-size: 20px;
+    display: none;
+}
+
+.mshTitle{
+    color: orange;
+    font-weight: bolder;
+    width: fit-content;
+    margin-top:35px;
+    margin-left: 10px;
+    margin-bottom:0;
+    padding-bottom:20px;
+    display: inline-block;
+}
+.headerData{
+    width:max-content;
+    cursor: pointer;
+}
+
+.headerData:hover h2, .headerData:hover p{
+    color:darkorange;
+}
+
+
+* { box-sizing: border-box; }
