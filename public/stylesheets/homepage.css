@@ -8,18 +8,22 @@ body{margin: 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: max-content;
+    height: 650px;
     z-index: 9;
 
 }
-.carousel-inner{
-
+.carousel-item{
+    height: 650px;
 }
+.carousel-inner{
+}
+
 .sliderimg{
     position: relative;
-    left: 65%;
-    margin-top: 5.5%;
+    left: 75%;
+    margin-top: 100px;
     margin-bottom: 4%;
+    cursor: pointer;
 
 }
 
@@ -30,47 +34,39 @@ body{margin: 0;
 
 .carousel-control-next, .carousel-control-prev{
     height: max-content;
-    margin-top: 17.5%;
+    margin-top: 325px;
 
     width: max-content;
 }
 .carousel-control-next{
-    margin-right: 5%;
+    margin-right: 20px;
 }
 .carousel-control-prev{
-    margin-left: 5%;
+    margin-left: 20px;
 }
 .carousel-caption{
-    position: absolute;
-    left: 12% !important;
-    min-width: 30%;
-    height: max-content;
-    top: 20%;
+    position: relative;
+    display: block;
+    left: 7% !important;
+    width: 600px;
+    bottom:450px;
     padding-bottom: 20px;
     text-align: left;
 
 }
 .MovieName{
     font-size:5.0rem ;
-    margin-left: 0px;
+    margin-left: 0;
 
 }
 .MovieCategory{
-    border: 1px solid darkorange;
-    background-color: orange;
-    border-radius: 3px;
     padding: 2px;
-    width: 100px;
-    opacity: 0.75;
-    float: left;
+    width: fit-content;
     text-align: center;
     margin-right:10px ;
 
 }
-.MovieCategory:hover{
-    opacity: 1;
-    cursor: pointer;
-}
+
 .Morebtn{
     border: 1px solid darkorange;
     background-color: darkorange;
@@ -78,6 +74,7 @@ body{margin: 0;
     padding: 2px;
     width: 100px;
     opacity: 0.75;
+    margin-bottom: 15px;
 
 }
 .Morebtn a{
@@ -100,15 +97,21 @@ body{margin: 0;
 .sliderRating{
     font-size: 1.75rem;
 }
-.fa-thumbs-up, .fa-thumbs-down{
-    color: white;
-}
-.fa-thumbs-up:hover, .fa-thumbs-down:hover{
+
+.fa-thumbs-up:hover{
     color: orange;
+
+}
+.fa-thumbs-down:hover{
+    color: red;
+
+}
+.fa-thumbs-down{
     cursor: pointer;
 }
 .fa-thumbs-up{
     margin-right: 20px;
+    cursor: pointer;
 }
 .tabtitlearrow{
 
@@ -166,10 +169,10 @@ body{margin: 0;
     width: 250px;
     height:350px;
     margin-right: 20px;
-    opacity:0.65;
+    opacity:0.95;
 }
 
-.carousel-cell img:hover{cursor: pointer;}
+
 
 .carousel-cell img {
     display: block;
@@ -179,6 +182,7 @@ body{margin: 0;
     margin: 0 auto;
     -webkit-transition: opacity 0.4s;
     transition: opacity 0.4s;
+    cursor: pointer;
 }
 
 
@@ -236,6 +240,28 @@ body{margin: 0;
 .carousel-cell:hover img{
     border-radius: 7px;
 }
+
+@media only screen and (max-width: 1420px) {
+    .sliderimg{left:65%;}
+
+}
+@media only screen and (max-width: 1000px) {
+    .sliderimg{left:54%;}
+
+}
+@media only screen and (max-width: 768px) {
+
+    .sliderimg{left:27.5%;
+               cursor: pointer;}
+    .carousel-caption{display:none;}
+}
+
+.slidersMainDivBackground {
+
+    padding-bottom: 30px;
+    color: dimgrey;
+}
+
 
 
 * { box-sizing: border-box; }

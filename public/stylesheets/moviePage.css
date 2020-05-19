@@ -129,7 +129,10 @@ width: 60px;
 }
 .PosterDiv{
     float: left;
+    margin-right: 40px;
 }
+#moviePoster{width:120%;
+             }
 #likeDislike{position: relative;
             left: 10%;
             top: 30px;
