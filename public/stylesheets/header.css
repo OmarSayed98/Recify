@@ -97,7 +97,8 @@ body{font-family: 'Roboto',sans-serif;
     cursor: pointer;
     text-align: right;
     border-radius: 4px;
-    padding: 5px;}
+    padding: 5px;
+}
 #sanmenu{color:orange;}
 #smallmenu{
     display: none;
@@ -139,9 +140,10 @@ body{font-family: 'Roboto',sans-serif;
     color: white;
 }
 .searchResult{
+    margin-left: 50px;
     padding-left: 0.1px;
     height: max-content;
-    background: rgba(105, 105, 105, 0.8);
+    background: rgba(20,20,20,0.8);
     border-radius: 7px;
     position: relative;
     display:none;
@@ -153,7 +155,7 @@ body{font-family: 'Roboto',sans-serif;
                 margin-bottom: 7px;
                 float: left;
                 width: 70%;
-                margin-top: 7px;
+                margin-top: 40px;
                 }
 .searchResult img{width: 15%;
                   float: left;
@@ -162,17 +164,15 @@ body{font-family: 'Roboto',sans-serif;
                   margin-left: 7px;
                   }
 .theResult {
-
-
-    border-bottom: 1px solid darkgrey;
-
+    cursor: pointer;
+    border-bottom: 1px solid  rgba(20,20,20,0.8);
 }
+
 .theResult:last-child{  border-bottom:none;}
 .theResult:hover{
-    cursor: pointer;
+
     color: orange;
-    background-color: #202326;
-    border-radius: 7px;
+    background-color: rgba(12,12,12,0.8);
 
 }
 .notifDiv{
@@ -190,7 +190,7 @@ body{font-family: 'Roboto',sans-serif;
     border-radius: 7px;
     padding-left: 7.5px;
     padding-top: 7.5px;
-    background: rgba(105, 105, 105, 0.8);
+    background: rgba(20,20,20,0.8);
 }
 .fix{
     clear: both;

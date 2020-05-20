@@ -8,7 +8,7 @@ function sandwich(){
   if(smenu.style.display != "block")
   {
     smenu.style.display = "block";
-    sanmenu.style.background="rgba(105, 105, 105, 0.8)";
+    sanmenu.style.background="rgba(20,20,20,0.8)";
     sbar.style.width="100%";
     sbar.style.padding="0";
     sbar.style.margin="0";

@@ -269,9 +269,7 @@ body{margin: 0;
 }
 
 body::-webkit-scrollbar {
-    width: 12px;
-
-
+    width: 11px;
 }
 /* Track */
 body::-webkit-scrollbar-track {
