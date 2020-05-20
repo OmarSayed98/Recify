@@ -16,7 +16,8 @@ const movieschema = new schema({
     likedUsers: [String],
     dislikedUsers: [String],
     imdbID: {type:String,required:true},
-    production: {type:String}
+    production: {type:String},
+    comments:{type:[String]}
 });
 const movie = mongoose.model('movie', movieschema);
 module.exports=movie;

@@ -8,7 +8,19 @@ const {google}=require('googleapis');
 const youtubev3=google.youtube({version:'v3',auth:process.env.API_KEY});
 const movie=require('../models/movies');
 const user=require('../models/users');
+const comment=require('../models/comments');
+const {ObjectId}=require('mongodb');
 youtube.setKey(process.env.API_KEY1);
+const findusers=(commentarr)=>{
+    return new Promise(async(resolve,reject)=>{
+        let result = await comment.find({_id: { $in: commentarr }})
+        if(result.length < 1){
+            reject(new Error('failed to find users'));
+        }else {
+            resolve(result);
+        }
+    })
+}
 const savedb=(item,id,status)=>{
     if(status[1]==='1')
         item.likedUsers.push(id);
@@ -89,11 +101,8 @@ router.get('/',(req,res)=>{
             const trailerid=result1.data.items[0].id.videoId;
             const trailerurl="https://www.youtube.com/embed/"+trailerid;
             let buttonid=0;
-
             user.findOne({_id:req.session.user_id}).then((resmv)=>{
                 if(resmv) {
-                    console.log(resmv);
-
                     const arr = resmv.likedMovies;
                     const arrdis = resmv.dislikedMovies;
                     arr.forEach((element) => {
@@ -107,7 +116,51 @@ router.get('/',(req,res)=>{
                         }
                     });
                 }
-                res.render('moviePage',{movie:result,actors:actors,genre:genre,director,trailer:trailerurl,st:buttonid});
+                movie.find({imdbID:result.imdbid},{comments:1}).then((rescm)=>{
+                    const commenturl = `/movie/comment?movieid=${result.imdbid}&user_id=${req.session.user_id}`;
+                    if(rescm.length===0 || rescm[0].comments.length===0) {
+                        res.render('moviePage', {
+                            movie: result,
+                            actors: actors,
+                            genre: genre,
+                            director,
+                            trailer: trailerurl,
+                            st: buttonid,
+                            curl: commenturl,
+                            comments_users: 0,
+                            users: []
+                        });
+                    }
+                    else {
+                        console.log(rescm);
+                        const commentarr = rescm[0].comments;
+                        const objectcomments = commentarr.map((i) => {
+                            return ObjectId(i);
+                        })
+                        findusers(objectcomments).then(commentarray => {
+                            const contentname=commentarray.map((i)=>{
+                                let tmp=i;
+                                return user.findOne({_id:tmp.owner}).then(userresult=>{
+                                    tmp.owner=userresult.name;
+                                    return tmp;
+                                });
+                            });
+                            Promise.all(contentname).then(usercomments=>{
+                                res.render('moviePage', {
+                                    movie: result,
+                                    actors: actors,
+                                    genre: genre,
+                                    director,
+                                    trailer: trailerurl,
+                                    st: buttonid,
+                                    curl: commenturl,
+                                    comments_users: commentarr.length,
+                                    users:usercomments
+                                });
+                            });
+                        })
+                    }
+                })
             });
         }).catch(err=>console.log(err));
     }).catch(console.error);
@@ -165,4 +218,18 @@ router.post('/status',(req,res)=> {
         }).catch(console.error);
     }
 );
+router.post('/comment',(req,res)=>{
+    const query=url.parse(req.url,true).query;
+    const movieid=query.movieid;
+    const userid=query.user_id;
+    const content=req.body.Comments;
+    const newcomment=new comment({
+        content:content,
+        owner:userid
+    });
+    newcomment.save().then((result)=>{
+        console.log('comment saved');
+        movie.updateOne({imdbID:movieid},{$push:{comments:result._id}}).then(()=>console.log('comment saved to movie db'));
+    })
+})
 module.exports=router;

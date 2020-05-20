@@ -23,6 +23,7 @@
     "google-auth-library": "^6.0.0",
     "googleapis": "^50.0.0",
     "http-errors": "~1.6.3",
+    "mongodb": "^3.5.7",
     "mongoose": "^5.9.6",
     "morgan": "~1.9.1",
     "movie-trailer": "^2.0.6",
