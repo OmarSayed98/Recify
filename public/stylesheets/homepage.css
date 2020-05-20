@@ -215,7 +215,7 @@ body{margin: 0;
     display: inline-block;
 }
 .headerData{
-    width:max-content;
+    width:fit-content;
     cursor: pointer;
 }
 
@@ -264,9 +264,26 @@ body{margin: 0;
 .GreyslidersMainDivBackground{
     padding-bottom: 20px;
     color: dimgrey;
-    background-color: rgba(46,46,46,0.8);
+    background-color: rgba(20,20,20,0.8);
 
 }
 
+body::-webkit-scrollbar {
+    width: 12px;
+
+
+}
+/* Track */
+body::-webkit-scrollbar-track {
+    background: rgba(105,105,105,0.5);
+    border-radius: 20px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: orange;
+    cursor: pointer;
+    border-radius: 20px;
+}
 
 * { box-sizing: border-box; }

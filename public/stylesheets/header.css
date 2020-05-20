@@ -196,7 +196,7 @@ body{font-family: 'Roboto',sans-serif;
     clear: both;
 }
 .notificationMenu::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
 
 }
 /* Track */
@@ -207,9 +207,10 @@ body{font-family: 'Roboto',sans-serif;
 /* Handle */
 .notificationMenu::-webkit-scrollbar-thumb {
     background: orange;
+    cursor: pointer;
 }
 
 /* Handle on hover */
-.notificationMenu::-webkit-scrollbar-thumb:hover {
+/*.notificationMenu::-webkit-scrollbar-thumb:hover {
     background: darkorange;
-}
+}*/
