@@ -2,15 +2,12 @@ const express=require('express');
 const router=express.Router();
 const url=require('url');
 const omdb = new (require('omdbapi'))('e7aad19');
-const youtubelib=require('youtube-node');
-const youtube=new youtubelib();
 const {google}=require('googleapis');
-const youtubev3=google.youtube({version:'v3',auth:process.env.API_KEY});
+const youtubev3=google.youtube({version:'v3',auth:process.env.API_KEY1});
 const movie=require('../models/movies');
 const user=require('../models/users');
 const comment=require('../models/comments');
 const {ObjectId}=require('mongodb');
-youtube.setKey(process.env.API_KEY1);
 const findusers=(commentarr)=>{
     return new Promise(async(resolve,reject)=>{
         let result = await comment.find({_id: { $in: commentarr }})
