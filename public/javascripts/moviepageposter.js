@@ -1,8 +1,9 @@
 function setupPage(poster,st) {
-  if(poster!=="N/A")
+  if(poster!=="")
   {
-    var pst=document.getElementById('moviePoster');
-
+    const pst=document.getElementById('moviePoster');
+    document.getElementById('poster').style.marginRight="0";
+    pst.style.width="100%";
     pst.src=poster;
   }
   if(st==='1')

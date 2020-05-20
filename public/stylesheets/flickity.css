@@ -42,14 +42,15 @@
 
 .flickity-button {
   position: absolute;
-  background: hsla(0, 0%, 100%, 0.75);
+  background: rgba(105, 105, 105, 0.5);
   border: none;
-  color: #333;
+  color: rgba(255,165,0,0.5);
 }
 
 .flickity-button:hover {
-  background: white;
+  background: rgba(255,165,0,1);
   cursor: pointer;
+  color: rgba(105, 105, 105, 1);
 }
 
 .flickity-button:focus {
