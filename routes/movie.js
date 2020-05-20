@@ -18,6 +18,30 @@ const findusers=(commentarr)=>{
         }
     })
 }
+const getmovieitem=(result)=>{
+    let arr = Object.values(result.actors);
+    let arr1 = Object.values(result.genre);
+    let arr2 = Object.values(result.director);
+    let arr3=Object.values(result.writer);
+    let actors = get(arr), genre = get(arr1), director = get(arr2),writer=get(arr3);
+    const item=new movie({
+        title:result.title,
+        release:result.released,
+        imdbID:result.imdbid,
+        rating:result.imdbrating,
+        runtime:result.runtime,
+        rated:result.rated,
+        genre:genre,
+        director:director,
+        writer:writer,
+        actors:actors,
+        plot:result.plot,
+        awards:result.awards,
+        poster:result.poster,
+        production:result.production,
+    });
+    return item;
+}
 const savedb=(item,id,status)=>{
     if(status[1]==='1')
         item.likedUsers.push(id);
@@ -82,27 +106,7 @@ router.get('/',(req,res)=>{
     omdb.get({
         id:id
     }).then((result)=>{
-        let arr = Object.values(result.actors);
-        let arr1 = Object.values(result.genre);
-        let arr2 = Object.values(result.director);
-        let arr3=Object.values(result.writer);
-        let actors = get(arr), genre = get(arr1), director = get(arr2),writer=get(arr3);
-        const item=new movie({
-            title:result.title,
-            release:result.released,
-            imdbID:result.imdbid,
-            rating:result.imdbrating,
-            runtime:result.runtime,
-            rated:result.rated,
-            genre:genre,
-            director:director,
-            writer:writer,
-            actors:actors,
-            plot:result.plot,
-            awards:result.awards,
-            poster:result.poster,
-            production:result.production,
-        });
+        const item=getmovieitem(result);
         movie.findOne({imdbID:result.imdbid}).then(resofmovie=>{
             if(!resofmovie)
                 item.save().then(()=>console.log('movie saved for first time'));
@@ -139,9 +143,9 @@ router.get('/',(req,res)=>{
                     if(rescm[0].comments.length===0) {
                         res.render('moviePage', {
                             movie: result,
-                            actors: actors,
-                            genre: genre,
-                            director,
+                            actors: item.actors,
+                            genre: item.genre,
+                            director:item.director,
                             trailer: trailerurl,
                             st: buttonid,
                             curl: commenturl,
@@ -166,9 +170,9 @@ router.get('/',(req,res)=>{
                             Promise.all(contentname).then(usercomments=>{
                                 res.render('moviePage', {
                                     movie: result,
-                                    actors: actors,
-                                    genre: genre,
-                                    director,
+                                    actors: item.actors,
+                                    genre: item.genre,
+                                    director:item.director,
                                     trailer: trailerurl,
                                     st: buttonid,
                                     curl: commenturl,
@@ -191,27 +195,7 @@ router.post('/status',(req,res)=> {
         omdb.get({
             id: id
         }).then((result) => {
-            let arr = Object.values(result.actors);
-            let arr1 = Object.values(result.genre);
-            let arr2 = Object.values(result.director);
-            let arr3=Object.values(result.writer);
-            let actors = get(arr), genre = get(arr1), director = get(arr2),writer=get(arr3);
-            const item=new movie({
-                title:result.title,
-                release:result.released,
-                imdbID:result.imdbid,
-                rating:result.imdbrating,
-                runtime:result.runtime,
-                rated:result.rated,
-                genre:genre,
-                director:director,
-                writer:writer,
-                actors:actors,
-                plot:result.plot,
-                awards:result.awards,
-                poster:result.poster,
-                production:result.production,
-            });
+            const item=getmovieitem(result);
             if (st[0] === '0') {
                 savedb(item, req.session.user_id, st);
             }
