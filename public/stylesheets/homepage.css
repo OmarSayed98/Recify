@@ -35,7 +35,6 @@ body{margin: 0;
 .carousel-control-next, .carousel-control-prev{
     height: max-content;
     margin-top: 325px;
-
     width: max-content;
 }
 .carousel-control-next{
@@ -207,6 +206,7 @@ body{margin: 0;
     color: orange;
     font-weight: bolder;
     width: fit-content;
+    padding-right: 10px;
     margin-top:35px;
     margin-left: 10px;
     margin-bottom:0;
@@ -222,14 +222,6 @@ body{margin: 0;
     color:darkorange;
 }
 
-/*.miniMovieData{
-    width:70%;
-    position: absolute;
-    top:650px;
-    left: 15%;
-    background-color: white;
-    height: 500px;
-}*/
 .carousel-cell:hover{
     opacity: 1;
     -webkit-transition: opacity 0.5s;
@@ -239,6 +231,12 @@ body{margin: 0;
 }
 .carousel-cell:hover img{
     border-radius: 7px;
+}
+
+.slidersMainDivBackground {
+
+    padding-bottom: 30px;
+    color: dimgrey;
 }
 
 @media only screen and (max-width: 1420px) {
@@ -255,13 +253,6 @@ body{margin: 0;
                cursor: pointer;}
     .carousel-caption{display:none;}
 }
-
-.slidersMainDivBackground {
-
-    padding-bottom: 30px;
-    color: dimgrey;
-}
-
 
 
 * { box-sizing: border-box; }
