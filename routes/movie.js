@@ -85,10 +85,31 @@ router.get('/',(req,res)=>{
     omdb.get({
         id:id
     }).then((result)=>{
-        let arr=Object.values(result.actors);
-        let arr1=Object.values(result.genre);
-        let arr2=Object.values(result.director);
-        let actors=get(arr),genre=get(arr1),director=get(arr2);
+        let arr = Object.values(result.actors);
+        let arr1 = Object.values(result.genre);
+        let arr2 = Object.values(result.director);
+        let arr3=Object.values(result.writer);
+        let actors = get(arr), genre = get(arr1), director = get(arr2),writer=get(arr3);
+        const item=new movie({
+            title:result.title,
+            release:result.released,
+            imdbID:result.imdbid,
+            rating:result.imdbrating,
+            runtime:result.runtime,
+            rated:result.rated,
+            genre:genre,
+            director:director,
+            writer:writer,
+            actors:actors,
+            plot:result.plot,
+            awards:result.awards,
+            poster:result.poster,
+            production:result.production,
+        });
+        movie.findOne({imdbID:result.imdbid}).then(resofmovie=>{
+            if(!resofmovie)
+                item.save().then(()=>console.log('movie saved for first time'));
+        })
         youtubev3.search.list({
             part: 'snippet',
             type: 'video',
@@ -118,7 +139,7 @@ router.get('/',(req,res)=>{
                 }
                 movie.find({imdbID:result.imdbid},{comments:1}).then((rescm)=>{
                     const commenturl = `/movie/comment?movieid=${result.imdbid}&user_id=${req.session.user_id}`;
-                    if(rescm.length===0 || rescm[0].comments.length===0) {
+                    if(rescm[0].comments.length===0) {
                         res.render('moviePage', {
                             movie: result,
                             actors: actors,
