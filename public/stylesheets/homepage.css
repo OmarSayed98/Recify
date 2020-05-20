@@ -235,12 +235,6 @@ body{margin: 0;
 
 }
 
-.slidersMainDivBackground {
-
-    padding-bottom: 30px;
-    color: dimgrey;
-}
-
 @media only screen and (max-width: 1420px) {
     .sliderimg{left:65%;}
 
@@ -257,12 +251,12 @@ body{margin: 0;
 }
 
 .BlackslidersMainDivBackground {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     color: dimgrey;
     background-color: rgba(12,12,12,0.8);
 }
 .GreyslidersMainDivBackground{
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     color: dimgrey;
     background-color: rgba(20,20,20,0.8);
 
