@@ -1,6 +1,6 @@
 footer
 {
-background-color: rgba(6,6,6,1);
+background-color: rgba(9,9,9,1);
 color: white;
 width: 100%;
 
@@ -36,8 +36,7 @@ footer .third button{
   background-color: orange;
   border-radius: 5px;
   border:none;
-  width:80px;
-  color: white;}
+  width:80px;}
 footer .third button:hover{background-color: darkorange;}
 footer .third hr{margin-left: 0px;}
 
@@ -55,7 +54,13 @@ footer .third{display: flex;
 
 footer textarea{display:flex;
   height: 90px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  background-color: rgba(40,40,40,0.6);
+  color: white;
+  padding: 5px;
+  border: 1px solid darkorange;
+  outline: none;
 }
 
 footer a

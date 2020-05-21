@@ -210,6 +210,19 @@ body{font-family: 'Roboto',sans-serif;
     cursor: pointer;
 }
 
+::placeholder {
+    color: white !important;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: white !important;
+}
+
+::-ms-input-placeholder {
+    color: white !important;
+}
+
 /* Handle on hover */
 /*.notificationMenu::-webkit-scrollbar-thumb:hover {
     background: darkorange;

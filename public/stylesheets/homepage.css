@@ -47,22 +47,23 @@ body{margin: 0;
     position: relative;
     display: block;
     left: 7% !important;
-    width: 600px;
-    bottom:450px;
+    width: fit-content;
+    bottom:500px;
     padding-bottom: 20px;
     text-align: left;
-
+    height: fit-content;
 }
 .MovieName{
-    font-size:5.0rem ;
+    font-size:55px;
     margin-left: 0;
-
+    width: fit-content;
+    max-width: 400px;
+    word-wrap: break-word;
 }
 .MovieCategory{
     padding: 2px;
-    width: fit-content;
-    text-align: center;
-    margin-right:10px ;
+    font-size: 25px;
+    font-weight: 400;
 
 }
 
@@ -241,7 +242,6 @@ body{margin: 0;
 }
 @media only screen and (max-width: 1000px) {
     .sliderimg{left:54%;}
-
 }
 @media only screen and (max-width: 768px) {
 

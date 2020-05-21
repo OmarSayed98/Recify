@@ -109,28 +109,16 @@ body{margin: 0;
 }
 
 .commentarea{
-  border-radius: 15px;
   height: 150px;
   width: 40%;
-    background-color: rgba(40,40,40,0.6);
-    color: white;
-    padding: 5px;
-    border: 1px solid darkorange;
-    outline: none;
+  border-radius: 15px;
+  background-color: rgba(40,40,40,0.6);
+  color: white;
+  padding: 5px;
+  border: 1px solid darkorange;
+  outline: none;
 }
 
-::placeholder {
-  color: white !important;
-  opacity: 1;
-}
-
-:-ms-input-placeholder {
-  color: white !important;
-}
-
-::-ms-input-placeholder {
-    color: white !important;
-}
 .CommentsDiv{
     width: 95%;
     margin-top: 75px;
@@ -139,11 +127,12 @@ body{margin: 0;
 
 .Postbtn{
 margin-top: 2%;
+width: 60px;
 border-radius: 5px;
 border: none;
 background-color: orange;
 margin-bottom: 2.5%;
-width: 60px;
+
 }
 .Postbtn:hover{
   background-color: darkorange;
@@ -252,4 +241,16 @@ body::-webkit-scrollbar-thumb {
     background: orange;
     cursor: pointer;
     border-radius: 20px;
+}
+::placeholder {
+    color: white !important;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: white !important;
+}
+
+::-ms-input-placeholder {
+    color: white !important;
 }
