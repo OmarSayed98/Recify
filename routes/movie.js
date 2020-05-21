@@ -232,6 +232,7 @@ router.post('/comment',(req,res)=>{
     newcomment.save().then((result)=>{
         console.log('comment saved');
         movie.updateOne({imdbID:movieid},{$push:{comments:result._id}}).then(()=>console.log('comment saved to movie db'));
+        res.redirect(`/movie?id=${movieid}`);
     })
 })
 module.exports=router;
