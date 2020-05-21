@@ -141,16 +141,20 @@ router.get('/',(req,res)=>{
                 movie.find({imdbID:result.imdbid},{comments:1}).then((rescm)=>{
                     const commenturl = `/movie/comment?movieid=${result.imdbid}&user_id=${req.session.user_id}`;
                     if(rescm[0].comments.length===0) {
-                        res.render('moviePage', {
-                            movie: result,
-                            actors: item.actors,
-                            genre: item.genre,
-                            director:item.director,
-                            trailer: trailerurl,
-                            st: buttonid,
-                            curl: commenturl,
-                            comments_users: 0,
-                            users: []
+                        user.findOne({_id:req.session.user_id}).then(username=>{
+                            console.log(username.name);
+                            res.render('moviePage', {
+                                movie: result,
+                                actors: item.actors,
+                                genre: item.genre,
+                                director:item.director,
+                                trailer: trailerurl,
+                                st: buttonid,
+                                curl: commenturl,
+                                comments_users: 0,
+                                users:[],
+                                name:username.name
+                            });
                         });
                     }
                     else {
@@ -168,16 +172,19 @@ router.get('/',(req,res)=>{
                                 });
                             });
                             Promise.all(contentname).then(usercomments=>{
-                                res.render('moviePage', {
-                                    movie: result,
-                                    actors: item.actors,
-                                    genre: item.genre,
-                                    director:item.director,
-                                    trailer: trailerurl,
-                                    st: buttonid,
-                                    curl: commenturl,
-                                    comments_users: commentarr.length,
-                                    users:usercomments
+                                user.findOne({_id:req.session.user_id}).then(username=>{
+                                    res.render('moviePage', {
+                                        movie: result,
+                                        actors: item.actors,
+                                        genre: item.genre,
+                                        director:item.director,
+                                        trailer: trailerurl,
+                                        st: buttonid,
+                                        curl: commenturl,
+                                        comments_users: commentarr.length,
+                                        users:usercomments,
+                                        name:username.name
+                                    });
                                 });
                             });
                         })
