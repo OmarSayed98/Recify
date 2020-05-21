@@ -1,7 +1,7 @@
-body{margin: 0;
+.hpBody{margin: 0;
     padding: 0;
-    font-family: 'Arial';
     background-color: #202326;
+    font-family: 'Alegreya SC', serif;
 }
 #carouselExampleIndicators{
     background-image: url("../images/Recify background6.jpg");

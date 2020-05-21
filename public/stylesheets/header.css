@@ -179,11 +179,12 @@ body{font-family: 'Roboto',sans-serif;
     color: white;
     float: right;
     overflow-x:visible;
-    width: 130px;
+    width: 134px;
 }
 
 .notificationMenu{
     display: none;
+    position: relative;
     width: 200px;
     max-height: 200px;
     overflow-y: scroll;

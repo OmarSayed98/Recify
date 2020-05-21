@@ -3,151 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Recify</title>
-    <link rel="icon" href="../public/images/FavIcon.png" sizes="32x32">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/stylesheets/mdb.min.css">
+    <%include ./Components/allLinks.ejs %>
     <link rel="stylesheet" href="../public/stylesheets/homepage.css">
-    <link rel="stylesheet" href="../public/stylesheets/header.css">
-    <link rel="stylesheet" type="text/css" href="../public/stylesheets/footer.css">
-    <link rel="stylesheet" href="../public/stylesheets/flickity.css" media="screen">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
 </head>
-<body onload="loadSliderImages()">
-<div class="header">
+<body onload="loadSliderImages()" class="hpBody">
 
-    <div class="logo">
-        <a href="/home"><img src="../public/images/logo.png" class="headerLogo"></a>
-    </div>
-    <div class="NavBarContentSelection">
-
-        <a href="#"> Movies</a>
-
-        <div class="vl"></div>
-
-        <a href="#">TV shows</a>
-    </div>
-
-    <div id="searchmenu">
-        <div id="searchbar">
-            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
-                <i class="fas fa-search" aria-hidden="true"></i>
-                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-                       aria-label="Search" id="searchData" onkeyup="searchMenu()">
-            </form>
-        </div>
-        <div class="searchResult" id="searchResult">
-            <div class="theResult" onclick="sendMovieId(this)">
-                <img>
-                <p name="test"></p>
-                <input type="hidden" name="theMovieId" value="">
-                <br class="fix">
-            </div>
-
-            <div class="theResult" onclick="sendMovieId(this)">
-                <img>
-                <p></p>
-                <input type="hidden" name="theMovieId" value="">
-                <br class="fix">
-            </div>
-            <div class="theResult" onclick="sendMovieId(this)">
-                <img>
-                <p></p>
-                <input type="hidden" name="theMovieId" value="">
-                <br class="fix">
-            </div>
-            <div class="theResult" onclick="sendMovieId(this)">
-                <img>
-                <p></p>
-                <input type="hidden" name="theMovieId" value="">
-                <br class="fix">
-            </div>
-            <div class="theResult" onclick="sendMovieId(this)">
-                <img>
-                <p></p>
-                <input type="hidden" name="theMovieId" value="">
-                <br class="fix">
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="NavBarMenu">
-
-        <div class="NavBarProfileLink">
-            <a href="home/signout">Sign out <i class="fa fa-user"></i></a>
-            <div class="vr"></div>
-            <div class="notifDiv" id="notifDiv">
-                <p class="notificationP" onclick="notificationMenu()">Notifications <i class="fa fa-bell"></i>
-                    <span class="NotificationBadge">3</span>
-                </p>
-                <br>
-                <div class="notificationMenu" id="notifications">
-
-                    <p>This is a notification</p>
-                    <p>This is a a long notification</p>
-                    <p>This is a notification</p>
-                    <p>This is a a long notification</p>
-                    <p>This is a notification</p>
-                    <p>This is a a long notification........</p>
-                    <p>This is a notification</p>
-                    <p>This is a a long notification</p>
-                    <p>This is a notification</p>
-                    <p>This is a a long notification</p>
-                </div>
-
-            </div>
-
-
-            <div class="vr"></div>
-            <a href="#"><%=name%> <i class="fa fa-user-circle"></i></a>
-
-        </div>
-
-
-    </div>
-
-    <div id="sandwichMenu" class="sandwichMenu">
-        <i id="sanmenu" class="fa fa-bars fa-2x" onclick="sandwich()"></i>
-
-        <div id="smallmenu">
-            <a href="#"> Movies</a>
-
-            <a href="#">TV shows</a>
-
-            <a href="#"><%=name%> <i class="fa fa-user-circle"></i></a>
-
-            <p class="notificationP">Notifications <i class="fa fa-bell"></i>
-                <span class="NotificationBadge">3</span>
-            </p>
-
-            <a href="home/signout">Sign out <i class="fa fa-user"></i></a>
-
-            <div id="sbar">
-                <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
-
-                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-                           aria-label="Search">
-                </form>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
+<%include ./Components/header.ejs %>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -306,52 +167,13 @@
     </div>
 </div>
 
+<%include ./Components/footer.ejs %>
+
 <div>
 
 
 </div>
 
-<footer id="footer">
-        <div class="all">
-            <div class="first">
-                <h4 class="footerTitle">Menu</h4>
-                <ul>
-                    <li><a href="#" class="footerLinks">Home</a></li>
-                    <li><a href="#" class="footerLinks">Recommendations</a></li>
-                    <li><a href="#" class="footerLinks">Coming Soon</a></li>
-
-                </ul>
-            </div>
-
-            <div class="second">
-                <h4 class="footerTitle">Profile</h4>
-                <ul>
-
-                    <li><a href="#" class="footerLinks">Sign in</a></li>
-                    <li><a href="#" class="footerLinks">Sign up</a></li>
-                    <li><a href="#" class="footerLinks">Movies</a></li>
-                    <li><a href="#" class="footerLinks">Tv Shows</a></li>
-
-                </ul>
-            </div>
-
-            <div class="third">
-                <h4 class="footerTitle">LEAVE A MESSAGE</h4>
-                <textarea class="footerMsg" name="Message" placeholder="Message"></textarea>
-                <button type="submit" name="submit">submit</button>
-            </div>
-        </div>
-
-        <div class="social">
-            <a href="https://www.facebook.com/" id="fblink"><i class="fab fa-facebook fa-3x socialLink"></i></a>
-            <a href="https://www.google.com/" id="golink"><i class="fab fa-google fa-3x socialLinks"></i></a>
-            <a href="https://www.instagram.com/" id="iglink"><i class="fab fa-instagram fa-3x socialLinks"></i></a>
-            <a href="https://www.youtube.com/" id="ytlink"><i class="fab fa-youtube fa-3x socialLinks"></i></a>
-        </div>
-
-
-
-</footer>
 
 <script type="text/javascript" src="../public/javascripts/homepage.js"></script>
 <script type="text/javascript" src="../public/javascripts/header.js"></script>
