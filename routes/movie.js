@@ -3,7 +3,7 @@ const router=express.Router();
 const url=require('url');
 const omdb = new (require('omdbapi'))('e7aad19');
 const {google}=require('googleapis');
-const youtubev3=google.youtube({version:'v3',auth:process.env.API_KEY1});
+const youtubev3=google.youtube({version:'v3',auth:process.env.API_KEY});
 const movie=require('../models/movies');
 const user=require('../models/users');
 const comment=require('../models/comments');
@@ -232,6 +232,7 @@ router.post('/comment',(req,res)=>{
     newcomment.save().then((result)=>{
         console.log('comment saved');
         movie.updateOne({imdbID:movieid},{$push:{comments:result._id}}).then(()=>console.log('comment saved to movie db'));
+        res.redirect(`/movie?id=${movieid}`);
     })
 })
 module.exports=router;
