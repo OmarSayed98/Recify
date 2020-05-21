@@ -35,7 +35,6 @@ body{margin: 0;
 .carousel-control-next, .carousel-control-prev{
     height: max-content;
     margin-top: 325px;
-
     width: max-content;
 }
 .carousel-control-next{
@@ -48,22 +47,23 @@ body{margin: 0;
     position: relative;
     display: block;
     left: 7% !important;
-    width: 600px;
-    bottom:450px;
+    width: fit-content;
+    bottom:500px;
     padding-bottom: 20px;
     text-align: left;
-
+    height: fit-content;
 }
 .MovieName{
-    font-size:5.0rem ;
+    font-size:55px;
     margin-left: 0;
-
+    width: fit-content;
+    max-width: 400px;
+    word-wrap: break-word;
 }
 .MovieCategory{
     padding: 2px;
-    width: fit-content;
-    text-align: center;
-    margin-right:10px ;
+    font-size: 25px;
+    font-weight: 400;
 
 }
 
@@ -169,7 +169,7 @@ body{margin: 0;
     width: 250px;
     height:350px;
     margin-right: 20px;
-    opacity:0.95;
+    opacity:0.8;
 }
 
 
@@ -180,9 +180,10 @@ body{margin: 0;
     text-align: center;
     height: 100%;
     margin: 0 auto;
-    -webkit-transition: opacity 0.4s;
-    transition: opacity 0.4s;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
     cursor: pointer;
+
 }
 
 
@@ -207,14 +208,15 @@ body{margin: 0;
     color: orange;
     font-weight: bolder;
     width: fit-content;
-    margin-top:35px;
+    padding-right: 10px;
+    margin-top:20px;
     margin-left: 10px;
     margin-bottom:0;
     padding-bottom:20px;
     display: inline-block;
 }
 .headerData{
-    width:max-content;
+    width:fit-content;
     cursor: pointer;
 }
 
@@ -222,14 +224,6 @@ body{margin: 0;
     color:darkorange;
 }
 
-/*.miniMovieData{
-    width:70%;
-    position: absolute;
-    top:650px;
-    left: 15%;
-    background-color: white;
-    height: 500px;
-}*/
 .carousel-cell:hover{
     opacity: 1;
     -webkit-transition: opacity 0.5s;
@@ -239,6 +233,7 @@ body{margin: 0;
 }
 .carousel-cell:hover img{
     border-radius: 7px;
+
 }
 
 @media only screen and (max-width: 1420px) {
@@ -247,7 +242,6 @@ body{margin: 0;
 }
 @media only screen and (max-width: 1000px) {
     .sliderimg{left:54%;}
-
 }
 @media only screen and (max-width: 768px) {
 
@@ -256,12 +250,32 @@ body{margin: 0;
     .carousel-caption{display:none;}
 }
 
-.slidersMainDivBackground {
-
-    padding-bottom: 30px;
+.BlackslidersMainDivBackground {
+    padding-bottom: 10px;
     color: dimgrey;
+    background-color: rgba(12,12,12,0.8);
+}
+.GreyslidersMainDivBackground{
+    padding-bottom: 10px;
+    color: dimgrey;
+    background-color: rgba(20,20,20,0.8);
+
 }
 
+body::-webkit-scrollbar {
+    width: 11px;
+}
+/* Track */
+body::-webkit-scrollbar-track {
+    background: rgba(105,105,105,0.5);
+    border-radius: 20px;
+}
 
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: orange;
+    cursor: pointer;
+    border-radius: 20px;
+}
 
 * { box-sizing: border-box; }

@@ -1,7 +1,9 @@
 body{margin: 0;
     padding: 0;
     font-family: 'Arial';
-    background-color: #202326;
+    background-image: url("../images/MoviePageBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 .container-fluid{
@@ -13,7 +15,17 @@ body{margin: 0;
 
     width: 95%;
 }
+.MainDiv{
+    background-color: rgba(74,74,74,0.6);
+    width:80%;
+    margin: auto;
+    margin-bottom: 50px;
+    border-radius: 2%;
+    box-shadow:3px 3px 20px 0px rgba(255,140,0,0.6);
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
 
+
+}
 .MovieData {
     width: 95%;
     margin-top: 150px;
@@ -22,6 +34,7 @@ body{margin: 0;
 }
 .DataDiv  p{
     width: 70%;
+    color: white;
 }
 .DataDiv{
   float: left;
@@ -58,7 +71,8 @@ body{margin: 0;
 #likeDislike .dislikeClicked{
     color:red;
 }
-#movieTitle{color: orange;}
+#movieTitle{color: orange;
+            margin-top: 30px;}
 #plot{color: white;
       width: 85%;
       text-align: justify;}
@@ -87,28 +101,38 @@ body{margin: 0;
   width:100%;
   text-align: justify;
   margin-bottom: 20px;
+    color: white;
 }
 .PrintedComments{
   width: 70%;
 
 }
+
 .commentarea{
-  border-radius: 5px;
   height: 150px;
   width: 40%;
+  border-radius: 15px;
+  background-color: rgba(40,40,40,0.6);
+  color: white;
+  padding: 5px;
+  border: 1px solid darkorange;
+  outline: none;
 }
+
 .CommentsDiv{
     width: 95%;
     margin-top: 75px;
+    margin-left: 30px;
 }
 
 .Postbtn{
 margin-top: 2%;
+width: 60px;
 border-radius: 5px;
 border: none;
 background-color: orange;
-margin-bottom: 4%;
-width: 60px;
+margin-bottom: 2.5%;
+
 }
 .Postbtn:hover{
   background-color: darkorange;
@@ -117,8 +141,8 @@ width: 60px;
 .playbtn{
     z-index: 100;
     position: absolute;
-    left: 125px;
-    top: 180px;
+    left: 150px;
+    top: 200px;
     float: left;
     color: white;
     cursor: pointer;
@@ -130,6 +154,8 @@ width: 60px;
 .PosterDiv{
     float: left;
     margin-right: 40px;
+    margin-left: 30px;
+    margin-top: 30px;
 }
 #moviePoster{width:120%;
              }
@@ -198,4 +224,33 @@ width: 60px;
         width: fit-content;
     }
 
+}
+body::-webkit-scrollbar {
+    width: 12px;
+
+
+}
+/* Track */
+body::-webkit-scrollbar-track {
+    background: rgba(105,105,105,0.5);
+    border-radius: 20px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: orange;
+    cursor: pointer;
+    border-radius: 20px;
+}
+::placeholder {
+    color: white !important;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: white !important;
+}
+
+::-ms-input-placeholder {
+    color: white !important;
 }

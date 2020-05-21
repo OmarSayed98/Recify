@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../public/stylesheets/mdb.min.css">
     <link rel="stylesheet" href="../public/stylesheets/homepage.css">
     <link rel="stylesheet" href="../public/stylesheets/header.css">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/footer.css">
     <link rel="stylesheet" href="../public/stylesheets/flickity.css" media="screen">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -159,7 +160,7 @@
             <img class="d-block w-20 sliderimg" src="" alt="First slide" id="sliderimg1" onclick="displayMoviePage('tt4154796')">
             <div class="carousel-caption d-none d-md-block ">
                 <h1 class="MovieName">Joker</h1>
-                <h2 class="MovieYear">2019</h2>
+                <h2 class="MovieYear">(2019)</h2>
                 <p class="MovieCategory">Action</p>
                 <button class="Morebtn"><a href="#">More Info</a></button>
                 <br class="fix">
@@ -174,7 +175,7 @@
             <img class="d-block w-20 sliderimg" src="" alt="Second slide"  id="sliderimg2" onclick="displayMoviePage('tt4154796')">
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="MovieName">Avengers</h1>
-                <h2 class="MovieYear">2018</h2>
+                <h2 class="MovieYear">(2018)</h2>
                 <p class="MovieCategory">Action</p>
                 <button class="Morebtn"><a href="#">More Info</a></button>
                 <br class="fix">
@@ -189,7 +190,7 @@
             <img class="d-block w-20 sliderimg" src="" alt="Third slide"  id="sliderimg3" onclick="displayMoviePage('tt4154796')">
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="MovieName">Inception</h1>
-                <h2 class="MovieYear">2010</h2>
+                <h2 class="MovieYear">(2010)</h2>
                 <p class="MovieCategory">Action</p>
                 <button class="Morebtn"><a href="#">More Info</a></button>
                 <br class="fix">
@@ -215,7 +216,7 @@
 
 
 
-<div class="slidersMainDivBackground"  onmouseenter="sliderShowArrow('trenArrow')" onmouseleave="sliderHideArrow('trenArrow')">
+<div class="BlackslidersMainDivBackground"  onmouseenter="sliderShowArrow('trenArrow')" onmouseleave="sliderHideArrow('trenArrow')">
     <div class="movieSelectionHeader">
         <div class="headerData" onmouseenter="sliderTitleHover('trenShow')" onmouseleave="sliderTitleHoverExit('trenShow')">
             <h2 id='trenTitle' class="mshTitle">Trending Movies</h2>
@@ -260,7 +261,7 @@
     </div>
 </div>
 
-<div class="slidersMainDivBackground"  onmouseenter="sliderShowArrow('recArrow')" onmouseleave="sliderHideArrow('recArrow')">
+<div class="GreyslidersMainDivBackground"  onmouseenter="sliderShowArrow('recArrow')" onmouseleave="sliderHideArrow('recArrow')">
     <div class="movieSelectionHeader">
         <div class="headerData" onmouseenter="sliderTitleHover('recShow')" onmouseleave="sliderTitleHoverExit('recShow')">
             <h2 id='recTitle' class="mshTitle">Recommended Movies</h2>
@@ -306,10 +307,51 @@
 </div>
 
 <div>
-    <h1>Helloo</h1>
+
 
 </div>
 
+<footer id="footer">
+        <div class="all">
+            <div class="first">
+                <h4 class="footerTitle">Menu</h4>
+                <ul>
+                    <li><a href="#" class="footerLinks">Home</a></li>
+                    <li><a href="#" class="footerLinks">Recommendations</a></li>
+                    <li><a href="#" class="footerLinks">Coming Soon</a></li>
+
+                </ul>
+            </div>
+
+            <div class="second">
+                <h4 class="footerTitle">Profile</h4>
+                <ul>
+
+                    <li><a href="#" class="footerLinks">Sign in</a></li>
+                    <li><a href="#" class="footerLinks">Sign up</a></li>
+                    <li><a href="#" class="footerLinks">Movies</a></li>
+                    <li><a href="#" class="footerLinks">Tv Shows</a></li>
+
+                </ul>
+            </div>
+
+            <div class="third">
+                <h4 class="footerTitle">LEAVE A MESSAGE</h4>
+                <textarea class="footerMsg" name="Message" placeholder="Message"></textarea>
+                <button type="submit" name="submit">submit</button>
+            </div>
+        </div>
+
+        <div class="social">
+            <a href="https://www.facebook.com/" id="fblink"><i class="fab fa-facebook fa-3x socialLink"></i></a>
+            <a href="https://www.google.com/" id="golink"><i class="fab fa-google fa-3x socialLinks"></i></a>
+            <a href="https://www.instagram.com/" id="iglink"><i class="fab fa-instagram fa-3x socialLinks"></i></a>
+            <a href="https://www.youtube.com/" id="ytlink"><i class="fab fa-youtube fa-3x socialLinks"></i></a>
+        </div>
+
+
+
+</footer>
 
 <script type="text/javascript" src="../public/javascripts/homepage.js"></script>
 <script type="text/javascript" src="../public/javascripts/header.js"></script>

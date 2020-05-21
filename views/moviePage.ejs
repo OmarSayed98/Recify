@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="../public/stylesheets/mdb.min.css">
     <link rel="stylesheet" href="../public/stylesheets/moviePage.css">
-    <link rel="stylesheet" href="../public/stylesheets/headerMoviePage.css">
+    <link rel="stylesheet" href="../public/stylesheets/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
@@ -145,7 +145,7 @@
 
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid MainDiv">
   <div class="MovieData">
 
   <div class="PosterDiv" id="poster">
@@ -198,7 +198,7 @@
         <div class="CommentsEntry">
             <h3 class="CommentRequestTitle CommentRequestBorderFix">Leave a comment</h3>
             <form class="Comments" action="<%=curl%>" method="post">
-                <textarea class="commentarea" name="Comments" placeholder="Write Your Comment Here"></textarea>
+                <textarea class="commentarea" name="Comments"  maxlength="300" placeholder="Write Your Comment Here"></textarea>
                 <br>
                 <button class="Postbtn" type="submit" name="Postbtn">Post</button>
             </form>

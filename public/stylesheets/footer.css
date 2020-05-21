@@ -1,0 +1,90 @@
+footer
+{
+background-color: rgba(9,9,9,1);
+color: white;
+width: 100%;
+
+}
+
+.all{
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin: auto;
+  padding:0;
+
+
+}
+
+footer div{padding: 30px;}
+
+footer ul
+{
+list-style-type: none;
+  padding-left: 0;
+}
+
+.footerTitle{width: fit-content;
+  padding-right: 4px;
+  border-bottom: 1px solid orange;
+  margin-bottom: 20px;
+}
+
+
+footer .third h4{margin-left: 0px;}
+footer .third button{
+  background-color: orange;
+  border-radius: 5px;
+  border:none;
+  width:80px;}
+footer .third button:hover{background-color: darkorange;}
+footer .third hr{margin-left: 0px;}
+
+
+footer .first{display: flex;
+              flex-direction: column;
+              width: 300px;}
+footer .second{display:flex;
+  flex-direction: column;
+width: 300px;}
+footer .third{display: flex;
+              flex-direction: column;
+              width: 400px;
+              }
+
+footer textarea{display:flex;
+  height: 90px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  background-color: rgba(40,40,40,0.6);
+  color: white;
+  padding: 5px;
+  border: 1px solid darkorange;
+  outline: none;
+}
+
+footer a
+{
+  text-decoration: none;
+  color: white;
+  width: fit-content;
+}
+
+footer .footerLinks:hover
+{
+  font-size:20px;
+  color: orange;
+}
+.social{
+  display: flex;
+  width: 30%;
+  margin: auto;
+}
+.social a{margin-right:30px;}
+#fblink:hover{color: rgb(7,118,232) !important;}
+#golink:hover{color: rgb(52,168,83) !important;}
+#iglink:hover{color: rgb(147,57,193) !important;}
+#ytlink:hover{color: red !important;}
+
+.footerMsg{width:100%;}
+
