@@ -28,6 +28,7 @@
     "morgan": "~1.9.1",
     "movie-trailer": "^2.0.6",
     "ms": "^2.1.2",
+    "node-cache": "^5.1.0",
     "node-fetch": "^2.6.0",
     "nodemailer": "^6.4.6",
     "omdbapi": "^3.0.0",
