@@ -88,82 +88,31 @@
 
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": false, "cellAlign":"left"} '>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/knives.jpg">
-            <input type="hidden" value="">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/1.jpeg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/2.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/3.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/4.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/download.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/knives.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/knives.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/knives.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/knives.jpg">
-        </div>
+        <%imdbid_poster.forEach((movie)=>{%>
+            <div class="carousel-cell" onclick="displayMoviePage(movie.id)">
+                <img src=<%=movie.poster%>>
+                <input type="hidden" value="">
+            </div>
+        <%})%>
     </div>
 </div>
 
 <div class="GreyslidersMainDivBackground"  onmouseenter="sliderShowArrow('recArrow')" onmouseleave="sliderHideArrow('recArrow')">
     <div class="movieSelectionHeader">
         <div class="headerData" onmouseenter="sliderTitleHover('recShow')" onmouseleave="sliderTitleHoverExit('recShow')">
-            <h2 id='recTitle' class="mshTitle">Recommended Movies</h2>
+            <h2 id='recTitle' class="mshTitle">Trending Tv Shows</h2>
             <p id="recShow" class="showMore">show more</p>
             <i class="fas fa-angle-right titleArrow" id="recArrow"></i>
         </div>
     </div>
-
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": false, "cellAlign":"left"} '>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/knives.jpg">
+        <%imdb_poster_tv.forEach((tv)=>{%>
+        <div class="carousel-cell" onclick="displayMoviePage(tv.id)">
+            <img src=<%=tv.poster%>>
             <input type="hidden" value="">
         </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/1.jpeg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/2.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/3.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/4.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/download.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/knives.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/knives.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/knives.jpg">
-        </div>
-        <div class="carousel-cell" onclick="displayMoviePage('tt4154796')">
-            <img src="../public/images/knives.jpg">
-        </div>
+        <%})%>
     </div>
 </div>
 
