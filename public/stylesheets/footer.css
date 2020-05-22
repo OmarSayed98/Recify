@@ -63,6 +63,8 @@ footer textarea{display:flex;
   outline: none;
 }
 
+.footerLinks{color:darkgrey;}
+
 footer a
 {
   text-decoration: none;
@@ -87,4 +89,3 @@ footer .footerLinks:hover
 #ytlink:hover{color: red !important;}
 
 .footerMsg{width:100%;}
-
