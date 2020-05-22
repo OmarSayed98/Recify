@@ -89,7 +89,7 @@
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": false, "cellAlign":"left"} '>
         <%imdbid_poster.forEach((movie)=>{%>
-            <div class="carousel-cell" onclick="displayMoviePage(movie.id)">
+            <div class="carousel-cell" onclick="displayMoviePage('<%=movie.id%>')">
                 <img src=<%=movie.poster%>>
                 <input type="hidden" value="">
             </div>
@@ -108,7 +108,7 @@
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": false, "cellAlign":"left"} '>
         <%imdb_poster_tv.forEach((tv)=>{%>
-        <div class="carousel-cell" onclick="displayMoviePage(tv.id)">
+        <div class="carousel-cell" onclick="displayMoviePage('<%=tv.id%>')">
             <img src=<%=tv.poster%>>
             <input type="hidden" value="">
         </div>
