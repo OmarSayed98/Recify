@@ -21,7 +21,7 @@ router.get('/',redirect,(req,res)=>{
     }
     request(option).then(resp=>{
         let trending_id=[];
-        trending_id=resp.results.map((movie)=>{
+        trending_id=resp.results.slice(0,8).map((movie)=>{
             const optionid={
                 url:`https://api.themoviedb.org/3/movie/${movie.id}/external_ids?api_key=9bde952e56ff27d1016ff6144cbf27c9`,
                 json:true
@@ -32,7 +32,7 @@ router.get('/',redirect,(req,res)=>{
         })
         request(optiontv).then(resptv=>{
             let trending_id_tv=[];
-            trending_id_tv=resptv.results.map((tv)=>{
+            trending_id_tv=resptv.results.slice(0,8).map((tv)=>{
                 const optionid_tv={
                     url:`https://api.themoviedb.org/3/tv/${tv.id}/external_ids?api_key=9bde952e56ff27d1016ff6144cbf27c9&language=en-US`,
                     json:true
