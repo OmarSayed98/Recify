@@ -70,8 +70,8 @@ body{font-family: 'Roboto',sans-serif;
     margin-right: 10px;}
 .NotificationBadge{
     position: relative;
-    top: -10px;
-    right: 3px;
+    top: -15px;
+    right: 5px;
     padding-right:3.2px;
     padding-left:2.8px;
     font-size: 0.8rem;
@@ -179,7 +179,7 @@ body{font-family: 'Roboto',sans-serif;
     color: white;
     float: right;
     overflow-x:visible;
-    width: 134px;
+    width: 118px;
 }
 
 .notificationMenu{
