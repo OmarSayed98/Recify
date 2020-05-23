@@ -38,7 +38,7 @@ app.use(function(req,res,next){
 app.use(cookieParser());
 app.use('/public',express.static(path.join(__dirname, 'public')));
 route(app);
-const tmdb=cron.schedule('33 14 * * SAT',()=>{
+const tmdb=cron.schedule('26 16 * * SAT',()=>{
     const option={
         url:"https://api.themoviedb.org/3/trending/movie/week?api_key=9bde952e56ff27d1016ff6144cbf27c9",
         json:true
@@ -61,7 +61,7 @@ const tmdb=cron.schedule('33 14 * * SAT',()=>{
             return request(optionid).then(respid=>{
                 return {id:respid.imdb_id,poster:`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`};
             }).catch(err=>console.log(err));
-        })
+        });
         request(optiontv).then(resptv=>{
             let trending_id_tv=[];
             trending_id_tv=resptv.results.map((tv)=>{
