@@ -2,6 +2,8 @@ const express=require('express');
 const router=express.Router();
 const nodemailer=require('nodemailer');
 const trending=require('../models/trending');
+const sanitize = require('mongo-sanitize');
+const sanitizeHtml = require('sanitize-html');
 function redirect(req,res,next){
     if(!req.session.name){
         res.redirect('/signin');
@@ -21,7 +23,7 @@ router.get('/signout',redirect,function(req,res){
     res.redirect('/signin');
 });
 router.post('/feedback',(req,res)=>{
-    const content=req.body.Message;
+    const content=sanitizeHtml(req.body.Message);
     const transport=nodemailer.createTransport({
         service:'Gmail',
         secure:false,

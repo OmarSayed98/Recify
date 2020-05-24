@@ -231,7 +231,7 @@ router.post('/comment',(req,res)=>{
     const query=url.parse(req.url,true).query;
     const movieid=query.movieid;
     const userid=query.user_id;
-    const content=req.body.Comments;
+    const content=sanitizeHtml(sanitize(req.body.Comments));
     const newcomment=new comment({
         content:content,
         owner:userid

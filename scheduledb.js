@@ -1,7 +1,7 @@
 const cron=require('node-cron');
 const request=require('request-promise');
 const trend=require('./models/trending');
-const tmdb=cron.schedule('56 19 * * SUN',()=>{
+const tmdb=cron.schedule('41 20 * * SUN',()=>{
     const option={
         url:"https://api.themoviedb.org/3/trending/movie/week?api_key=9bde952e56ff27d1016ff6144cbf27c9",
         json:true
@@ -11,7 +11,7 @@ const tmdb=cron.schedule('56 19 * * SUN',()=>{
         json:true
     };
     const topratedoptioin={
-        url:'https://api.themoviedb.org/3/movie/upcoming?api_key=9bde952e56ff27d1016ff6144cbf27c9&language=en-US&page=1',
+        url:'https://api.themoviedb.org/3/movie/popular?api_key=9bde952e56ff27d1016ff6144cbf27c9&language=en-US&page=1',
         json:true
     };
     request(option).then(resp=>{
