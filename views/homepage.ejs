@@ -21,7 +21,7 @@
             <a href="http://localhost:3000/movie?id=<%=top[0].id%>"><img class="d-block w-20 sliderimg" src=<%=top[0].poster%> alt="First slide" id="sliderimg1"></a>
             <div class="carousel-caption d-none d-md-block ">
                 <h1 class="MovieName"><%=top[0].data.title%></h1>
-                <h2 class="MovieYear"><%top[0].data.release_date.substr(0,4)%></h2>
+                <h2 class="MovieYear"><%=top[0].data.release_date.substr(0,4)%></h2>
                 <a href="http://localhost:3000/movie?id=<%=top[0].id%>"><button class="Morebtn">More Info</button></a>
                 <br class="fix">
                 <i class="fas fa-thumbs-up fa-2x"></i>
@@ -34,7 +34,7 @@
                 <a href="http://localhost:3000/movie?id=<%=top[i].id%>"><img class="d-block w-20 sliderimg" src=<%=top[i].poster%> alt="Second slide"  id="sliderimg2"></a>
                 <div class="carousel-caption d-none d-md-block ">
                     <h1 class="MovieName"><%=top[i].data.title%></h1>
-                    <h2 class="MovieYear"><%top[i].data.release_date.substr(0,4)%></h2>
+                    <h2 class="MovieYear"><%=top[i].data.release_date.substr(0,4)%></h2>
                     <a href="http://localhost:3000/movie?id=<%=top[i].id%>"><button class="Morebtn">More Info</button></a>
                     <br class="fix">
                     <i class="fas fa-thumbs-up fa-2x"></i>
