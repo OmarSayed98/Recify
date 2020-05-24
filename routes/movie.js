@@ -8,6 +8,8 @@ const movie=require('../models/movies');
 const user=require('../models/users');
 const comment=require('../models/comments');
 const {ObjectId}=require('mongodb');
+const sanitize = require('mongo-sanitize');
+const sanitizeHtml = require('sanitize-html');
 const findusers=(commentarr)=>{
     return new Promise(async(resolve,reject)=>{
         let result = await comment.find({_id: { $in: commentarr }})
