@@ -3,6 +3,8 @@ const router=express.Router();
 const users=require('../models/users');
 const crypto=require('crypto');
 const nodemailer=require('nodemailer');
+const sanitize = require('mongo-sanitize');
+const sanitizeHtml = require('sanitize-html');
 function redirect(req,res,next){
     if(req.session.name){
         res.redirect('/home');
@@ -37,9 +39,9 @@ function rand(){
 }
 function savedb(data,rand){
     const user=new users({
-        name:data.Name,
-        email:data.UserEmail,
-        password:data.Password,
+        name:sanitizeHtml(sanitize(data.Name)),
+        email:sanitizeHtml(sanitize(data.UserEmail)),
+        password:sanitizeHtml(sanitize(data.Password)),
         confirmtoken:rand
     });
     user.save().then(()=>console.log("saved to db"));
@@ -63,7 +65,7 @@ router.get('/',redirect,function(req,res){
 router.post('/',redirect,function(req,res){
     const data=req.body;
     const errors=[];
-    const email=data.UserEmail.toLowerCase();
+    const email=sanitizeHtml(sanitize(data.UserEmail.toLowerCase()));
     users.findOne({email:email}).then(function(result){
         if(!result){
             let rando;

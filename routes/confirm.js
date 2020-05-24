@@ -1,13 +1,16 @@
 const express=require('express');
 const router=express.Router();
 const users=require('../models/users');
+const sanitize = require('mongo-sanitize');
+const sanitizeHtml = require('sanitize-html');
 function redirect(req,res,next){
     if(req.session.name)
         return res.redirect('/home');
     next();
 }
 router.get('/:token',redirect,function(req,res){
-    users.findOne({confirmtoken:req.params.token}).then((result)=>{
+    const token=sanitizeHtml(sanitize(req.params.token));
+    users.findOne({confirmtoken:token}).then((result)=>{
         if(!result){
             req.flash('error_msg','invalid token');
             res.redirect('/signin');
@@ -17,7 +20,7 @@ router.get('/:token',redirect,function(req,res){
             req.session.user_id=result._id;
             result.save().then((err)=>console.log(err));
             req.flash('confirm','email confirmed');
-            req.session.name=result.name;
+            req.session.name=sanitizeHtml(sanitize(result.name));
             res.redirect('/home');
         }
     });
