@@ -22,10 +22,8 @@
             <div class="carousel-caption d-none d-md-block ">
                 <h1 class="MovieName"><%=top[0].data.title%></h1>
                 <h2 class="MovieYear"><%top[0].data.release_date.substr(0,4)%></h2>
-                <button class="Morebtn"><a href="#">More Info</a></button>
+                <a href="http://localhost:3000/movie?id=<%=top[0].id%>"><button class="Morebtn">More Info</button></a>
                 <br class="fix">
-                <i class="fas fa-star fa-2x sliderratingicon"></i>
-                <p id="sliderRating1" class="sliderRating"><%=top[0].data.vote_average%></p>
                 <i class="fas fa-thumbs-up fa-2x"></i>
                 <i class="fas fa-thumbs-down fa-2x"></i>
 
@@ -37,10 +35,8 @@
                 <div class="carousel-caption d-none d-md-block ">
                     <h1 class="MovieName"><%=top[i].data.title%></h1>
                     <h2 class="MovieYear"><%top[i].data.release_date.substr(0,4)%></h2>
-                    <button class="Morebtn"><a href="#">More Info</a></button>
+                    <a href="http://localhost:3000/movie?id=<%=top[i].id%>"><button class="Morebtn">More Info</button></a>
                     <br class="fix">
-                    <i class="fas fa-star fa-2x sliderratingicon"></i>
-                    <p id="sliderRating1" class="sliderRating"><%=top[i].data.vote_average%></p>
                     <i class="fas fa-thumbs-up fa-2x"></i>
                     <i class="fas fa-thumbs-down fa-2x"></i>
 

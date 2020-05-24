@@ -22,10 +22,10 @@
 .sliderimg{
     position: relative;
     left: 75%;
-    margin-top: 100px;
+    margin-top: 125px;
     margin-bottom: 4%;
     cursor: pointer;
-
+    width: 300px;
 }
 
 .ctrl{color: orange;
@@ -49,7 +49,7 @@
     display: block;
     left: 7% !important;
     width: fit-content;
-    bottom:500px;
+    bottom:450px;
     padding-bottom: 20px;
     text-align: left;
     height: fit-content;
@@ -60,6 +60,7 @@
     width: fit-content;
     max-width: 400px;
     word-wrap: break-word;
+    color: orange;
 }
 .MovieCategory{
     padding: 2px;
@@ -76,7 +77,7 @@
     width: 100px;
     opacity: 0.75;
     margin-bottom: 15px;
-
+    color: white;
 }
 .Morebtn a{
     text-decoration: none;
@@ -246,7 +247,7 @@
 }
 @media only screen and (max-width: 768px) {
 
-    .sliderimg{left:27.5%;
+    .sliderimg{left:20%;
                cursor: pointer;}
     .carousel-caption{display:none;}
 }
