@@ -6,7 +6,7 @@
     <%include ./Components/allLinks.ejs %>
     <link rel="stylesheet" href="../public/stylesheets/homepage.css">
 </head>
-<body onload="loadSliderImages()" class="hpBody">
+<body  class="hpBody">
 
 <%include ./Components/header.ejs %>
 
@@ -18,36 +18,35 @@
     </ol>
     <div class="carousel-inner ">
         <div class="carousel-item active">
-            <a href="http://localhost:3000/movie?id=tt4154796"><img class="d-block w-20 sliderimg" src="" alt="First slide" id="sliderimg1"></a>
+            <a href="http://localhost:3000/movie?id=<%=top[0].id%>"><img class="d-block w-20 sliderimg" src=<%=top[0].poster%> alt="First slide" id="sliderimg1"></a>
             <div class="carousel-caption d-none d-md-block ">
-                <h1 class="MovieName">Joker</h1>
-                <h2 class="MovieYear">(2019)</h2>
-                <p class="MovieCategory">Action</p>
+                <h1 class="MovieName"><%=top[0].data.title%></h1>
+                <h2 class="MovieYear"><%top[0].data.release_date.substr(0,4)%></h2>
                 <button class="Morebtn"><a href="#">More Info</a></button>
                 <br class="fix">
                 <i class="fas fa-star fa-2x sliderratingicon"></i>
-                <p id="sliderRating1" class="sliderRating">7.5/10</p>
+                <p id="sliderRating1" class="sliderRating"><%=top[0].data.vote_average%></p>
                 <i class="fas fa-thumbs-up fa-2x"></i>
                 <i class="fas fa-thumbs-down fa-2x"></i>
 
             </div>
         </div>
-        <div class="carousel-item">
-           <a href="http://localhost:3000/movie?id=tt4154796"><img class="d-block w-20 sliderimg" src="" alt="Second slide"  id="sliderimg2"></a>
-            <div class="carousel-caption d-none d-md-block">
-                <h1 class="MovieName">Avengers</h1>
-                <h2 class="MovieYear">(2018)</h2>
-                <p class="MovieCategory">Action</p>
-                <button class="Morebtn"><a href="#">More Info</a></button>
-                <br class="fix">
-                <i class="fas fa-star fa-2x sliderratingicon"></i>
-                <p id="sliderRating2" class="sliderRating">7.5/10</p>
-                <i class="fas fa-thumbs-up fa-2x"></i>
-                <i class="fas fa-thumbs-down fa-2x"></i>
+        <%for(let i=1;i<top.length;i++){%>
+            <div class="carousel-item">
+                <a href="http://localhost:3000/movie?id=<%=top[i].id%>"><img class="d-block w-20 sliderimg" src=<%=top[i].poster%> alt="Second slide"  id="sliderimg2"></a>
+                <div class="carousel-caption d-none d-md-block ">
+                    <h1 class="MovieName"><%=top[i].data.title%></h1>
+                    <h2 class="MovieYear"><%top[i].data.release_date.substr(0,4)%></h2>
+                    <button class="Morebtn"><a href="#">More Info</a></button>
+                    <br class="fix">
+                    <i class="fas fa-star fa-2x sliderratingicon"></i>
+                    <p id="sliderRating1" class="sliderRating"><%=top[i].data.vote_average%></p>
+                    <i class="fas fa-thumbs-up fa-2x"></i>
+                    <i class="fas fa-thumbs-down fa-2x"></i>
 
+                </div>
             </div>
-        </div>
-
+        <%}%>
     </div>
 
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
