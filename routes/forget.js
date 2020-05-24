@@ -5,6 +5,8 @@ const user=require('../models/users');
 const crypto=require('crypto');
 const async=require('async');
 const nodemailer=require('nodemailer');
+const sanitize = require('mongo-sanitize');
+const sanitizeHtml = require('sanitize-html');
 function redirect(req,res,next){
     if(req.session.name)
         return res.redirect('/home');
@@ -22,7 +24,7 @@ router.post('/',redirect,function(req,res){
             });
         },
         function(token,done){
-            const email=req.body.UserEmail;
+            const email=sanitizeHtml(sanitize(req.body.UserEmail));
             const error=[];
             user.findOne({email:email}).then(function(result){
                 if(!result){
@@ -53,7 +55,7 @@ router.post('/',redirect,function(req,res){
                 }
             });
             const mailoption={
-                to:result.email,
+                to:sanitizeHtml(sanitize(result.email)),
                 from:process.env.GMAIL,
                 subject:'Recify Password reset',
                 text:'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
