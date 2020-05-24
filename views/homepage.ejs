@@ -19,7 +19,7 @@
     </ol>
     <div class="carousel-inner ">
         <div class="carousel-item active">
-            <a href="http://localhost:3000/movie?id=<%=top[0].id%>"><img class="d-block w-20 sliderimg" src=<%=top[0].poster%> alt="First slide" id="sliderimg1"></a>
+            <a href="http://localhost:3000/movie?id=<%=top[0].id%>"><img class="d-block w-20 sliderimg" src='<%=top[0].poster%>' alt="<%=top[0].data.title%>" id="sliderimg1"></a>
             <div class="carousel-caption d-none d-md-block ">
                 <h1 class="MovieName"><%=top[0].data.title%></h1>
                 <h2 class="MovieYear"><%=top[0].data.release_date.substr(0,4)%></h2>
@@ -32,7 +32,7 @@
         </div>
         <%for(let i=1;i<top.length;i++){%>
             <div class="carousel-item">
-                <a href="http://localhost:3000/movie?id=<%=top[i].id%>"><img class="d-block w-20 sliderimg" src=<%=top[i].poster%> alt="Second slide"  id="sliderimg2"></a>
+                <a href="http://localhost:3000/movie?id=<%=top[i].id%>"><img class="d-block w-20 sliderimg" src='<%=top[i].poster%>' alt="<%=top[0].data.title%>"  id="sliderimg2"></a>
                 <div class="carousel-caption d-none d-md-block ">
                     <h1 class="MovieName"><%=top[i].data.title%></h1>
                     <h2 class="MovieYear"><%=top[i].data.release_date.substr(0,4)%></h2>

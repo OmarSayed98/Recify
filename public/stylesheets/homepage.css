@@ -55,10 +55,10 @@
     height: fit-content;
 }
 .MovieName{
-    font-size:55px;
+    font-size:50px;
     margin-left: 0;
     width: fit-content;
-    max-width: 400px;
+    max-width: 450px;
     word-wrap: break-word;
     color: orange;
 }
