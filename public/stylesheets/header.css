@@ -142,38 +142,40 @@ body{font-family: 'Roboto',sans-serif;
 .searchResult{
     margin-left: 50px;
     padding-left: 0.1px;
-    height: max-content;
+    max-height: 500px;
     background: rgba(20,20,20,0.8);
     border-radius: 7px;
     position: relative;
     display:none;
-    overflow-y: hidden;
+    overflow-y: scroll;
 
 }
-.searchResult p{
+.theResult p{
                 margin-left: 10px;
                 margin-bottom: 7px;
                 float: left;
                 width: 70%;
                 margin-top: 40px;
                 }
-.searchResult img{width: 15%;
+.theResult img{width: 15%;
                   float: left;
                   margin-bottom: 7px;
                   margin-top: 7px;
                   margin-left: 7px;
                   }
+
 .theResult {
+    width: fit-content;
+    height: fit-content;
+    color: white;
     cursor: pointer;
-    border-bottom: 1px solid  rgba(20,20,20,0.8);
+    border-bottom: 1px solid rgba(20,20,20,0.8) !important;
 }
 
-.theResult:last-child{  border-bottom:none;}
+.theResult:last-child{border-bottom:none;}
 .theResult:hover{
-
-    color: orange;
     background-color: rgba(12,12,12,0.8);
-
+    color:orange !important;
 }
 .notifDiv{
     color: white;
@@ -228,3 +230,17 @@ body{font-family: 'Roboto',sans-serif;
 /*.notificationMenu::-webkit-scrollbar-thumb:hover {
     background: darkorange;
 }*/
+.searchResult::-webkit-scrollbar {
+    width: 5px;
+
+}
+/* Track */
+.searchResult::-webkit-scrollbar-track {
+
+}
+
+/* Handle */
+.searchResult::-webkit-scrollbar-thumb {
+    background: rgba(60,60,60,1);
+    border-radius: 3px;
+}

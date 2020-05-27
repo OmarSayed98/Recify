@@ -21,33 +21,46 @@ function sandwich(){
 
 function searchMenu()
 {
+  var key="&apikey=e7aad19";
   var searchResult = document.getElementById("searchResult");
   if(searchResult.style.display!=="block"){
     searchResult.style.display="block";
   }
   var movie=document.getElementById('searchData').value;
-  var key="&apikey=e7aad19";
+  $("#searchResult").empty();
   var pageNum =1;
   $.getJSON('http://www.omdbapi.com/?s='+movie+'&page='+pageNum+ key).then(function(response){
     var t=JSON.stringify(response);
     var tt=JSON.parse(t);
-
-
-    for(var i=0;i<5;i++)
+    for(var i=0;i<tt.Search.length;i++)
     {
-
-      var movieName = document.querySelectorAll('#searchResult p')[i];
-      var moviePoster = document.querySelectorAll("#searchResult img")[i];
-      movieName.innerHTML= tt.Search[i].Title;
-      var movieId = document.querySelectorAll('#searchResult input')[i];
-      movieId.value=tt.Search[i].imdbID;
+      var link = document.createElement('a');
+      link.classList.add("searchListMovieLink");
+      var resultDiv = document.createElement('div');
+      resultDiv.classList.add("theResult");
+      var moviename = document.createElement('p');
+      moviename.classList.add("searchListMovieName");
+      var moviePoster = document.createElement('img');
+      moviePoster.classList.add("searchListMoviePoster");
+      var thefix = document.createElement('br');
+      thefix.classList.add("fix");
+      searchResult.appendChild(link);
+      var thelink=document.getElementsByClassName("searchListMovieLink")[i];
+      thelink.appendChild(resultDiv);
+      resultDiv.appendChild(moviePoster);
+      resultDiv.appendChild(moviename);
+      resultDiv.appendChild(thefix);
+      var movieId=tt.Search[i].imdbID;
+      thelink.href="http://localhost:3000/movie?id="+movieId;
+      var themoviename=document.getElementsByClassName("searchListMovieName")[i];
+      themoviename.innerHTML=tt.Search[i].Title;
+      var themovieposter=document.getElementsByClassName("searchListMoviePoster")[i];
       if(tt.Search[i].Poster!=="N/A")
       {
-
-        moviePoster.src=tt.Search[i].Poster;
+       themovieposter.src=tt.Search[i].Poster;
       }
       else{
-        moviePoster.src="../public/images/noposter.jpg";
+        themovieposter.src="../public/images/noposter.jpg";
       }
 
     }
@@ -67,19 +80,6 @@ function notificationMenu()
   }
 }
 
-function sendMovieId(selection)
-{
-
-  var movieId= selection.getElementsByTagName('input')[0].value;
-
-  $.getJSON('http://www.omdbapi.com/?i='+movieId+ key).then(function(res){
-    /*var http = new XMLHttpRequest();
-    http.open('POST', 'http://localhost:3000/search', true);
-    http.setRequestHeader("Content-type", "application/json");
-    http.send(JSON.stringify(res));*/
-    window.location.href="http://localhost:3000/movie?id="+movieId;
-  });
-}
 
 $(document).click(function(e) {
 
