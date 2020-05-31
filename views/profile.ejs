@@ -2,9 +2,339 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>Recify</title>
+    <%include ./Components/allLinks.ejs %>
+    <link rel="stylesheet" href="../public/stylesheets/Profile.css">
 
+</head>
+<body class="Pbody">
+
+<div class="header">
+
+    <div class="logo">
+        <a href="/home"><img src="../public/images/logo.png" class="headerLogo"></a>
+    </div>
+    <div class="NavBarContentSelection">
+
+        <a href="#"> Movies</a>
+
+        <div class="vl"></div>
+
+        <a href="#">TV shows</a>
+    </div>
+
+    <div id="searchmenu">
+        <div id="searchbar">
+            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                       aria-label="Search" id="searchData" onkeyup="searchMenu()">
+            </form>
+        </div>
+        <div class="searchResult" id="searchResult">
+
+        </div>
+
+    </div>
+
+
+    <div class="NavBarMenu">
+
+        <div class="NavBarProfileLink">
+            <a href="home/signout">Sign out <i class="fa fa-user"></i></a>
+            <div class="vr"></div>
+            <div class="notifDiv" id="notifDiv">
+                <p class="notificationP" onclick="notificationMenu()">Notifications <i class="fa fa-bell"></i>
+                    <span class="NotificationBadge">3</span>
+                </p>
+                <br>
+                <div class="notificationMenu" id="notifications">
+
+                    <p>This is a notification</p>
+                    <p>This is a a long notification</p>
+                    <p>This is a notification</p>
+                    <p>This is a a long notification</p>
+                    <p>This is a notification</p>
+                    <p>This is a a long notification........</p>
+                    <p>This is a notification</p>
+                    <p>This is a a long notification</p>
+                    <p>This is a notification</p>
+                    <p>This is a a long notification</p>
+                </div>
+
+            </div>
+
+
+            <div class="vr"></div>
+            <a href="/profile">Bayza <i class="fa fa-user-circle"></i></a>
+
+        </div>
+
+
+    </div>
+
+    <div id="sandwichMenu" class="sandwichMenu">
+        <i id="sanmenu" class="fa fa-bars fa-2x" onclick="sandwich()"></i>
+
+        <div id="smallmenu">
+            <a href="#"> Movies</a>
+
+            <a href="#">TV shows</a>
+
+            <a href="/profile">Bayza <i class="fa fa-user-circle"></i></a>
+
+            <p class="notificationP">Notifications <i class="fa fa-bell"></i>
+                <span class="NotificationBadge">3</span>
+            </p>
+
+            <a href="home/signout">Sign out <i class="fa fa-user"></i></a>
+
+            <div id="sbar">
+                <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+
+                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                           aria-label="Search">
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid ProfileMainDiv">
+    <div class="row">
+        <div class="col-3">
+            <div class="nav flex-column nav-pills Submenu " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-Profile-tab" data-toggle="pill" href="#v-pills-Profile" role="tab" aria-controls="v-pills-Profile" aria-selected="true">Profile</a>
+                <a class="nav-link" id="v-pills-EditProfile-tab" data-toggle="pill" href="#v-pills-EditProfile" role="tab" aria-controls="v-pills-EditProfile" aria-selected="false">Edit Profile</a>
+                <a class="nav-link" id="v-pills-LikedMoviesTvShows-tab" data-toggle="pill" href="#v-pills-LikedMoviesTvShows" role="tab" aria-controls="v-pills-LikedMoviesTvShows" aria-selected="false">Liked Movies/TvShows</a>
+                <a class="nav-link" id="v-pills-DislikedMoviesTvShows-tab" data-toggle="pill" href="#v-pills-DislikedMoviesTvShows" role="tab" aria-controls="v-pills-DislikedMoviesTvShows" aria-selected="false">Disliked Movies/TvShows</a>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-Profile" role="tabpanel" aria-labelledby="v-pills-Profile-tab">
+                    <img class="ProfilePic" src="../public/images/faceorange.png">
+                    <div class="ProfileData">
+                        <p class="Name">Name: Hatem Tarek</p>
+              git           <p class="borderfix emptyP"><p>
+                        <p class="Email">Email: hatem1111998@gmail.com</p>
+                        <p class="borderfix emptyP"><p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-EditProfile" role="tabpanel" aria-labelledby="v-pills-EditProfile-tab">
+                    <img class="ProfilePic" src="../public/images/faceorange.png">
+                    <form action="#" method="post" class="EditProfile">
+                        <label for="Name">Change Name:</label>
+                        <input class="Input" type="text" id="Name" name="Name">
+                        <br class="fix">
+                        <br class="fix">
+                        <label for="Email">Change Email:</label>
+                        <input class="Input" type="email" id="Email" name="Email">
+                        <br class="fix">
+                        <br class="fix">
+                        <label for="OPass">Enter Old Password:</label>
+                        <input class="Input" type="password" id="OPass" name="OPass">
+                        <br class="fix">
+                        <br class="fix">
+                        <label for="NPass">Enter New Password:</label>
+                        <input class="Input" type="password" id="NPass" name="NPass">
+                        <br class="fix">
+                        <br class="fix">
+                        <button class="SBtn">Submit</button>
+                    </form>
+
+                </div>
+                <div class="tab-pane fade" id="v-pills-LikedMoviesTvShows" role="tabpanel" aria-labelledby="v-pills-LikedMoviesTvShows-tab">
+
+                    <div class="BlackslidersMainDivBackground">
+                        <div class="movieSelectionHeader">
+                            <div class="headerData">
+                                <h2 class="MTVTile">Liked Movies</h2>
+                            </div>
+                        </div>
+                        <div class="carousel movieSelectionSlider"
+                             data-flickity='{"contain": true ,"pageDots": false,"draggable": false} '>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="GreyslidersMainDivBackground">
+                        <div class="movieSelectionHeader">
+                            <div class="headerData">
+                                <h2 class="MTVTile">Liked TV Shows</h2>
+                            </div>
+                        </div>
+                        <div class="carousel movieSelectionSlider"
+                             data-flickity='{"contain": true ,"pageDots": false,"draggable": false} '>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-DislikedMoviesTvShows" role="tabpanel" aria-labelledby="v-pills-DislikedMoviesTvShows-tab">
+
+                    <div class="BlackslidersMainDivBackground">
+                        <div class="movieSelectionHeader">
+                            <div class="headerData">
+                                <h2 class="MTVTile">Disliked Movies</h2>
+                            </div>
+                        </div>
+                        <div class="carousel movieSelectionSlider"
+                             data-flickity='{"contain": true ,"pageDots": false,"draggable": false} '>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="GreyslidersMainDivBackground">
+                        <div class="movieSelectionHeader">
+                            <div class="headerData">
+                                <h2 class="MTVTile">Disliked TV Shows</h2>
+                            </div>
+                        </div>
+                        <div class="carousel movieSelectionSlider"
+                             data-flickity='{"contain": true ,"pageDots": false,"draggable": false} '>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/3.jpg"/>
+                            </div>
+                            <div class="carousel-cell">
+                                <img src="../public/images/download.jpg"/>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<%include ./Components/footer.ejs %>
+<script src="../public/javascripts/flickity.pkgd.min.js"></script>
 </body>
 </html>
