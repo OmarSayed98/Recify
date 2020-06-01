@@ -1,0 +1,175 @@
+.Pbody{
+    margin: 0;
+    padding: 0;
+    font-family: 'Amiri', serif;
+    font-weight: 500;
+    background-image: url("../images/PBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ProfileMainDiv{
+    background-color: rgba(74,74,74,0.6);
+    width:80%;
+    height: 900px;  /*header fix*/
+    margin: auto;
+    margin-top: 100px;   /*header fix*/
+    margin-bottom: 50px;
+    border-radius: 0.5%;
+    box-shadow:3px 3px 20px 0px rgba(255,140,0,0.6);
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+}
+.Submenu{
+    margin-left: -15px;
+
+}
+.nav-link{
+    color: darkgrey;
+    font-size: 1.3rem;
+
+}
+.Submenu a:hover, .nav-link:hover{
+    color: white;
+
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: darkorange !important;
+
+}
+.MTVTile{
+    color: orange;
+    font-weight: bolder;
+    width: fit-content;
+    padding-right: 10px;
+    margin-top:20px;
+    margin-left: 10px;
+    margin-bottom:0;
+    padding-bottom:20px;
+    display: inline-block;
+}
+.BlackslidersMainDivBackground {
+    padding-bottom: 10px;
+    color: dimgrey;
+}
+.GreyslidersMainDivBackground{
+    padding-bottom: 10px;
+    color: dimgrey;
+
+}
+.carousel-cell {
+    width: 250px;
+    height:350px;
+    margin-right: 20px;
+    opacity:0.7;
+
+}
+
+
+
+.carousel-cell img {
+    display: block;
+    width:100%;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+    cursor: pointer;
+
+}
+
+
+/* fade in lazy loaded image */
+.carousel-cell-image.flickity-lazyloaded,
+.carousel-cell-image.flickity-lazyerror {
+    opacity: 1;
+}
+.carousel-cell:hover{
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    border: 2px solid rgba(255,165,0,0.5);
+    border-radius: 7px;
+}
+.carousel-cell:hover img{
+    border-radius: 7px;
+
+}
+.ProfilePic{
+    border-radius: 15%;
+    margin-top: 5%;
+    margin-left: 2%;
+    width: 20%;
+    box-shadow:3px 3px 20px 0px rgba(0,0,0,0.5);
+}
+.ProfileData{
+    position: relative;
+    margin-top: 5%;
+}
+.ProfileData p{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.EditProfile label{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 2%;
+}
+.Input{
+    outline: none;
+    height: 35px;
+    background-color: darkorange;
+    color: white;
+    border: 1px solid rgba(0,0,0,1);
+    box-shadow:3px 3px 20px 0px rgba(0,0,0,0.5);
+
+}
+.EditProfile{
+    margin-top: 30px;
+
+}
+.SBtn{
+    border: 2px solid darkorange;
+    color: white;
+    padding: 14px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 10%;
+    position: relative;
+    left: 40%;
+}
+.SBtn:hover{
+    background-color: darkorange;
+    color: white;
+    box-shadow:3px 3px 20px 0px rgba(0,0,0,0.5);
+
+
+}
+.borderfix:after{
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 100%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-bottom: 1px solid darkorange; /* This creates the border. Replace black with whatever color you want. */
+    margin-left: 0;
+}
+body::-webkit-scrollbar {
+    width: 11px;
+}
+/* Track */
+body::-webkit-scrollbar-track {
+    background: rgba(105,105,105,0.5);
+    border-radius: 20px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: orange;
+    cursor: pointer;
+    border-radius: 20px;
+}
+* { box-sizing: border-box; }
