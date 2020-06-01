@@ -10,7 +10,8 @@ const userschema = new schema({
     resetpasstoken:String,
     resetpassexpiry:Date,
     confirmtoken:String,
-    similarity_indices:[]
+    similarity_indices:[],
+    suggestions:[]
 });
 const bcrypt = require('bcrypt');
 userschema.pre('save', function(next) {
