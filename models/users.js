@@ -9,7 +9,8 @@ const userschema = new schema({
     email: {type:String,required:true},
     resetpasstoken:String,
     resetpassexpiry:Date,
-    confirmtoken:String
+    confirmtoken:String,
+    similarity_indices:[]
 });
 const bcrypt = require('bcrypt');
 userschema.pre('save', function(next) {

@@ -11,12 +11,8 @@ const db=require('./server');
 const MongoStore=require('connect-mongo')(session);
 const ms=require('ms');
 const schedule=require('./scheduledb');
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(session({
+const engine=require('./engine');
+const Session=session({
     secret:process.env.SECRET_KEY,
     resave:false,
     saveUninitialized:false,
@@ -24,7 +20,13 @@ app.use(session({
         maxAge: ms('14 days')
     },
     store:new MongoStore({mongooseConnection:db})
-}));
+});
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(Session);
 app.use(flash());
 app.use(function(req,res,next){
     res.locals.success_msg=req.flash('success_msg');
