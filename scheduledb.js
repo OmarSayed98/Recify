@@ -68,8 +68,7 @@ const tmdb=cron.schedule('09 22 * * SUN',()=>{
         })
     });
 });
-const recommender=cron.schedule('17 1 * * *',()=>{
+const recommender=cron.schedule('21 3 * * *',()=>{
     engine.get_similar();
-    engine.suggest();
 })
 module.exports=tmdb;

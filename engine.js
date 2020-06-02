@@ -1,17 +1,6 @@
 const user=require('./models/users');
 const underscore=require('underscore');
 const Movie=require('./models/movies');
-const get_similar=()=>{
-    user.find({})
-        .then(result=>{
-            result.forEach(it=>{
-                recommendation(it).then(res=>{
-                    //console.log(res);
-                    res.save().then(()=>console.log('similarity updated'));
-                });
-            });
-        });
-}
 const recommendation=(result)=>{
     return new Promise((resolve,reject)=>{
         const liked=result.likedMovies;
@@ -116,8 +105,21 @@ const suggest=()=>{
             });
         });
 };
+const get_similar=()=>{
+    user.find({})
+        .then(result=>{
+            result.forEach(it=>{
+                recommendation(it).then(res=>{
+                    //console.log(res);
+                    res.save().then(()=>{
+                        console.log('similarity updated');
+                        suggest();
+                    });
+                });
+            });
+        });
+}
 module.exports={
     recommendation,
-    suggest,
     get_similar
 };
