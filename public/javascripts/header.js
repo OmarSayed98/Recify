@@ -28,7 +28,7 @@ function searchMenu()
   }
   var movie=document.getElementById('searchData').value;
   $("#searchResult").empty();
-  var pageNum =1;
+  var pageNum = 1;
   $.getJSON('http://www.omdbapi.com/?s='+movie+'&page='+pageNum+ key).then(function(response){
     var t=JSON.stringify(response);
     var tt=JSON.parse(t);
@@ -39,7 +39,7 @@ function searchMenu()
       counter = tt.Search.length;
     }
 
-    for(var i=0;i<counter;i++)
+    for(var i=0;i < counter;i++)
     {
       var link = document.createElement('a');
       link.classList.add("searchListMovieLink");
