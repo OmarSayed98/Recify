@@ -32,7 +32,14 @@ function searchMenu()
   $.getJSON('http://www.omdbapi.com/?s='+movie+'&page='+pageNum+ key).then(function(response){
     var t=JSON.stringify(response);
     var tt=JSON.parse(t);
-    for(var i=0;i<tt.Search.length;i++)
+    let counter = 10;
+
+    if(tt.Search.length < counter)
+    {
+      counter = tt.Search.length;
+    }
+
+    for(var i=0;i<counter;i++)
     {
       var link = document.createElement('a');
       link.classList.add("searchListMovieLink");
