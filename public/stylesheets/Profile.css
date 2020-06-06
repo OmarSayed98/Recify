@@ -114,7 +114,6 @@
 .Input{
     outline: none;
     height: 35px;
-    background-color: darkorange;
     color: white;
     border: 1px solid rgba(0,0,0,1);
     box-shadow:3px 3px 20px 0px rgba(0,0,0,0.5);
