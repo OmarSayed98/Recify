@@ -150,6 +150,8 @@ body::-webkit-scrollbar-thumb {
     color: white;
     border: 1px solid rgba(0,0,0,1);
     box-shadow:3px 3px 20px 0px rgba(0,0,0,0.5);
+    width: fit-content;
+    max-width: 300px;
 
 }
 
