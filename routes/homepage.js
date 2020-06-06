@@ -2,7 +2,6 @@ const express=require('express');
 const router=express.Router();
 const nodemailer=require('nodemailer');
 const trending=require('../models/trending');
-const sanitize = require('mongo-sanitize');
 const sanitizeHtml = require('sanitize-html');
 function redirect(req,res,next){
     if(!req.session.name){

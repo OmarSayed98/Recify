@@ -1,7 +1,8 @@
 const cron=require('node-cron');
 const request=require('request-promise');
 const trend=require('./models/trending');
-const tmdb=cron.schedule('41 20 * * SUN',()=>{
+const engine=require('./engine');
+cron.schedule('09 22 * * SUN',()=>{
     const option={
         url:"https://api.themoviedb.org/3/trending/movie/week?api_key=9bde952e56ff27d1016ff6144cbf27c9",
         json:true
@@ -67,4 +68,6 @@ const tmdb=cron.schedule('41 20 * * SUN',()=>{
         })
     });
 });
-module.exports=tmdb;
+cron.schedule('35 3 * * *',()=>{
+    engine.get_similar();
+})
