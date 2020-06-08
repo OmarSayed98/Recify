@@ -109,7 +109,6 @@ $(document).mouseup(function(e)
     if (!trailer.is(e.target) && trailer.has(e.target).length === 0)
     {
         trailer.hide();
-        ifr.attr('src',"");
         btn.show();
         ifr.attr('src',"");
     }

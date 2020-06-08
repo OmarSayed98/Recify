@@ -219,11 +219,6 @@
     width:fit-content;
     cursor: pointer;
 }
-
-.headerData:hover h2, .headerData:hover p{
-    color:darkorange;
-}
-
 .carousel-cell:hover{
     opacity: 1;
     -webkit-transition: opacity 0.5s;

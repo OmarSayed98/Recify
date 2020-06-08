@@ -1,0 +1,29 @@
+.headerData:hover h2, .headerData:hover p{
+    color:darkorange;
+}
+.showMoreDiv{
+    display: none;
+    position: absolute;
+    top:150px;
+    left:2.5%;
+    margin: auto;
+    border-radius: 2%;
+    box-shadow:3px 3px 20px 0px rgba(255,140,0,0.6);
+    background-color: rgba(50,50,50,0.6);
+    height: 1000px;
+    width: 95%;
+    padding: 20px;
+}
+.showMoreHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.showMoreHeaderTitle{
+
+}
+.closeShowMoreIcon{
+    color: orange;
+    cursor: pointer;
+}
