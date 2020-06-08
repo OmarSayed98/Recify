@@ -26,13 +26,26 @@ function show(selected) {
 
 function displayChangeNameInput(){
     let input= document.getElementById("editNameInput");
-    input.style.display="block";
-
+    if(input.style.display!=="block")
+    {
+        input.style.display="block";
+    }
+    else
+    {
+        input.style.display="none";
+    }
 }
 
 function displayChangeEmailInput(){
     let input= document.getElementById("editEmailInput");
-    input.style.display="block";
+    if(input.style.display!=="block")
+    {
+        input.style.display="block";
+    }
+    else
+    {
+        input.style.display="none";
+    }
 }
 
 function displayChangePasswordInput(){
@@ -40,22 +53,33 @@ function displayChangePasswordInput(){
     let input1 = document.getElementById("editPasswordOldInput");
     let input2 = document.getElementById("editPasswordNewInput");
     let input3 = document.getElementById("editPasswordConfInput");
-    input1.style.display="block";
-    input2.style.display="block";
-    input3.style.display="block";
+    if(input1.style.display!=="block")
+    {
+        input1.style.display="block";
+        input2.style.display="block";
+        input3.style.display="block";
+    }
+    else
+    {
+        input1.style.display="none";
+        input2.style.display="none";
+        input3.style.display="none";
+    }
 
 }
 
-function matchPassword(confirmPass)
+function showEditProfile()
 {
+    let editTab = document.getElementsByClassName("editProfileTab-content")[0];
 
-    var pass= document.getElementById('Password');
-    if(pass.value !== confirmPass.value)
+    if(editTab.style.maxHeight==="0px" || editTab.style.maxHeight==="")
     {
-        confirmPass.setCustomValidity("Passwords Don't Match");
+        editTab.style.maxHeight="500px";
     }
-    else {
-        confirmPass.setCustomValidity("");
+    else
+    {
+        editTab.style.maxHeight="0px";
+
     }
 }
 

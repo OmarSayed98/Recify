@@ -175,8 +175,6 @@
     opacity:0.7;
 }
 
-
-
 .carousel-cell img {
     display: block;
     width:100%;
@@ -269,7 +267,7 @@ body::-webkit-scrollbar {
 }
 /* Track */
 body::-webkit-scrollbar-track {
-    background: rgba(105,105,105,0.5);
+    background-color: rgba(50,50,50,1);
     border-radius: 20px;
 }
 

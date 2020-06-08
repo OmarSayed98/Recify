@@ -10,9 +10,8 @@
 .main{
     display: flex;
     flex-direction: row;
-    background-color: rgba(74,74,74,0.6);
+    background-color: rgba(50,50,50,0.6);
     width:85%;
-    height: fit-content;  /*header fix*/
     min-height: 900px;
     margin: auto;
     margin-top: 150px;   /*header fix*/
@@ -45,11 +44,21 @@
     transition: 0.75s color;
 }
 .content-div{flex:4;
-    padding-top: 30px;
+            padding-top: 30px;
              color: darkgrey;
 }
 .profileTab-content{display: block;}
-.editProfileTab-content{display: none;}
+.editProfileTab-content{display: block;
+                        padding-top: 0;
+                        color: darkgrey;
+                        max-height: 0px;
+                        overflow: hidden;
+                        -webkit-transition: max-height 2s;
+                        -moz-transition: max-height 2s;
+                        -ms-transition: max-height 2s;
+                        -o-transition: max-height 2s;
+                        transition: max-height 2s;
+}
 .LikesTab-content{display: none;}
 .DislikesTab-content{display: none;}
 
@@ -102,6 +111,7 @@
     border-radius: 15px;
     width: 200px;
     box-shadow:3px 3px 20px 0px rgba(0,0,0,0.5);
+
 }
 .ProfileData{
     position: relative;
@@ -125,7 +135,7 @@ body::-webkit-scrollbar {
 }
 /* Track */
 body::-webkit-scrollbar-track {
-    background: rgba(105,105,105,0.5);
+    background: rgba(50,50,50,1);
     border-radius: 20px;
 }
 
@@ -154,35 +164,44 @@ body::-webkit-scrollbar-thumb {
     color: white;
     border: 1px solid rgba(0,0,0,1);
     box-shadow:3px 3px 20px 0px rgba(0,0,0,0.5);
-    width: fit-content;
-    max-width: 300px;
+    max-width: 250px;
 
 }
-
+.profileAndEdit{display: flex;
+                flex-direction: column;}
 .editPass{margin-bottom: 15px;}
 .EditProfile{
     margin-top: 30px;
 
 }
+.profileHeader{display: flex;
+               flex-direction: row;
+    justify-content: space-between;
+}
+.MBtn{
+    align-self: flex-start;
+    margin-top: 0 !important;
+    font-size: 16px !important;
+}
 
 .SBtn{
     border: 2px solid darkorange;
     color: white;
-    padding: 14px 32px;
+    padding: 10px 28px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     transition-duration: 0.5s;
     cursor: pointer;
     background-color: transparent;
-    border-radius: 7px;
+    border-radius: 5px;
     position: relative;
+    outline: none;
+    margin-top: 10px;
 }
 .SBtn:hover{
     background-color: darkorange;
     color: white;
     box-shadow:3px 3px 20px 0px rgba(0,0,0,0.5);
-
-
 }

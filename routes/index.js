@@ -6,6 +6,8 @@ const reset=require('./reset');
 const confirm=require('./confirm');
 const movie=require('./movie');
 const profile=require('./profile');
+const showmoremovies=require('./showmoremovies');
+const showmoretvshows=require('./showmoretvshows');
 module.exports=function(app){
     app.use('/signin',signin);
     app.use('/signup',signup);
@@ -15,4 +17,6 @@ module.exports=function(app){
     app.use('/confirm',confirm);
     app.use('/movie',movie);
     app.use('/profile',profile);
+    app.use('/showmoremovies',showmoremovies);
+    app.use('/showmoretvshows',showmoretvshows);
 };

@@ -72,7 +72,6 @@
         <%imdbid_poster.forEach((movie)=>{%>
             <div class="carousel-cell">
                 <a href="http://localhost:3000/movie?id=<%=movie.id%>"><img src=<%=movie.poster%>></a>
-                <input type="hidden" value="">
             </div>
         <%})%>
     </div>
@@ -91,19 +90,12 @@
         <%imdb_poster_tv.forEach((tv)=>{%>
         <div class="carousel-cell">
             <a href="http://localhost:3000/movie?id=<%=tv.id%>"><img src=<%=tv.poster%>></a>
-            <input type="hidden" value="">
         </div>
         <%})%>
     </div>
 </div>
 
 <%include ./Components/footer.ejs %>
-
-<div>
-
-
-</div>
-
 
 <script type="text/javascript" src="../public/javascripts/homepage.js"></script>
 <script type="text/javascript" src="../public/javascripts/header.js"></script>
