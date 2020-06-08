@@ -66,7 +66,7 @@
 
 
             <div class="vr"></div>
-            <a href="/profile">Bayza <i class="fa fa-user-circle"></i></a>
+            <a href="/profile"><%=name%> <i class="fa fa-user-circle"></i></a>
 
         </div>
 
@@ -81,7 +81,7 @@
 
             <a href="#">TV shows</a>
 
-            <a href="/profile">Bayza <i class="fa fa-user-circle"></i></a>
+            <a href="/profile"><%=name%> <i class="fa fa-user-circle"></i></a>
 
             <p class="notificationP">Notifications <i class="fa fa-bell"></i>
                 <span class="NotificationBadge">3</span>
@@ -115,9 +115,9 @@
         <div>
             <img class="ProfilePic" src="../public/images/faceorange.png">
             <div class="ProfileData">
-                <p class="Name">Hatem Tarek</p>
+                <p class="Name"><%=full%></p>
                 <p class="borderfix emptyP"><p>
-                <p class="Email">hatem1111998@gmail.com</p>
+                <p class="Email"><%=email%></p>
                 <p class="borderfix emptyP"><p>
             </div>
         </div>
@@ -128,7 +128,7 @@
     <div class="content-div editProfileTab-content">
         <div>
             <img class="ProfilePic" src="../public/images/faceorange.png">
-            <form action="" method="post" class="EditProfile" autocomplete="off">
+            <form action="/profile/edit" method="post" class="EditProfile" autocomplete="off">
                 <p onclick="displayChangeNameInput()"><i class="fas fa-address-card"></i> Change Name</p>
                 <input type="text" class="Input" id="editNameInput" name="newName">
                 <p onclick="displayChangeEmailInput()"><i class="fas fa-envelope"></i> Change Email</p>
