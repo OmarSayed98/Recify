@@ -18,6 +18,7 @@ const movieschema = new schema({
     imdbID: {type:String,required:true},
     production: {type:String},
     comments:{type:[String]},
+    type:String
 });
 const movie = mongoose.model('movie', movieschema);
 module.exports=movie;

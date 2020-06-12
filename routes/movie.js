@@ -41,6 +41,7 @@ const getmovieitem=(result)=>{
         awards:result.awards,
         poster:result.poster,
         production:result.production,
+        type:result.type
     });
     return item;
 }
