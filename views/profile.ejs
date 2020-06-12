@@ -58,42 +58,17 @@
         <div class="movieSelectionHeader">
             <div class="headerData">
                 <h2 class="MTVTile">Liked Movies</h2>
-
             </div>
         </div>
         <div class="carousel movieSelectionSlider"
-             data-flickity='{"pageDots": false,"draggable": false, "cellAlign":"left", "contain":true} '>
+             data-flickity='{"pageDots": false,"draggable": true, "cellAlign":"left", "contain":true} '>
+            <%likedmovies.forEach(i=>{%>
+            <%if(i!==undefined){%>
             <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
+                <img src="<%=i.poster%>"/>
             </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-
+                <%}%>
+                <%});%>
         </div>
 
         <div class="movieSelectionHeader">
@@ -102,38 +77,14 @@
             </div>
         </div>
         <div class="carousel movieSelectionSlider"
-             data-flickity='{"pageDots": false,"draggable": false, "cellAlign":"left", "contain":true} '>
+             data-flickity='{"pageDots": false,"draggable": true, "cellAlign":"left", "contain":true} '>
+            <%likedseries.forEach(i=>{%>
+            <%if(i!==undefined){%>
             <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
+                <img src="<%=i.poster%>"/>
             </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-
+            <%}%>
+            <%});%>
         </div>
 
     </div>
@@ -146,36 +97,13 @@
         </div>
         <div class="carousel movieSelectionSlider"
              data-flickity='{"pageDots": false,"draggable": false, "cellAlign":"left", "contain":true} '>
+            <%dislikemovies.forEach(i=>{%>
+            <%if(i!==undefined){%>
             <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
+                <img src="<%=i.poster%>"/>
             </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
+            <%}%>
+            <%});%>
 
         </div>
 
@@ -186,36 +114,13 @@
         </div>
         <div class="carousel movieSelectionSlider"
              data-flickity='{"pageDots": false,"draggable": false, "cellAlign":"left", "contain":true} '>
+            <%dislikeseries.forEach(i=>{%>
+            <%if(i!==undefined){%>
             <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
+                <img src="<%=i.poster%>"/>
             </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/3.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img src="../public/images/download.jpg"/>
-            </div>
+            <%}%>
+            <%});%>
 
         </div>
 

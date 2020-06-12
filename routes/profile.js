@@ -14,7 +14,7 @@ const getmovies=(result)=>{
                 }
             });
     });
-}
+};
 const getseries=(result)=>{
     return result.map(i=>{
         return movie.findOne({imdbID:i})
@@ -27,7 +27,7 @@ const getseries=(result)=>{
                 }
             });
     });
-}
+};
 router.get('/',(req,res)=>{
     user.findById(req.session.user_id)
         .then(result=>{
@@ -64,5 +64,5 @@ router.get('/',(req,res)=>{
 router.post('/edit',(req,res)=>{
     const data=req.body;
     console.log(data);
-})
+});
 module.exports=router;
