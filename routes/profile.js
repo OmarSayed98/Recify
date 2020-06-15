@@ -45,7 +45,6 @@ router.get('/',(req,res)=>{
                                 .then(dislikemovie=>{
                                     Promise.all(dislikedseries)
                                         .then(dislikeseries=>{
-                                            console.log(likemovie);
                                             res.render('profile',{
                                                 name:req.session.name,
                                                 full:full_name,
@@ -65,11 +64,40 @@ router.post('/edit',(req,res)=>{
     const data=req.body;
     if(data.newName!==undefined){
         user.findOneAndUpdate({_id:req.session.user_id},{name:data.newName},{useFindAndModify: false})
-            .then(()=>console.log('name updated'));
+            .then(()=>{
+                console.log('name updated');
+                req.session.name=data.newName;
+                req.flash('success_msg','data updated successfully');
+                res.redirect('/profile');
+            });
     }
     if(data.newEmail!==undefined){
         user.findOneAndUpdate({_id:req.session.user_id},{email:data.newEmail},{useFindAndModify: false})
-            .then(()=>console.log('email updated'));
+            .then(()=>{
+                console.log('email updated');
+                req.flash('success_msg','data updated successfully');
+                res.redirect('/profile');
+            });
+    }
+    if(data.oldPassword!==undefined){
+        user.findOne({_id:req.session.user_id})
+            .then(result=>{
+                result.comparePassword(data.oldPassword,(err,match)=>{
+                    if(err)
+                        return err;
+                    if(match){
+                        req.flash('success_msg','data updated successfully');
+                        result.password=data.newPassword;
+                        result.save().then(()=>console.log('password updated'));
+                        res.redirect('/profile');
+                    }
+                    else{
+                        req.flash('error_msg','invalid data');
+                        console.log('invalid password');
+                        res.redirect('/profile');
+                    }
+                })
+            })
     }
 });
 module.exports=router;

@@ -143,7 +143,7 @@ function checkForm()
    {
        let pass = document.getElementById("editPasswordNewInput");
        let confPass = document.getElementById("editPasswordConfInput");
-       if(pass.value===confPass.value)
+       if(pass.value!==confPass.value)
        {
            alert("New and confirm passwords don't match");
            return false;
