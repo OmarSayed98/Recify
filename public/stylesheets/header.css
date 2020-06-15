@@ -98,11 +98,11 @@ body{font-family: 'Roboto',sans-serif;
     text-align: right;
     border-radius: 4px;
     padding: 5px;
+    width: 27.5%;
 }
 #sanmenu{color:orange;}
 #smallmenu{
     display: none;
-
 }
 #smallmenu a,#smallmenu .notificationP{text-decoration: none;
     color: white;}
@@ -126,15 +126,15 @@ body{font-family: 'Roboto',sans-serif;
     .sandwichMenu{
         display: block;
     }
-    #searchmenu{display: none;}
 
 }
 
 
 #searchmenu{
-    width: 25%;
+    width: 30%;
     margin-top: 1%;
     margin-left: 2%;
+    min-width: 250px;
     float: left;
     overflow-y: visible;
     color: white;
@@ -154,7 +154,8 @@ body{font-family: 'Roboto',sans-serif;
                 margin-left: 10px;
                 margin-bottom: 7px;
                 float: left;
-                width: 70%;
+                font-size: 20px;
+                width: 75%;
                 margin-top: 40px;
                 }
 .theResult img{width: 15%;
@@ -165,7 +166,7 @@ body{font-family: 'Roboto',sans-serif;
                   }
 
 .theResult {
-    width: fit-content;
+    width: 100%;
     height: fit-content;
     color: white;
     cursor: pointer;
