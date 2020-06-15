@@ -129,6 +129,7 @@ function showEditProfile()
 function checkForm()
 {
     let form = document.getElementsByClassName("EditProfile")[0];
+    let changePass = document.getElementById("changePassword");
     let inpts = form.getElementsByTagName("input");
     for (let i = 0; i < inpts.length;i++) {
         if(inpts[i].value==="")
@@ -137,6 +138,18 @@ function checkForm()
             return false;
         }
     }
+
+   if(changePass.children.length>1)
+   {
+       let pass = document.getElementById("editPasswordNewInput");
+       let confPass = document.getElementById("editPasswordConfInput");
+       if(pass.value===confPass.value)
+       {
+           alert("New and confirm passwords don't match");
+           return false;
+       }
+   }
+
     return true;
 }
 $('#LikesTabLink').on( 'click', function() {
