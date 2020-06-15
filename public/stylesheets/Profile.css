@@ -159,7 +159,7 @@ body::-webkit-scrollbar-thumb {
 .Input{
     outline: none;
     background-color: darkgrey;
-    display: none;
+    display: block;
     height: 35px;
     color: white;
     border: 1px solid rgba(0,0,0,1);

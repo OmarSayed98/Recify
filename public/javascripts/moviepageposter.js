@@ -11,10 +11,10 @@ function setupPage(poster,st) {
       document.getElementById('like').classList.add("likeClicked");
   }
 
-    if(st==='2')
-    {
+   if(st==='2')
+   {
         document.getElementById('dislike').classList.add("dislikeClicked");
-    }
+   }
 }
 
 function play(trailer){
