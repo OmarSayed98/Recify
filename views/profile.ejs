@@ -65,7 +65,7 @@
             <%likedmovies.forEach(i=>{%>
             <%if(i!==undefined){%>
             <div class="carousel-cell">
-                <img src="<%=i.poster%>"/>
+                <a href="http://localhost:3000/movie?id=<%=i.id%>"><img src="<%=i.poster%>"/></a>
             </div>
                 <%}%>
                 <%});%>
@@ -81,7 +81,7 @@
             <%likedseries.forEach(i=>{%>
             <%if(i!==undefined){%>
             <div class="carousel-cell">
-                <img src="<%=i.poster%>"/>
+                <a href="http://localhost:3000/movie?id=<%=i.id%>"><img src="<%=i.poster%>"/></a>
             </div>
             <%}%>
             <%});%>
@@ -100,7 +100,7 @@
             <%dislikemovies.forEach(i=>{%>
             <%if(i!==undefined){%>
             <div class="carousel-cell">
-                <img src="<%=i.poster%>"/>
+                <a href="http://localhost:3000/movie?id=<%=i.id%>"><img src="<%=i.poster%>"/></a>
             </div>
             <%}%>
             <%});%>
@@ -117,7 +117,7 @@
             <%dislikeseries.forEach(i=>{%>
             <%if(i!==undefined){%>
             <div class="carousel-cell">
-                <img src="<%=i.poster%>"/>
+                <a href="http://localhost:3000/movie?id=<%=i.id%>"><img src="<%=i.poster%>"/></a>
             </div>
             <%}%>
             <%});%>
