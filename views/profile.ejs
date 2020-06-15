@@ -35,16 +35,16 @@
 
         <div class="editProfileTab-content">
             <div>
-                <form action="/profile/edit" method="post" class="EditProfile" autocomplete="off">
-                    <p onclick="displayChangeNameInput()"><i class="fas fa-address-card"></i> Change Name</p>
-                    <input type="text" class="Input" id="editNameInput" name="newName">
-                    <p onclick="displayChangeEmailInput()"><i class="fas fa-envelope" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email should be something like omar@hotmail.com"></i> Change Email</p>
-                    <input type="text" class="Input" id="editEmailInput" name="newEmail">
-                    <p onclick="displayChangePasswordInput()"><i class="fas fa-lock"></i> Change password</p>
-                    <input type="password" class="Input editPass" id="editPasswordOldInput" name="oldPassword" placeholder="Old password">
-                    <input type="password" class="Input editPass" id="editPasswordNewInput" name="newPassword"  placeholder="New password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-                    <input type="password" class="Input editPass" id="editPasswordConfInput" name="confirmNewPassword" placeholder="Confirm password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required
-                           value="<%=typeof confirm!="undefined" ? confirm:''%>">
+                <form action="/profile/edit" method="post" class="EditProfile" autocomplete="off"  onsubmit="return checkForm()">
+                    <div id="changeName">
+                        <p onclick="displayChangeNameInput()"><i class="fas fa-address-card"></i> Change Name</p>
+                    </div>
+                    <div id="changeEmail">
+                        <p onclick="displayChangeEmailInput()"><i class="fas fa-envelope"></i> Change Email</p>
+                    </div>
+                    <div id="changePassword">
+                        <p onclick="displayChangePasswordInput()"><i class="fas fa-lock"></i> Change password</p>
+                    </div>
                     <input type="submit" class="SBtn" value="Save changes" name="submitBtn">
                 </form>
             </div>

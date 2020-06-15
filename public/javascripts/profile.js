@@ -25,47 +25,90 @@ function show(selected) {
 }
 
 function displayChangeNameInput(){
-    let input= document.getElementById("editNameInput");
-    if(input.style.display!=="block")
+    let theDiv= document.getElementById("changeName");
+    if(theDiv.children[1]===undefined)
     {
-        input.style.display="block";
+        let inpt = document.createElement('input');
+        inpt.classList.add("Input");
+        inpt.type="text";
+        inpt.id="editNameInput";
+        inpt.name="newName";
+        inpt.placeholder="Name";
+        theDiv.appendChild(inpt);
     }
     else
     {
-        input.style.display="none";
+        theDiv.removeChild(theDiv.children[1]);
     }
 }
 
 function displayChangeEmailInput(){
-    let input= document.getElementById("editEmailInput");
-    if(input.style.display!=="block")
+    let theDiv= document.getElementById("changeEmail");
+    if(theDiv.children[1]===undefined)
     {
-        input.style.display="block";
+        let inpt = document.createElement('input');
+        inpt.classList.add("Input");
+        inpt.type="text";
+        inpt.id="editEmailInput";
+        inpt.name="newEmail";
+        inpt.pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$";
+        inpt.title="Email should be something like omar@hotmail.com";
+        inpt.placeholder="Email";
+        theDiv.appendChild(inpt);
     }
     else
     {
-        input.style.display="none";
+        theDiv.removeChild(theDiv.children[1]);
     }
 }
 
 function displayChangePasswordInput(){
-
-    let input1 = document.getElementById("editPasswordOldInput");
-    let input2 = document.getElementById("editPasswordNewInput");
-    let input3 = document.getElementById("editPasswordConfInput");
-    if(input1.style.display!=="block")
+    let theDiv= document.getElementById("changePassword");
+    if(theDiv.children[1]===undefined)
     {
-        input1.style.display="block";
-        input2.style.display="block";
-        input3.style.display="block";
+        let inpt1 = document.createElement('input');
+        let inpt2 = document.createElement('input');
+        let inpt3 = document.createElement('input');
+
+
+        inpt1.classList.add("Input");
+        inpt1.classList.add("editPass");
+        inpt1.type="password";
+        inpt1.id="editPasswordOldInput";
+        inpt1.name="oldPassword";
+        inpt1.placeholder="Old password";
+
+
+        inpt2.classList.add("Input");
+        inpt2.classList.add("editPass");
+        inpt2.type="password";
+        inpt2.id="editPasswordNewInput";
+        inpt2.name="newPassword";
+        inpt2.placeholder="New password";
+        inpt2.pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}";
+        inpt2.title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters";
+
+
+        inpt3.classList.add("Input");
+        inpt3.classList.add("editPass");
+        inpt3.type="password";
+        inpt3.id="editPasswordConfInput";
+        inpt3.name="confirmNewPassword";
+        inpt3.placeholder="Confirm password";
+        inpt3.pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}";
+        inpt3.title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters";
+
+        theDiv.appendChild(inpt1);
+        theDiv.appendChild(inpt2);
+        theDiv.appendChild(inpt3);
+
     }
     else
     {
-        input1.style.display="none";
-        input2.style.display="none";
-        input3.style.display="none";
+        theDiv.removeChild(theDiv.children[3]);
+        theDiv.removeChild(theDiv.children[2]);
+        theDiv.removeChild(theDiv.children[1]);
     }
-
 }
 
 function showEditProfile()
@@ -83,6 +126,19 @@ function showEditProfile()
     }
 }
 
+function checkForm()
+{
+    let form = document.getElementsByClassName("EditProfile")[0];
+    let inpts = form.getElementsByTagName("input");
+    for (let i = 0; i < inpts.length;i++) {
+        if(inpts[i].value==="")
+        {
+            alert(inpts[i].placeholder + " is empty");
+            return false;
+        }
+    }
+    return true;
+}
 $('#LikesTabLink').on( 'click', function() {
     $(".carousel").show()
         // resize after un-hiding Flickity
