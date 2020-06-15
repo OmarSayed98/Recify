@@ -57,12 +57,19 @@ router.get('/',(req,res)=>{
                                             });
                                         })
                                 })
-                        })
+                        });
                 });
         });
 });
 router.post('/edit',(req,res)=>{
     const data=req.body;
-    console.log(data);
+    if(data.newName!==undefined){
+        user.findOneAndUpdate({_id:req.session.user_id},{name:data.newName},{useFindAndModify: false})
+            .then(()=>console.log('name updated'));
+    }
+    if(data.newEmail!==undefined){
+        user.findOneAndUpdate({_id:req.session.user_id},{email:data.newEmail},{useFindAndModify: false})
+            .then(()=>console.log('email updated'));
+    }
 });
 module.exports=router;

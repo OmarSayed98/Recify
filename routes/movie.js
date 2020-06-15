@@ -157,7 +157,7 @@ router.get('/',(req,res)=>{
                                 curl: commenturl,
                                 comments_users: 0,
                                 users:[],
-                                name:username.name
+                                name:username.name.split(' ')[0]
                             });
                         });
                     }
@@ -187,7 +187,7 @@ router.get('/',(req,res)=>{
                                         curl: commenturl,
                                         comments_users: commentarr.length,
                                         users:usercomments,
-                                        name:username.name
+                                        name:username.name.split(' ')[0]
                                     });
                                 });
                             });
