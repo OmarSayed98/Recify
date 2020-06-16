@@ -1,9 +1,11 @@
 const movie=require('./models/movies');
 const keyword_extractor = require("keyword-extractor");
+const cron=require('node-cron');
 let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
-movie.find({}).then(res=>{
+cron.schedule('27 07 * * *',()=>{
+    movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{
             const plot_key=keyword_extractor.extract(i.plot,{
                 language:"english",
@@ -59,9 +61,9 @@ movie.find({}).then(res=>{
                         return -1;
                     return 1;
                 });
-                console.log(cosine_similarities);
                 movie.findOneAndUpdate({title:matrix[i].title},{content_similarity:cosine_similarities},{useFindAndModify: false})
                     .then(()=>console.log('update completed'));
             }
         });
     });
+});
