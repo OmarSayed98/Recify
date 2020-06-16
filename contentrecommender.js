@@ -4,7 +4,7 @@ const cron=require('node-cron');
 let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
-cron.schedule('27 07 * * *',()=>{
+cron.schedule('51 16 * * *',()=>{
     movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{
             const plot_key=keyword_extractor.extract(i.plot,{
@@ -34,7 +34,7 @@ cron.schedule('27 07 * * *',()=>{
             all_words=[...new Set([...all_words,...bag_words])];
             return i.updateOne({idx:idx+1,bag_words:bag_words}).then(()=>{
                 console.log('words updated');
-                return {title:i.title,bag_words};
+                return {title:i.title,bag_words,type:i.type,id:i.imdbID,poster:i.poster};
             });
         });
         Promise.all(promises).then((bags)=>{
@@ -48,13 +48,16 @@ cron.schedule('27 07 * * *',()=>{
                     else
                         freq_num.push(0);
                 });
-                matrix.push({title:i.title,freq_num:freq_num});
+                matrix.push({title:i.title,freq_num:freq_num,type:i.type,id:i.id,poster:i.poster});
             });
             for(let i=0;i<bags.length;i++){
                 let cosine_similarities=[];
                 for(let c=0;c<bags.length;c++){
                     const cosine_similarity=similarity(matrix[i].freq_num,matrix[c].freq_num);
-                    cosine_similarities.push({title:matrix[c].title,cosine_similarity:cosine_similarity});
+                    cosine_similarities.push({title:matrix[c].title
+                        ,cosine_similarity:cosine_similarity
+                        ,type:matrix[c].type,id:matrix[c].id,
+                        poster:matrix[c].poster});
                 }
                 cosine_similarities.sort((a,b)=>{
                     if(a.cosine_similarity>b.cosine_similarity)
