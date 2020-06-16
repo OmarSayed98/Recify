@@ -1,20 +1,24 @@
 function setupPage(poster,st) {
+    const pst=document.getElementById('moviePoster');
   if(poster!=="")
   {
-    const pst=document.getElementById('moviePoster');
     document.getElementById('poster').style.marginRight="0";
     pst.style.width="100%";
     pst.src=poster;
+  }
+  else
+  {
+      pst.src="../public/images/noposter.jpg";
   }
   if(st==='1')
   {
       document.getElementById('like').classList.add("likeClicked");
   }
 
-   if(st==='2')
-   {
+  else if(st==='2')
+  {
         document.getElementById('dislike').classList.add("dislikeClicked");
-   }
+  }
 }
 
 function play(trailer){

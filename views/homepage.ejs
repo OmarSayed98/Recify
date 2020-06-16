@@ -61,7 +61,7 @@
 <div class="BlackslidersMainDivBackground">
     <div class="movieSelectionHeader">
         <div class="headerData">
-            <h2 id='trenTitle' class="mshTitle">Trending Movies</h2>
+            <h2 class="mshTitle">Trending Movies</h2>
         </div>
     </div>
 
@@ -78,7 +78,7 @@
 <div class="GreyslidersMainDivBackground">
     <div class="movieSelectionHeader">
         <div class="headerData">
-            <h2 id='recTitle' class="mshTitle">Trending Tv Shows</h2>
+            <h2 class="mshTitle">Trending Tv Shows</h2>
         </div>
     </div>
     <div class="carousel movieSelectionSlider"
@@ -91,6 +91,38 @@
     </div>
 </div>
 
+<div class="BlackslidersMainDivBackground">
+    <div class="movieSelectionHeader">
+        <div class="headerData">
+            <h2 class="mshTitle">Recommended Movies</h2>
+        </div>
+    </div>
+
+    <div class="carousel movieSelectionSlider"
+         data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
+        <%imdbid_poster.forEach((movie)=>{%>
+        <div class="carousel-cell">
+            <a href="http://localhost:3000/movie?id=<%=movie.id%>"><img src=<%=movie.poster%>></a>
+        </div>
+        <%})%>
+    </div>
+</div>
+
+<div class="GreyslidersMainDivBackground">
+    <div class="movieSelectionHeader">
+        <div class="headerData">
+            <h2 class="mshTitle">Recommended Tv Shows</h2>
+        </div>
+    </div>
+    <div class="carousel movieSelectionSlider"
+         data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
+        <%imdb_poster_tv.forEach((tv)=>{%>
+        <div class="carousel-cell">
+            <a href="http://localhost:3000/movie?id=<%=tv.id%>"><img src=<%=tv.poster%>></a>
+        </div>
+        <%})%>
+    </div>
+</div>
 <%include ./Components/footer.ejs %>
 
 <script type="text/javascript" src="../public/javascripts/homepage.js"></script>

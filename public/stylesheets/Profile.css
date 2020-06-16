@@ -62,6 +62,9 @@
 .LikesTab-content{display: none;}
 .DislikesTab-content{display: none;}
 
+.carousel{
+    height:350px;
+}
 .carousel-cell {
     width: 250px;
     height:350px;
