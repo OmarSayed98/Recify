@@ -79,26 +79,23 @@ function searchMenu()
 
 function notificationMenu()
 {
-  var notifmenu = document.getElementById('notifications');
-  if(notifmenu.style.display!="block")
+  var notifmenu = document.getElementsByClassName("notificationMenu")[0];
+  if(notifmenu.style.display!=="block")
   {
     notifmenu.style.display="block";
   }
-  else {
-    notifmenu.style.display="none";
-  }
 }
 
-
-$(document).click(function(e) {
-
-
-  if( e.target.id !== 'searchResult') {
-    $("#searchResult").hide();
-  }
-  else if(e.target.id !== 'notifications')
+$(document).mouseup(function(e)
+{
+  var search = $("#searchResult");
+  var notif =  $(".notificationMenu");
+  if (!search.is(e.target) && search.has(e.target).length === 0)
   {
-    $("#notifications").hide();
+    search.hide();
   }
-
+  if (!notif.is(e.target) && notif.has(e.target).length === 0)
+  {
+    notif.hide();
+  }
 });
