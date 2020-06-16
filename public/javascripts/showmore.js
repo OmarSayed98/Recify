@@ -1,24 +1,23 @@
-function sliderTitleHover(showMore) {
-    const show=document.getElementById(showMore);
+function sliderTitleHover(div) {
+    let show = div.getElementsByClassName("showMore")[0];
     show.style.display="inline-block";
-
-
-
 }
 
-function sliderTitleHoverExit(showMore) {
-    const show=document.getElementById(showMore);
+function sliderTitleHoverExit(div) {
+    let show = div.getElementsByClassName("showMore")[0];
     show.style.display="none";
-
 }
 
-function sliderShowArrow(arrow){
-    const arr=document.getElementById(arrow);
+function sliderShowArrow(div){
+    let headerData=div.getElementsByClassName("headerData")[0];
+    let arr=headerData.getElementsByClassName("titleArrow")[0];
     arr.style.display="inline-block";
 
+
 }
-function sliderHideArrow(arrow){
-    const arr=document.getElementById(arrow);
+function sliderHideArrow(div){
+    let headerData=div.getElementsByClassName("headerData")[0];
+    let arr=headerData.getElementsByClassName("titleArrow")[0];
     arr.style.display="none";
 
 }
@@ -30,6 +29,11 @@ function showMore() {
         moreDiv.style.display="block";
     }
 
+}
+
+function closeShowMore(){
+    let moreDiv = document.getElementsByClassName("showMoreDiv")[0];
+    moreDiv.style.display="none";
 }
 
 $(document).mouseup(function(e)
