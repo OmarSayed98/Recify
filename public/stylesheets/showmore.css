@@ -3,8 +3,7 @@
 }
 .showMoreDiv{
     display: none;
-    position: fixed;
-    top:100px;
+    position: absolute;
     left:2.5%;
     margin: auto;
     border-radius: 20px;
@@ -21,7 +20,7 @@
 }
 
 .showMoreHeaderTitle{
-
+    color: orange;
 }
 .closeShowMoreIcon{
     color: orange;

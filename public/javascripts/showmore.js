@@ -22,12 +22,17 @@ function sliderHideArrow(div){
 
 }
 
-function showMore() {
+function showMore(div) {
+    let divTitle = document.getElementsByClassName("showMoreHeaderTitle")[0];
+    divTitle.innerHTML=div.getElementsByClassName("mshTitle")[0].innerHTML;
     let moreDiv = document.getElementsByClassName("showMoreDiv")[0];
     if(moreDiv.style.display!=="block")
     {
+        let place=150+window.pageYOffset;
+        moreDiv.style.top=place.toString()+"px";
         moreDiv.style.display="block";
     }
+
 
 }
 
