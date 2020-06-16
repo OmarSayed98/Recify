@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../public/stylesheets/showmore.css">
 </head>
 <body  class="hpBody">
-
-<div class="BlackslidersMainDivBackground"  onmouseenter="sliderShowArrow(this)" onmouseleave="sliderHideArrow(this)">
+<%include ./Components/header.ejs %>
+<div class="BlackslidersMainDivBackground firstSlider"  onmouseenter="sliderShowArrow(this)" onmouseleave="sliderHideArrow(this)">
     <div class="movieSelectionHeader">
         <div class="headerData" onmouseenter="sliderTitleHover(this)" onmouseleave="sliderTitleHoverExit(this)" onclick="showMore(this)">
             <h2 id='trenTitle' class="mshTitle">Genre1</h2>

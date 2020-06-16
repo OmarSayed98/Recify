@@ -1,6 +1,8 @@
+.hpBody{background-color: rgba(12,12,12,1);}
 .headerData:hover h2, .headerData:hover p{
     color:darkorange;
 }
+.firstSlider{margin-top: 100px;}
 .showMoreDiv{
     display: none;
     position: absolute;
