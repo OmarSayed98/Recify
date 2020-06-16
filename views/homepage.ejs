@@ -100,7 +100,7 @@
 
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
-        <%imdbid_poster.forEach((movie)=>{%>
+        <%movies.forEach((movie)=>{%>
         <div class="carousel-cell">
             <a href="http://localhost:3000/movie?id=<%=movie.id%>"><img src=<%=movie.poster%>></a>
         </div>
@@ -116,7 +116,7 @@
     </div>
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
-        <%imdb_poster_tv.forEach((tv)=>{%>
+        <%series.forEach((tv)=>{%>
         <div class="carousel-cell">
             <a href="http://localhost:3000/movie?id=<%=tv.id%>"><img src=<%=tv.poster%>></a>
         </div>
