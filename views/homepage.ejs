@@ -31,6 +31,9 @@
             </div>
         </div>
         <%for(let i=1;i<top.length;i++){%>
+            <%if(top[i].data.release_date===undefined){
+                continue;
+            }%>
             <div class="carousel-item">
                 <a href="http://localhost:3000/movie?id=<%=top[i].id%>"><img class="d-block w-20 sliderimg" src='<%=top[i].poster%>' alt="<%=top[0].data.title%>"  id="sliderimg2"></a>
                 <div class="carousel-caption d-none d-md-block ">

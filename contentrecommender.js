@@ -4,7 +4,8 @@ const cron=require('node-cron');
 let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
-cron.schedule('51 16 * * *',()=>{
+const user=require('./models/users');
+cron.schedule('36 08 * * *',()=>{
     movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{
             const plot_key=keyword_extractor.extract(i.plot,{
@@ -69,4 +70,54 @@ cron.schedule('51 16 * * *',()=>{
             }
         });
     });
+});
+const getrecommendations=(liked,suggest,itemtype)=>{
+    return liked.map(like=>{
+        return movie.findOne({imdbID:like})
+            .then(movies=>{
+                const similar=movies.content_similarity;
+                let itemarr=[],num=0,filternum=0;
+                for(let i=1;i<similar.length;i++){
+                    if(num===2)
+                        break;
+                    if(similar[i].type===itemtype){
+                        num++;
+                        itemarr.push({id:similar[i].id,poster:similar[i].poster});
+                    }
+                }
+                for(let i=0;i<suggest.length;i++){
+                    if(suggest[i].probability===0 || filternum===5)
+                        break;
+                    if(suggest[i].type===itemtype) {
+                        filternum++;
+                        itemarr.push({id: suggest[i].id, poster: suggest[i].poster});
+                    }
+                }
+                console.log(itemarr)
+                return itemarr;
+            });
+    });
+}
+cron.schedule('06 11 * * *',()=>{
+    user.find({})
+        .then(result=>{
+            result.forEach(resultuser=>{
+                const liked=resultuser.likedMovies;
+                let suggestions=resultuser.suggestions;
+                let movies=getrecommendations(liked,suggestions,'movie');
+                let series=getrecommendations(liked,[],'series');
+                Promise.all(movies)
+                    .then(ans=>{
+                        Promise.all(series)
+                            .then(ans1=>{
+                                ans=[].concat.apply([],ans);
+                                ans1=[].concat.apply([],ans1);
+                                ans=_.uniq(ans,'id');
+                                ans1=_.uniq(ans1,'id');
+                                user.updateOne({_id:resultuser._id},{series_suggestions:ans1,movie_suggestions:ans})
+                                    .then('suggestions updated');
+                            });
+                    });
+            });
+        });
 });
