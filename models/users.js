@@ -11,7 +11,9 @@ const userschema = new schema({
     resetpassexpiry:Date,
     confirmtoken:String,
     similarity_indices:[],
-    suggestions:[]
+    suggestions:[],
+    series_suggestions:[],
+    movie_suggestions:[]
 });
 const bcrypt = require('bcrypt');
 userschema.pre('save', function(next) {

@@ -54,7 +54,7 @@ const suggest=()=>{
     user.find({})
         .then(result=>{
             result.forEach(res=>{
-                const suggestions=[];
+                let suggestions=[];
                 let unrated=[];
                 const similar=res.similarity_indices;
                 const union_all=underscore.union(res.likedMovies,res.dislikedMovies);
@@ -79,27 +79,35 @@ const suggest=()=>{
                                         if(disliked_users===undefined)
                                             disliked_users=[];
                                         liked_users.forEach(userid=>{
-                                            if(userid===it.id){
+                                            if(userid===it.id.toString()){
                                                 similarity_coeff_likes+=it.jaccard;
                                             }
                                         });
                                         disliked_users.forEach(userid=>{
-                                            if(userid===it.id){
+                                            if(userid===it.id.toString()){
                                                 similarity_coeff_disliked+=it.jaccard;
                                             }
                                         });
                                         if(liked_users.length===0 && disliked_users.length===0)
                                             return;
                                         const item_probability=(similarity_coeff_likes-similarity_coeff_disliked)/(liked_users.length+disliked_users.length);
-                                        suggestions.push({id:movie.imdbID,probability:item_probability});
+                                        suggestions.push({id:movie.imdbID,probability:item_probability,type:movie.type,poster:movie.poster});
                                     });
                                 });
                         });
                         Promise.all(probability_unrated)
                             .then(()=>{
-                                res.suggestions=suggestions;
-                                console.log(suggestions);
-                                res.save().then(()=>console.log('suggestions updated'));
+                                suggestions=underscore.uniq(suggestions,'id');
+                                suggestions.sort((a,b)=>{
+                                    if(a.probability>b.probability)
+                                        return -1;
+                                    else
+                                        return 1;
+                                })
+                                user.findOneAndUpdate({_id:res._id},{suggestions:suggestions},{useFindAndModify: false})
+                                    .then(()=>{
+                                        console.log('suggestions updated');
+                                    })
                             });
                     });
             });
