@@ -4,7 +4,6 @@ const cron=require('node-cron');
 let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
-<<<<<<< HEAD
 cron.schedule('07 17 * * *',()=>{
 =======
 const user=require('./models/users');
