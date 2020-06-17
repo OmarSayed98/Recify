@@ -4,11 +4,8 @@ const cron=require('node-cron');
 let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
-cron.schedule('07 17 * * *',()=>{
-=======
 const user=require('./models/users');
 cron.schedule('36 08 * * *',()=>{
->>>>>>> recommendations
     movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{
             const plot_key=keyword_extractor.extract(i.plot,{
