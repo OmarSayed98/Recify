@@ -2,7 +2,7 @@
 .headerData:hover h2, .headerData:hover p{
     color:darkorange;
 }
-.firstSlider{margin-top: 100px;}
+.firstSlider{margin-top: 120px;}
 .showMoreDiv{
     display: none;
     position: absolute;
