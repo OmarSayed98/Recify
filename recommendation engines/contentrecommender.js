@@ -1,10 +1,10 @@
-const movie=require('./models/movies');
+const movie=require('../models/movies');
 const keyword_extractor = require("keyword-extractor");
 const cron=require('node-cron');
 let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
-const user=require('./models/users');
+const user=require('../models/users');
 cron.schedule('36 08 * * *',()=>{
     movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{

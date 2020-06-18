@@ -1,6 +1,6 @@
-const user=require('./models/users');
+const user=require('../models/users');
 const underscore=require('underscore');
-const Movie=require('./models/movies');
+const Movie=require('../models/movies');
 const recommendation=(result)=>{
     return new Promise((resolve,reject)=>{
         const liked=result.likedMovies;

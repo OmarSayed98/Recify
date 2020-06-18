@@ -12,7 +12,7 @@
 <div class="BlackslidersMainDivBackground firstSlider"  onmouseenter="sliderShowArrow(this)" onmouseleave="sliderHideArrow(this)">
     <div class="movieSelectionHeader">
         <div class="headerData" onmouseenter="sliderTitleHover(this)" onmouseleave="sliderTitleHoverExit(this)" onclick="showMore(this)">
-            <h2 id='trenTitle' class="mshTitle">Genre1</h2>
+            <h2 id='trenTitle' class="mshTitle">Action and Adventure</h2>
             <p id="trenShow" class="showMore">show more</p>
             <i class="fas fa-angle-right titleArrow" id="trenArrow"></i>
         </div>
@@ -20,16 +20,20 @@
 
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
+        <%action_adventure.forEach(movie=>{%>
+        <%if(movie.imdbid!==null){%>
         <div class="carousel-cell">
-            <a href="http://localhost:3000/movie?id="><img src="../public/images/download.jpg"></a>
+            <a href="http://localhost:3000/movie?id=<%=movie.imdbid%>"><img src="<%=movie.poster_path%>"></a>
         </div>
+        <%}%>
+        <%})%>
     </div>
 </div>
 
 <div class="GreyslidersMainDivBackground"  onmouseenter="sliderShowArrow(this)" onmouseleave="sliderHideArrow(this)">
     <div class="movieSelectionHeader">
         <div class="headerData" onmouseenter="sliderTitleHover(this)" onmouseleave="sliderTitleHoverExit(this)" onclick="showMore(this)">
-            <h2 id='trenTitle' class="mshTitle">Genre2</h2>
+            <h2 id='trenTitle' class="mshTitle">Comedy</h2>
             <p id="trenShow" class="showMore">show more</p>
             <i class="fas fa-angle-right titleArrow" id="trenArrow"></i>
         </div>
@@ -37,16 +41,20 @@
 
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
+        <%comedy.forEach(movie=>{%>
+        <%if(movie.imdbid!==null){%>
         <div class="carousel-cell">
-            <a href="http://localhost:3000/movie?id="><img src="../public/images/download.jpg"></a>
+            <a href="http://localhost:3000/movie?id=<%=movie.imdbid%>"><img src="<%=movie.poster_path%>"></a>
         </div>
+        <%}%>
+        <%})%>
     </div>
 </div>
 
 <div class="BlackslidersMainDivBackground"  onmouseenter="sliderShowArrow(this)" onmouseleave="sliderHideArrow(this)">
     <div class="movieSelectionHeader">
         <div class="headerData" onmouseenter="sliderTitleHover(this)" onmouseleave="sliderTitleHoverExit(this)" onclick="showMore(this)">
-            <h2 id='trenTitle' class="mshTitle">Genre3</h2>
+            <h2 id='trenTitle' class="mshTitle">Drama</h2>
             <p id="trenShow" class="showMore">show more</p>
             <i class="fas fa-angle-right titleArrow" id="trenArrow"></i>
         </div>
@@ -54,16 +62,20 @@
 
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
+        <%drama.forEach(movie=>{%>
+        <%if(movie.imdbid!==null){%>
         <div class="carousel-cell">
-            <a href="http://localhost:3000/movie?id="><img src="../public/images/download.jpg"></a>
+            <a href="http://localhost:3000/movie?id=<%=movie.imdbid%>"><img src="<%=movie.poster_path%>"></a>
         </div>
+        <%}%>
+        <%})%>
     </div>
 </div>
 
 <div class="GreyslidersMainDivBackground"  onmouseenter="sliderShowArrow(this)" onmouseleave="sliderHideArrow(this)">
     <div class="movieSelectionHeader">
         <div class="headerData" onmouseenter="sliderTitleHover(this)" onmouseleave="sliderTitleHoverExit(this)" onclick="showMore(this)">
-            <h2 id='trenTitle' class="mshTitle">Genre4</h2>
+            <h2 id='trenTitle' class="mshTitle">Crime</h2>
             <p id="trenShow" class="showMore">show more</p>
             <i class="fas fa-angle-right titleArrow" id="trenArrow"></i>
         </div>
@@ -71,9 +83,13 @@
 
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
+        <%crime.forEach(movie=>{%>
+        <%if(movie.imdbid!==null){%>
         <div class="carousel-cell">
-            <a href="http://localhost:3000/movie?id="><img src="../public/images/download.jpg"></a>
+            <a href="http://localhost:3000/movie?id=<%=movie.imdbid%>"><img src="<%=movie.poster_path%>"></a>
         </div>
+        <%}%>
+        <%})%>
     </div>
 </div>
 

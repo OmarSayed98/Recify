@@ -1,7 +1,7 @@
 const cron=require('node-cron');
 const request=require('request-promise');
-const trend=require('./models/trending');
-const engine=require('./engine');
+const trend=require('../models/trending');
+const engine=require('../recommendation engines/engine');
 cron.schedule('40 08 * * *',()=>{
     const option={
         url:"https://api.themoviedb.org/3/trending/movie/week?api_key=9bde952e56ff27d1016ff6144cbf27c9",

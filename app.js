@@ -10,8 +10,9 @@ const route=require('./routes/index');
 const db=require('./server');
 const MongoStore=require('connect-mongo')(session);
 const ms=require('ms');
-const schedule=require('./scheduledb');
-const recommend=require('./contentrecommender');
+const schedule=require('./Daily updates/scheduledb');
+const recommend=require('./recommendation engines/contentrecommender');
+const showmore=require('./movies/movies_tv');
 const Session=session({
     secret:process.env.SECRET_KEY,
     resave:false,

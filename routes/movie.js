@@ -111,7 +111,6 @@ router.get('/',(req,res)=>{
     }).then((result)=>{
         const item=getmovieitem(result);
         movie.findOne({imdbID:result.imdbid}).then(resofmovie=>{
-            console.log(resofmovie);
             if(!resofmovie)
                 item.save().then(()=>console.log('movie saved for first time'));
         })
