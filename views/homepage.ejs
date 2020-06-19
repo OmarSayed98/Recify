@@ -103,7 +103,7 @@
 
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
-        <%movies.forEach((movie)=>{%>
+        <%movies.slice().reverse().forEach((movie)=>{%>
         <div class="carousel-cell">
             <a href="http://localhost:3000/movie?id=<%=movie.id%>"><img src=<%=movie.poster%>></a>
         </div>
@@ -119,7 +119,7 @@
     </div>
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
-        <%series.forEach((tv)=>{%>
+        <%series.slice().reverse().forEach((tv)=>{%>
         <div class="carousel-cell">
             <a href="http://localhost:3000/movie?id=<%=tv.id%>"><img src=<%=tv.poster%>></a>
         </div>

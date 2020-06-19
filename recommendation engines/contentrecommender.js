@@ -5,7 +5,7 @@ let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
 const user=require('../models/users');
-cron.schedule('21 19 * * *',()=>{
+cron.schedule('55 21 * * *',()=>{
     movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{
             const plot_key=keyword_extractor.extract(i.plot,{
@@ -96,8 +96,8 @@ const getrecommendations=(liked,suggest,itemtype)=>{
                 return itemarr;
             });
     });
-}
-cron.schedule('22 19 * * *',()=>{
+};
+cron.schedule('54 21 * * *',()=>{
     user.find({})
         .then(result=>{
             result.forEach(resultuser=>{
@@ -122,11 +122,11 @@ cron.schedule('22 19 * * *',()=>{
                                 let new_recommendations=difference_movies.concat(difference_tv);
                                 let notifications=new_recommendations.map(item=>{
                                     if(item.like!==undefined){
-                                        const message="Because you liked "+item.like+" we recommend "+item.title;
+                                        const message="Because you liked "+item.like+" we recommend ";
                                         item.message=message;
                                     }
                                     else{
-                                        const message="Similar users also liked "+item.title;
+                                        const message="Similar users also liked ";
                                         item.message=message;
                                     }
                                     return item;

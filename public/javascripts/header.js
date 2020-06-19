@@ -80,21 +80,45 @@ function searchMenu()
 function notificationMenu()
 {
   var notifmenu = document.getElementsByClassName("notificationMenu")[0];
+  var badge = document.getElementsByClassName("NotificationBadge")[0];
+  var div = document.getElementsByClassName("notifDiv")[0];
   if(notifmenu.style.display!=="block")
   {
     notifmenu.style.display="block";
+    div.style.width="101px";
+    badge.style.display="none";
+  }
+  else{
+    notifmenu.style.display="none";
   }
 }
 
-$(document).mouseup(function(e)
+function checkNotif(num)
+{
+  let badge = document.getElementsByClassName("NotificationBadge")[0];
+  if(parseInt(num)>9)
+  {
+    badge.textContent="9+";
+    alert("more");
+  }
+  else
+  {
+    badge.textContent=num.toString();
+    alert("less");
+
+  }
+}
+
+$(document).click(function(e)
 {
   var search = $("#searchResult");
-  var notif =  $(".notificationMenu");
+  var notif = $(".notificationMenu");
+  var notifP = $(".notificationP");
   if (!search.is(e.target) && search.has(e.target).length === 0)
   {
     search.hide();
   }
-  if (!notif.is(e.target) && notif.has(e.target).length === 0)
+  if(!notif.is(e.target) && !notifP.is(e.target))
   {
     notif.hide();
   }
