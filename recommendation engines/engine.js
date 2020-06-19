@@ -91,7 +91,7 @@ const suggest=()=>{
                                         if(liked_users.length===0 && disliked_users.length===0)
                                             return;
                                         const item_probability=(similarity_coeff_likes-similarity_coeff_disliked)/(liked_users.length+disliked_users.length);
-                                        suggestions.push({id:movie.imdbID,probability:item_probability,type:movie.type,poster:movie.poster});
+                                        suggestions.push({id:movie.imdbID,probability:item_probability,type:movie.type,poster:movie.poster,title:movie.title});
                                     });
                                 });
                         });

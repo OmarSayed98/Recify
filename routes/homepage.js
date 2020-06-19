@@ -24,7 +24,8 @@ router.get('/',redirect,(req,res)=>{
                     imdb_poster_tv:result.trending_tv,
                     top:result.upcoming,
                     series:resultuser.series_suggestions,
-                    movies:resultuser.movie_suggestions
+                    movies:resultuser.movie_suggestions,
+                    notifications:resultuser.notifications
                 });
             });
         });

@@ -5,7 +5,7 @@ let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
 const user=require('../models/users');
-cron.schedule('36 08 * * *',()=>{
+cron.schedule('21 19 * * *',()=>{
     movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{
             const plot_key=keyword_extractor.extract(i.plot,{
@@ -82,7 +82,7 @@ const getrecommendations=(liked,suggest,itemtype)=>{
                         break;
                     if(similar[i].type===itemtype){
                         num++;
-                        itemarr.push({id:similar[i].id,poster:similar[i].poster});
+                        itemarr.push({id:similar[i].id,poster:similar[i].poster,like:movies.title,title:similar[i].title});
                     }
                 }
                 for(let i=0;i<suggest.length;i++){
@@ -90,15 +90,14 @@ const getrecommendations=(liked,suggest,itemtype)=>{
                         break;
                     if(suggest[i].type===itemtype) {
                         filternum++;
-                        itemarr.push({id: suggest[i].id, poster: suggest[i].poster});
+                        itemarr.push({id: suggest[i].id, poster: suggest[i].poster,title:suggest[i].title});
                     }
                 }
-                console.log(itemarr)
                 return itemarr;
             });
     });
 }
-cron.schedule('06 11 * * *',()=>{
+cron.schedule('22 19 * * *',()=>{
     user.find({})
         .then(result=>{
             result.forEach(resultuser=>{
@@ -114,7 +113,26 @@ cron.schedule('06 11 * * *',()=>{
                                 ans1=[].concat.apply([],ans1);
                                 ans=_.uniq(ans,'id');
                                 ans1=_.uniq(ans1,'id');
-                                user.updateOne({_id:resultuser._id},{series_suggestions:ans1,movie_suggestions:ans})
+                                let difference_movies=_.filter(ans,(obj)=>{
+                                    return !_.findWhere(resultuser.movie_suggestions,obj);
+                                });
+                                let difference_tv=_.filter(ans1,(obj)=>{
+                                    return !_.findWhere(resultuser.series_suggestions,obj);
+                                });
+                                let new_recommendations=difference_movies.concat(difference_tv);
+                                let notifications=new_recommendations.map(item=>{
+                                    if(item.like!==undefined){
+                                        const message="Because you liked "+item.like+" we recommend "+item.title;
+                                        item.message=message;
+                                    }
+                                    else{
+                                        const message="Similar users also liked "+item.title;
+                                        item.message=message;
+                                    }
+                                    return item;
+                                });
+                                console.log(notifications);
+                                user.updateOne({_id:resultuser._id},{series_suggestions:ans1,movie_suggestions:ans,notifications:notifications})
                                     .then('suggestions updated');
                             });
                     });

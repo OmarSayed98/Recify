@@ -52,7 +52,8 @@ router.get('/',(req,res)=>{
                                                 likedmovies:likemovie,
                                                 likedseries:likeseries,
                                                 dislikeseries:dislikeseries,
-                                                dislikemovies:dislikemovie
+                                                dislikemovies:dislikemovie,
+                                                notifications:result.notifications
                                             });
                                         })
                                 })

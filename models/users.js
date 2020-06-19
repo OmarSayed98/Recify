@@ -5,7 +5,7 @@ const userschema = new schema({
     password: {type:String,required:true},
     likedMovies: [String],
     dislikedMovies: [String],
-    notifications: [String],
+    notifications: [],
     email: {type:String,required:true},
     resetpasstoken:String,
     resetpassexpiry:Date,

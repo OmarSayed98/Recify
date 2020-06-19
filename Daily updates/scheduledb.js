@@ -2,7 +2,8 @@ const cron=require('node-cron');
 const request=require('request-promise');
 const trend=require('../models/trending');
 const engine=require('../recommendation engines/engine');
-cron.schedule('40 08 * * *',()=>{
+const user=require('../models/users');
+cron.schedule('33 16 * * *',()=>{
     const option={
         url:"https://api.themoviedb.org/3/trending/movie/week?api_key=9bde952e56ff27d1016ff6144cbf27c9",
         json:true
@@ -65,9 +66,19 @@ cron.schedule('40 08 * * *',()=>{
                     }).catch(err=>console.log(err));
                 }).catch(err=>console.log(err));
             }).catch(err=>console.log(err));
-        })
+        });
     });
 });
-cron.schedule('44 10 * * *',()=>{
+cron.schedule('58 18 * * *',()=>{
     engine.get_similar();
-})
+});
+cron.schedule('07 16 * * *',()=>{
+    const message="Daily updates for trending movies/tv shows and recommendations based on your latest likes and dislikes";
+    user.find({})
+        .then(result=>{
+            result.forEach(res=>{
+               user.findOneAndUpdate({_id:res._id},{$push:{notifications:message}},{useFindAndModify: false})
+                   .then(()=>console.log('message added successfully'));
+            });
+        });
+});
