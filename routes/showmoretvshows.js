@@ -1,6 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const trending=require('../models/trending');
+const user=require('../models/users');
 router.get('/',(req,res)=>{
     trending.findOne({name:'omar'},{useFindAndModify: false})
         .then(result=>{
