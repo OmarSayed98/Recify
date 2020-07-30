@@ -1,6 +1,10 @@
 const express=require('express');
 const router=express.Router();
+const user=require('../models/users');
 router.get('/',(req,res)=>{
-   res.render('notification');
+   user.findOne({id:req.session.user_id})
+       .then(result=>{
+          res.render('notification',{notifications:result.notifications});
+       });
 });
 module.exports=router;
