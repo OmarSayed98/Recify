@@ -27,9 +27,7 @@ function searchMenu()
     searchResult.style.display="block";
   }
   var movie=document.getElementById('searchData').value;
-  var el = document.getElementById('searchResult');
 
-  while ( el.firstChild ) el.removeChild( el.firstChild );
   var pageNum = 1;
   $.getJSON('http://www.omdbapi.com/?s='+movie+'&page='+pageNum+ key).then(function(response){
     var t=JSON.stringify(response);
@@ -41,6 +39,7 @@ function searchMenu()
       counter = tt.Search.length;
     }
 
+    while ( searchResult.firstChild ) searchResult.removeChild( searchResult.firstChild );
     for(var i=0;i < counter;i++)
     {
       var link = document.createElement('a');
@@ -110,21 +109,31 @@ $(document).click(function(e)
 
 $( document ).ready(function() {
   let badge = document.getElementsByClassName("NotificationBadge")[0];
+  let sanbadge = document.getElementsByClassName("NotificationBadge")[1];
   let num = badge.textContent;
   if(parseInt(num)>9)
   {
     badge.textContent="9+";
-
+    sanbadge.textContent="9+";
   }
   else if(parseInt(num)==0)
   {
     badge.style.display="none";
+    sanbadge.style.display="none";
     let notifDiv = document.getElementsByClassName("notifDiv")[0];
     notifDiv.style.width="fit-content";
   }
   else
   {
     badge.textContent=num.toString();
+    sanbadge.textContent=num.toString();
   }
 
+});
+
+$("#searchData").keydown(function(event) {
+  if (event.code === 13) {
+    event.preventDefault();
+    alert("done");
+  }
 });
