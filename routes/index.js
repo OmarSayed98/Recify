@@ -8,6 +8,7 @@ const movie=require('./movie');
 const profile=require('./profile');
 const showmoremovies=require('./showmoremovies');
 const showmoretvshows=require('./showmoretvshows');
+const notifiaction=require('./notification');
 module.exports=function(app){
     app.use('/signin',signin);
     app.use('/signup',signup);
@@ -19,4 +20,5 @@ module.exports=function(app){
     app.use('/profile',profile);
     app.use('/showmoremovies',showmoremovies);
     app.use('/showmoretvshows',showmoretvshows);
+    app.use('/notification',notifiaction);
 };

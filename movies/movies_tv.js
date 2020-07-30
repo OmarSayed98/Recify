@@ -47,7 +47,7 @@ const genre_id=[28,35,18,878];
 const genre_id_tv=[10759,35,18,80]
 const genres=["action_","comedy_","drama_","Science_Fiction_"];
 const genres_tv=["action_adventure_","comedy_","drama_","crime_"]
-cron.schedule('19 14 * * *',()=>{
+cron.schedule('17 09 * * *',()=>{
     for(let i=0;i<4;i++){
         genres_result(genre_id[i],genres[i]+"movies",'movie');
         genres_result(genre_id_tv[i],genres_tv[i]+"tv",'tv');
