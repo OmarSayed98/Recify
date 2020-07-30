@@ -131,9 +131,8 @@ $( document ).ready(function() {
 
 });
 
-$("#searchData").keydown(function(event) {
-  if (event.code === 13) {
-    event.preventDefault();
-    alert("done");
+$("#searchData").keyup(function(event) {
+  if (event.code === "Enter") {
+    searchMenu();
   }
 });

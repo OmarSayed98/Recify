@@ -225,13 +225,12 @@ margin-bottom: 2.5%;
 }
 body::-webkit-scrollbar {
     width: 12px;
-
+    background-color: rgba(50,50,50,1);
 
 }
 /* Track */
 body::-webkit-scrollbar-track {
-    background-color: rgba(50,50,50,1);
-    border-radius: 20px;
+
 }
 
 /* Handle */

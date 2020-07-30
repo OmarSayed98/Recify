@@ -135,10 +135,11 @@
 }
 body::-webkit-scrollbar {
     width: 11px;
+    background: rgba(50,50,50,1);
 }
 /* Track */
 body::-webkit-scrollbar-track {
-    background: rgba(50,50,50,1);
+
     border-radius: 20px;
 }
 
