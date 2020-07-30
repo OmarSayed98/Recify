@@ -9,20 +9,18 @@
 }
 .container-fluid{
   padding: 0;
+  width:85%;
   position:relative;
-  margin: 0;
-  margin-top: 100px;
-  margin-left: 5%;
-  width: 95%;
+  background-color: rgba(50,50,50,0.6);
+  margin: auto;
+  margin-bottom: 50px;
+  border-radius: 2%;
+  box-shadow:3px 3px 20px 0px rgba(255,140,0,0.6);
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
 }
 .MainDiv{
-    background-color: rgba(50,50,50,0.6);
-    width:85%;
-    margin: auto;
-    margin-bottom: 50px;
-    border-radius: 2%;
-    box-shadow:3px 3px 20px 0px rgba(255,140,0,0.6);
-    /* offset-x | offset-y | blur-radius | spread-radius | color */
+
+
 
 
 }

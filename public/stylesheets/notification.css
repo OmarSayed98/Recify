@@ -1,0 +1,71 @@
+html{height:100%;}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Amiri', serif;
+    font-weight: 500;
+    background-color: rgba(12,12,12,1);
+    height: 100%;
+}
+.container-fluid{
+    height: 80%;
+    padding: 0;
+    width:85%;
+    background-color: rgba(50,50,50,0.6);
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    box-shadow:3px 3px 20px 0px rgba(255,140,0,0.6);
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    overflow-y: scroll;
+}
+.allNotifications{
+    display: flex;
+    flex-direction: column;
+}
+
+.theNotification{
+    padding-left: 10px;
+    border-bottom:1px solid rgba(12,12,12,1);
+    padding-top: 10px;
+}
+.theNotification:last-child{
+    border-bottom: none;
+}
+body::-webkit-scrollbar {
+    width: 12px;
+
+
+}
+/* Track */
+body::-webkit-scrollbar-track {
+    background-color: rgba(50,50,50,1);
+    border-radius: 20px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: orange;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.container-fluid::-webkit-scrollbar {
+    width: 12px;
+
+
+}
+/* Track */
+.container-fluid::-webkit-scrollbar-track {
+    background-color: rgba(50,50,50,1);
+    border-radius: 20px;
+}
+
+/* Handle */
+.container-fluid::-webkit-scrollbar-thumb {
+    background: orange;
+    cursor: pointer;
+    border-radius: 20px;
+}
