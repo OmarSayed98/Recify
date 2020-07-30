@@ -69,3 +69,18 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
     border-radius: 20px;
 }
+.notifLink{
+    text-decoration: none !important;
+    float: none !important;
+    color: orange !important;
+}
+.notifMsg{
+    float: none !important;
+    padding-left: 7.5px;
+    padding-top:7.5px;
+    margin-bottom: 0;
+}
+.notifMsg:hover{
+    background-color: rgba(12,12,12,0.8);
+
+}

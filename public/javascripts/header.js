@@ -93,22 +93,6 @@ function notificationMenu()
   }
 }
 
-function checkNotif(num)
-{
-  let badge = document.getElementsByClassName("NotificationBadge")[0];
-  if(parseInt(num)>9)
-  {
-    badge.textContent="9+";
-    alert("more");
-  }
-  else
-  {
-    badge.textContent=num.toString();
-    alert("less");
-
-  }
-}
-
 $(document).click(function(e)
 {
   var search = $("#searchResult");
@@ -122,4 +106,25 @@ $(document).click(function(e)
   {
     notif.hide();
   }
+});
+
+$( document ).ready(function() {
+  let badge = document.getElementsByClassName("NotificationBadge")[0];
+  let num = badge.textContent;
+  if(parseInt(num)>9)
+  {
+    badge.textContent="9+";
+
+  }
+  else if(parseInt(num)==0)
+  {
+    badge.style.display="none";
+    let notifDiv = document.getElementsByClassName("notifDiv")[0];
+    notifDiv.style.width="fit-content";
+  }
+  else
+  {
+    badge.textContent=num.toString();
+  }
+
 });

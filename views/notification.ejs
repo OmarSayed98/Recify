@@ -13,66 +13,12 @@
 
 <div class="container-fluid">
     <div class="allNotifications">
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
-        <div class="theNotification">
-            <p>This is a notifications p asda asd as fa dgf sad fasjdbhaishud asuydaisudhaosdka dhasdhabgskdhagbskda h</p>
-        </div>
 
+        <%notifications.forEach((notif)=>{%>
+        <div class="theNotification">
+            <p class="notifMsg"><%=notif.message%> <a class="notifLink" href="http://localhost:3000/movie?id=<%=notif.id%>"><%=notif.title%></a></p>
+        </div>
+        <%})%>
 
     </div>
 </div>
