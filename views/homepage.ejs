@@ -71,10 +71,11 @@
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
         <%imdbid_poster.forEach((movie)=>{%>
+            <%if(movie!==null && movie.id!==null) {%>
             <div class="carousel-cell">
                 <a href="http://localhost:3000/movie?id=<%=movie.id%>"><img src=<%=movie.poster%>></a>
             </div>
-        <%})%>
+        <%}})%>
     </div>
 </div>
 
@@ -87,10 +88,11 @@
     <div class="carousel movieSelectionSlider"
          data-flickity='{"wrapAround": true ,"pageDots": false,"draggable": true, "cellAlign":"left"} '>
         <%imdb_poster_tv.forEach((tv)=>{%>
+        <%if(tv!==null && tv.id!==null) {%>
         <div class="carousel-cell">
             <a href="http://localhost:3000/movie?id=<%=tv.id%>"><img src=<%=tv.poster%>></a>
         </div>
-        <%})%>
+        <%}})%>
     </div>
 </div>
 
