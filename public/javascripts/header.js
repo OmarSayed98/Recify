@@ -3,7 +3,7 @@ var key="&apikey=e7aad19";
 function sandwich(){
   var sanmenu = document.getElementById('sandwichMenu');
   var smenu = document.getElementById("smallmenu");
-  var sbar=document.getElementById('sbar');
+  var sbar=document.getElementById('searchbar');
 
   if(smenu.style.display != "block")
   {

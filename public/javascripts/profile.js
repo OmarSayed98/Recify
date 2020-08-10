@@ -34,6 +34,7 @@ function displayChangeNameInput(){
         inpt.id="editNameInput";
         inpt.name="newName";
         inpt.placeholder="Name";
+        inpt.maxLength="10";
         theDiv.appendChild(inpt);
     }
     else
