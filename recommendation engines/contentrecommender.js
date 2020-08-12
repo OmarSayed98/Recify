@@ -5,7 +5,7 @@ let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
 const user=require('../models/users');
-cron.schedule('06 21 * * *',()=>{
+cron.schedule('55 19 * * *',()=>{
     movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{
             const plot_key=keyword_extractor.extract(i.plot,{
@@ -97,7 +97,7 @@ const getrecommendations=(liked,suggest,itemtype)=>{
             });
     });
 };
-cron.schedule('07 21 * * *',()=>{
+cron.schedule('59 19 * * *',()=>{
     user.find({})
         .then(result=>{
             result.forEach(resultuser=>{
