@@ -69,7 +69,9 @@ cron.schedule('40 19 * * *',()=>{
         });
     });
 });
+
 cron.schedule('40 16 * * *',()=>{
+
     engine.get_similar();
 });
 cron.schedule('40 19 * * *',()=>{
