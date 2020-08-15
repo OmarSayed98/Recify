@@ -18,13 +18,19 @@ router.get('/',redirect,(req,res)=>{
     const user=req.session.name.split(' ')[0];
     users.findOne({_id:req.session.user_id})
         .then(resultuser=>{
+            let movies=resultuser.movie_suggestions.filter(i=>{
+                return i.poster!==null;
+            });
+            let series=resultuser.series_suggestions.filter(i=>{
+                return i.poster!==null;
+            });
             trending.findOne({name:'omar'}).then((result)=>{
                 res.render('homepage',{name:user,
                     imdbid_poster:result.trending_movie,
                     imdb_poster_tv:result.trending_tv,
                     top:result.upcoming,
-                    series:resultuser.series_suggestions,
-                    movies:resultuser.movie_suggestions,
+                    series:series,
+                    movies:movies,
                     notifications:resultuser.notifications
                 });
             });

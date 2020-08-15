@@ -5,7 +5,7 @@ let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
 const user=require('../models/users');
-cron.schedule('06 21 * * *',()=>{
+cron.schedule('47 16 * * *',()=>{
     movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{
             const plot_key=keyword_extractor.extract(i.plot,{
@@ -97,7 +97,7 @@ const getrecommendations=(liked,suggest,itemtype)=>{
             });
     });
 };
-cron.schedule('07 21 * * *',()=>{
+cron.schedule('48 16 * * *',()=>{
     user.find({})
         .then(result=>{
             result.forEach(resultuser=>{
@@ -120,6 +120,7 @@ cron.schedule('07 21 * * *',()=>{
                                     return !_.findWhere(resultuser.series_suggestions,obj);
                                 });
                                 let new_recommendations=difference_movies.concat(difference_tv);
+                                console.log(resultuser.name);
                                 console.log(new_recommendations);
                                 let notifications=new_recommendations.map(item=>{
                                     if(item.like!==undefined){
@@ -132,7 +133,6 @@ cron.schedule('07 21 * * *',()=>{
                                     }
                                     return item;
                                 });
-                                console.log(notifications);
                                 user.updateOne({_id:resultuser._id},{series_suggestions:ans1,movie_suggestions:ans,notifications:notifications})
                                     .then('suggestions updated');
                             });
