@@ -3,7 +3,7 @@ var key="&apikey=e7aad19";
 function sandwich(){
   var sanmenu = document.getElementById('sandwichMenu');
   var smenu = document.getElementById("smallmenu");
-  var sbar=document.getElementById('sbar');
+  var sbar=document.getElementById('searchbar');
 
   if(smenu.style.display != "block")
   {
@@ -29,11 +29,11 @@ function searchMenu()
   var movie=document.getElementById('searchData').value;
 
   var pageNum = 1;
+  console.log(movie);
   $.getJSON('http://www.omdbapi.com/?s='+movie+'&page='+pageNum+ key).then(function(response){
     var t=JSON.stringify(response);
     var tt=JSON.parse(t);
     let counter = 10;
-
     if(tt.Search.length < counter)
     {
       counter = tt.Search.length;
@@ -133,6 +133,15 @@ $( document ).ready(function() {
 
 $("#searchData").keyup(function(event) {
   if (event.code === "Enter") {
-    searchMenu();
+    var movie=document.getElementById('searchData').value;
+    let link = "http://localhost:3000/movie?id=";
+    $.getJSON('http://www.omdbapi.com/?t='+movie+ key).then(function(response) {
+      var t=JSON.stringify(response);
+      var tt=JSON.parse(t);
+      if(tt.imdbID!==undefined) {
+        link += tt.imdbID;
+        window.location.replace(link);
+      }
+    });
   }
 });
