@@ -5,11 +5,8 @@ let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
 const user=require('../models/users');
-<<<<<<< HEAD
-cron.schedule('39 15 * * *',()=>{
-=======
+
 cron.schedule('47 16 * * *',()=>{
->>>>>>> 6d8cb28eef25c8a11e5cfdf6efd0af91bb7c57e2
     movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{
             const plot_key=keyword_extractor.extract(i.plot,{
