@@ -3,7 +3,7 @@ const request=require('request-promise');
 const trend=require('../models/trending');
 const engine=require('../recommendation engines/engine');
 const user=require('../models/users');
-cron.schedule('06 21 * * *',()=>{
+cron.schedule('40 19 * * *',()=>{
     const option={
         url:"https://api.themoviedb.org/3/trending/movie/week?api_key=9bde952e56ff27d1016ff6144cbf27c9",
         json:true
@@ -69,10 +69,12 @@ cron.schedule('06 21 * * *',()=>{
         });
     });
 });
-cron.schedule('14 16 * * *',()=>{
+
+cron.schedule('40 16 * * *',()=>{
+
     engine.get_similar();
 });
-cron.schedule('07 21 * * *',()=>{
+cron.schedule('40 19 * * *',()=>{
     const message="Daily updates for trending movies/tv shows and recommendations based on your latest likes and dislikes";
     user.find({})
         .then(result=>{

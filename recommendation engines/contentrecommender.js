@@ -5,7 +5,11 @@ let all_words=[];
 const _=require('underscore');
 const similarity = require( 'compute-cosine-similarity' );
 const user=require('../models/users');
+<<<<<<< HEAD
 cron.schedule('39 15 * * *',()=>{
+=======
+cron.schedule('47 16 * * *',()=>{
+>>>>>>> 6d8cb28eef25c8a11e5cfdf6efd0af91bb7c57e2
     movie.find({}).then(res=>{
         let promises=res.map((i,idx)=>{
             const plot_key=keyword_extractor.extract(i.plot,{
@@ -97,7 +101,9 @@ const getrecommendations=(liked,suggest,itemtype)=>{
             });
     });
 };
-cron.schedule('40 15 * * *',()=>{
+
+
+cron.schedule('48 16 * * *',()=>{
     user.find({})
         .then(result=>{
             result.forEach(resultuser=>{
@@ -120,6 +126,7 @@ cron.schedule('40 15 * * *',()=>{
                                     return !_.findWhere(resultuser.series_suggestions,obj);
                                 });
                                 let new_recommendations=difference_movies.concat(difference_tv);
+                                console.log(resultuser.name);
                                 console.log(new_recommendations);
                                 let notifications=new_recommendations.map(item=>{
                                     if(item.like!==undefined){
@@ -132,7 +139,6 @@ cron.schedule('40 15 * * *',()=>{
                                     }
                                     return item;
                                 });
-                                console.log(notifications);
                                 user.updateOne({_id:resultuser._id},{series_suggestions:ans1,movie_suggestions:ans,notifications:notifications})
                                     .then('suggestions updated');
                             });
