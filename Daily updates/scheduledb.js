@@ -69,7 +69,7 @@ cron.schedule('06 21 * * *',()=>{
         });
     });
 });
-cron.schedule('07 21 * * *',()=>{
+cron.schedule('14 16 * * *',()=>{
     engine.get_similar();
 });
 cron.schedule('07 21 * * *',()=>{
